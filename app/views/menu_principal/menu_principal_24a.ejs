@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    <link href="node_modules\bootstrap\dist\css\bootstrap-theme.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
+    
+
+  </head>
+
+ <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid ">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">PerfisCalc - Altamira</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Perfis</a></li>
+            <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+            <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Entrada de Laterias Novas</a></li>
+            
+        </div>
+      </div>
+      </nav>
+      <br>
+      <div class"container">
+          <div class="row">
+
+                  <div class="section">
+                  <div class="container">
+                    <div class="row">
+                        <div class="thumbnail">
+                      <img src="imagens\menu_principal_24a.jpg" style="width:40%" class="center-block img-responsive img-rounded">
+                      <ul class="pager"></ul>
+                    </div>
+                    <div class="well">
+                    
+                      <ul class="nav nav-tabs" >
+                        <li class="active">
+                          <a data-toggle="tab" href="#entrada_Dados">Entrada de Dados</a>
+                        </li>
+                        <li class="">
+                          <a data-toggle="tab" href="#dimensoes_Perfil">Dimensões do Perfil</a>
+                        </li>
+                        <li>
+                          <a data-toggle="tab" href="#propriedades_Geometricas">Propriedades Geométricas da Seção Tranversal</a>
+                        </li>
+                      </ul>
+                      
+                      
+                      
+                      <br>
+                        <div class="tab-content">
+                          <div id="entrada_Dados" class="tab-pane fade in active">
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="optradio">Perfis Normais</label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="optradio">Perfis Perfurados</label>
+                            </div>
+                            
+                          
+                            
+                            <div class="container-fluid">
+                              
+                              <form class="form-inline" action="/action_page.php">
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Tamanho de A</label>
+                                  <input type="email" class="form-control" id="email" placeholder="mm"
+                                  name="email">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Tamanho de D</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm"
+                                  name="pwd">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Espessura (t)</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm"
+                                  name="pwd">
+                                </div>
+                                <div>
+                                 
+                                  <p align="right" class="btn-lg">
+                                    
+                                      <a href="/"><button type="button" class="btn btn-primary" style="width: 100px">Voltar</button></a>
+                                  </p>
+                              </form>
+                            </div>
+                              <form class="form-inline" action="/action_page.php">
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Tamanho de B</label>
+                                  <input type="email" class="form-control" id="email" placeholder="mm"
+                                  name="email">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Tamanho de E</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm"
+                                                                    name="pwd">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Ângulo</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm"
+                                  name="pwd">
+                                </div>
+                                <p align="right" class="btn-lg">
+                                  <a href="menu_principal_24a"><button type="button" onClick="limpar()" class="btn btn-danger" style="width: 100px">Cancela</button> 
+                                                                </a>
+                                </p>
+                                
+                                
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Tamanho de C</label>
+                                  <input type="email" class="form-control" id="email" placeholder="mm"
+                                  name="email">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="ex1">Raio da Dobra</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm"
+                                  name="pwd">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <div id="dimensoes_Perfil" class="tab-pane fade">
+                              <div class="container-fluid">
+                              <br>
+                              <form>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">A</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">e</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">m</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Peso</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">B</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">a/</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">X@</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Distância SC-CG</label>
+                                    <input class="form-control" id="ex2" type="text"
+                                    placeholder="mm">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">C</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">b/</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">Y@</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Espessura (t)</label>
+                                    <input class="form-control" id="ex2" type="text"
+                                    placeholder="mm">
+                                  </div>
+                                  
+                                                </a>
+                                  <p align="right" width="90" class="btn-lg">
+                                    <button type="button" class="btn btn-primary" style="width: 100px">
+                                      <a href="/">  .</a>Voltar</button>
+                                  </p>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">E</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">d/</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">x/</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Raio de Dobra</label>
+                                    <input class="form-control" id="ex2" type="text"
+                                    placeholder="mm">
+                                  </div>
+                                  
+                                                </a>
+                                  <p align="right" class="btn-lg" width="90">
+                                    <a href="menu_principal_24a"><button type="button" class="btn btn-danger" style="width: 100px">Cancela</button> 
+                                                              </a>
+                                  </p>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">a</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">e/</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">z/</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Raio Neutro</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">b</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">u</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3">y/</label>
+                                    <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Altura Dobra</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">c</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">u2</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3"></label>
+                                    <input class="form-control" input="" type="hidden" id="ex3">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">Largura DA</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-xs-2">
+                                    <label for="ex1">d</label>
+                                    <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2">u3</label>
+                                    <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex3"></label>
+                                    <input class="form-control" input="" type="hidden" id="ex3">
+                                  </div>
+                                  <div class="col-xs-2">
+                                    <label for="ex2"></label>
+                                    <input class="form-control" input="" type="hidden" id="ex2">
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <div id="propriedades_Geometricas" class="tab-pane fade" >
+                              <div class="container-fluid">
+                              <br>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">lx</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">Wz</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">J</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">ly</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">Wy</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">i</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                                <p align="right">
+                                  <button type="button" class="btn btn-default" style="width: 100px">
+                                    <span class="glyphicon glyphicon-print"></span>Imprimir</button>
+                                </p>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">lz</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">Wt</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">CGx</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                                <a href="guardadorrebanhos.html">
+                                                    </a>
+                                <p align="right">
+                                  <a href="guardadorrebanhos.html"><button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
+                                            </a>
+                                </p>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">lv</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2"></label>
+                                  <input class="form-control" input="" type="hidden" id="ex2">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">CGy</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                                <a href="guardadorrebanhos.html">
+                                                    </a>
+                                <p align="right">
+                                  <a href="guardadorrebanhos.html"><button type="button" class="btn btn-danger" style="width: 100px">Cancela</button> 
+                                                    </a>
+                                </p>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">lp</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">ix</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">Cw</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">lxy</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">iy</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">b</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">Wx</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">iz</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">0</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1">Wy</label>
+                                  <input class="form-control" id="ex1" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2">iv</label>
+                                  <input class="form-control" id="ex2" type="text" placeholder="mm">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">Área Total</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-2">
+                                  <label for="ex1"></label>
+                                  <input class="form-control" input="" type="hidden" id="ex1">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex2"></label>
+                                  <input class="form-control" input="" type="hidden" id="ex2">
+                                </div>
+                                <div class="col-xs-2">
+                                  <label for="ex3">Área Útil</label>
+                                  <input class="form-control" id="ex3" type="text" placeholder="mm">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          
+                        </div>
+                        <!--/.nav-collapse -->
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <!--/.nav-collapse -->
+                </div>
+                
+              </div>
+  </div>
+</div>
+</div>
+
+          
+
+
+
+  <!-- Bootstrap core JavaScript
+          ================================================== -->
+          <!-- Placed at the end of the document so the pages load faster -->
+          <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+         
+          
+        </body>
+      </html>

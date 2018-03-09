@@ -1,0 +1,23 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de notícias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clodoaldo Dias",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "express-validator": "^4.3.0",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.14.7"
+  },
+  "devDependencies": {
+    "inputmask": "^3.3.11"
+  }
+}

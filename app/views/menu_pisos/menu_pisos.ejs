@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shhrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link href="node_modules\bootstrap\dist\css\bootstrap.css" rel="stylesheet">
+    <link href="node_modules\bootstrap\dist\css\bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid ">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">PerfisCalc - Altamira</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="/">Perfis</a></li>
+                    <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+                    <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+                    <li><a href="menu_prateleiras">Prateleiras</a></li>
+                    <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+                    <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+                    <li><a href="menu_pisos">Pisos</a></li>
+                    <li><a href="entrada_laterais">Entrada de LateriasNovas</a></li>
+                    
+                </div>
+              </div>
+              </nav>
+               <br>
+
+
+
+
+
+
+
+<br>
+<br>
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="thumbnail">
+              <a href="menu_pisos" target="_self">
+                            <img src="imagens\menu_pisos.jpg" style="width:50%">
+                            <div class="caption">
+                              
+                            </div>
+                          </a>
+            </div>
+          </div>
+        </br>
+      </br>
+    </br>
+    <div class="well">
+        <div class="container">
+            
+          
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#entrada_dados">Entrada de Dados</a></li>
+              <li><a data-toggle="tab" href="#dimensoes">Dimensões</a></li>
+              <li><a data-toggle="tab" href="#propriedades">Propriedades Geométricas</a></li>
+              
+            </ul>
+            
+            <div class="tab-content">
+              <div id="entrada_dados" class="tab-pane fade in active">
+               <br>
+               <div class="checkbox">
+               <label><input type="checkbox" name="remember"> Enrijecido</label>
+               <br>
+               <br>
+               <form action="/action_page.php">
+               <div class="form-group col-xs-6">
+               <label for="email">Tamanho de A</label>
+               <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+               </div>
+               <div class="form-group col-xs-6">
+               <label for="pwd">Vão</label>
+               <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+               </div
+               
+               </form>
+               <form action="/action_page.php">
+                                <div class="form-group col-xs-6">
+                                  <label for="email">Tamanho de B</label>
+                                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                  <label for="pwd">Escoamento</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                                </div>
+                                  
+                              </form>
+                              
+                               <form action="/action_page.php">
+                                <div class="form-group col-xs-6">
+                                  <label for="email">Tamanho de C</label>
+                                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                  <label for="pwd">Espessura</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                                </div>
+                                  
+                              </form>
+               
+               
+               
+               </div>
+               <p align="right" class="btn-lg"> <button type="button" class="btn btn-success"  style="width: 100px">Calcular</button>
+               <p align="right" class="btn-lg"><a href="file:///C:/Users/clodoaldo.dias/git/perfisCalc/calc_vigas/calc_Vigas.html"> <button type="button" class="btn btn-primary"            style="width: 100px">Voltar</button></a>
+               
+               
+              </div>
+              <div id="dimensoes" class="tab-pane fade">
+              <br>
+              <form action="/action_page.php">
+              <div class="form-group col-xs-4">
+                <label for="email">A</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="pwd">Raio da Obra</label>
+                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="email">Compr.da Fita</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+              
+             
+             </form>
+             <form action="/action_page.php">
+              <div class="form-group col-xs-4">
+                <label for="email">B</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="pwd">Espessura</label>
+                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="email">Vão</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+            </form>
+                <form action="/action_page.php">
+              <div class="form-group col-xs-4">
+                <label for="email">C</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="pwd">Largura da Fita</label>
+                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="pwd">Peso Bruto</label>
+                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+              </div>
+              
+            </form>
+            <form action="/action_page.php">
+              <div class="form-group col-xs-4">
+                <label for="email">Espessura Reforço</label>
+                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+              </div>
+               <div class="form-group col-xs-4">
+                <label for="email"></label>
+                <input type="email" class="hidden" id="email" placeholder="mm" name="email">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="email"></label>
+                <input type="email" class="hidden" id="email" placeholder="mm" name="email">
+              </div>
+              
+              </form>
+              <div>
+              <p align="right" class="btn-lg"> <button type="button" class="btn btn-success"  style="width: 100px">Calcular</button>
+              <p align="right" class="btn-lg"><a href="file:///C:/Users/clodoaldo.dias/git/perfisCalc/calc_vigas/calc_Vigas.html"> <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button></a>
+              </div>
+                
+              </div>
+              
+              <div id="propriedades" class="tab-pane fade">
+              <br>
+                <form action="/action_page.php">
+                          <div class="form-group col-xs-6">
+                            <label for="email">lx</label>
+                            <input type="email" class="form-control" id="email" placeholder="mm4" name="email">
+                          </div>
+                            <div class="form-group col-xs-6">
+                            <label for="pwd">Área Total</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="mm2" name="pwd">
+                          </div>
+                
+                </form>
+                <form action="/action_page.php">
+                          <div class="form-group col-xs-6">
+                            <label for="email">wx</label>
+                            <input type="email" class="form-control" id="email" placeholder="mm3" name="email">
+                          </div>
+                          <div class="form-group col-xs-6">
+                            <label for="pwd"></label>
+                            
+                          </div>
+                
+                
+                <form action="/action_page.php">
+                          <div class="form-group col-xs-6">
+                            <label for="email">Tensão de Escoamento</label>
+                         <input type="password" class="form-control" id="pwd" placeholder="KGF/CM2" name="pwd">   
+                          </div>
+                          <div class="form-group col-xs-6">
+                            <label for="pwd">Cap. Carga Pontual</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
+                          </div>
+                          
+                        </form>
+                        
+                        <form action="/action_page.php">
+                          <div class="form-group col-xs-4">
+                            <label for="email">Flexa Máxima</label>
+                            <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                          </div>
+                          <div class="form-group col-xs-2">
+                            <label for="email"></label>
+                            <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                          </div>
+                          <div class="form-group col-xs-6">
+                            <label for="pwd">Cap. de Carga Concentrada</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
+                          </div>
+                          
+                        </form>
+                        
+                        <form action="/action_page.php">
+                          <div class="form-group col-xs-4">
+                            <label for="email">Capacidade de Carga</label>
+                            <input type="email" class="form-control" id="email" placeholder="Kg / m2" name="email">
+                          </div>
+                           <div class="form-group col-xs-2">
+                            <label for="email"></label>
+                            <input type="email" class="form-control" id="email" placeholder="Kg / Prateleira" name="email">
+                          </div>
+                          
+                          
+                            
+                         
+          
+                        </form>
+                        <div>
+                        <p>
+                        <div class="form-group col-xs-2">
+                                <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
+                                
+                                
+                           <align="rigth"> <button type="button" class="btn btn-print" style="width: 100px">
+                            <span class="glyphicon glyphicon-print" align="right"></span>Imprimir</button>
+                            <button type="button" class="btn btn-success" style="width: 100px">Calcular</button>
+                            <button type="button" class="btn btn-danger"  style="width: 100px">Cancelar</button> 
+              </div>
+                       
+                        
+                        
+                                                              
+                                                              
+                                                              
+           
+          </p>
+                        
+                        </div>
+                        
+                        
+                        
+                        
+                
+              </div>
+              
+            </div>
+          </div>
+
+        
+
+
+
+      <!-- Bootstrap core JavaScript
+          ================================================== -->
+          <!-- Placed at the end of the document so the pages load faster -->
+          <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/docs.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+          <script src="../../dist/js/bootstrap.min.js"></script>
+          <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+          <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        </body>
+      </html>

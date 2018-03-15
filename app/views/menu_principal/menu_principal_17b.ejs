@@ -2,42 +2,22 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="estilo.css">
-    
-    <link href="node_modules\bootstrap\dist\css\bootstrap-theme.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
-    rel="stylesheet" type="text/css">
-    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet" type="text/css">
+  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+  rel="stylesheet" type="text/css">
   
 
 
 <script type="text/javascript">
-$(document).ready(function(){
-    $("#etam_A").focus(function(){
-        $(this).css("background-color", "#F0F8FF");
-                
-    });
-    $("#etam_B").blur(function(){
-        $(this).css("background-color", "#F0F8FF");
-    });
-    $("#etam_C").blur(function(){
-        $(this).css("background-color", "#F0F8FF");
-    });
-    $("#espessura_e").blur(function(){
-        $(this).css("background-color", "#F0F8FF");
-    });
-    $("#raioe").blur(function(){
-        $(this).css("background-color", "#F0F8FF");
-    });
-    
-    
-    
-}); 
+
 
 function validar (){
   var form01 = document.getElementById("form01");
@@ -78,7 +58,7 @@ function validar (){
   eangulo.value = eangulo.value.replace(re_eangulo, "$1$2,00");
   }
     
-  var str = document.getElementById("etam_A").value; 
+    var str = document.getElementById("etam_A").value; 
     var res = str.replace(",", ".");
     document.getElementById("etam_A").value = res;
     var str = document.getElementById("etam_B").value; 
@@ -111,7 +91,7 @@ function validar (){
 }
 
   
-  function SomenteNumero(e){
+function SomenteNumero(e){
     var tecla=(window.event)?event.keyCode:e.which;   
     if((tecla>43 && tecla<58)) return true;
     else{
@@ -120,79 +100,26 @@ function validar (){
 }}
 
 
-  function id(el) {
-      return document.getElementById(el);
+function id(el) {
+     return document.getElementById(el);
     }
 
     
 function soma() {
-   
-  
-    
-
-      id('dtam_A').value = id('etam_A').value;
-      id('dtam_B').value = id('etam_B').value;
-      id('dtam_C').value = id('etam_C').value;
-      id('dtam_D').value = id('etam_D').value;
-      id('dtam_E').value = id('etam_E').value;
-      id('espessura_d').value = id('espessura_e').value;
-      
-      //RDB2 = RDB1 * ESPES
       var raio_e =  parseFloat(form03.raioe.value);
-      var espessura = parseFloat(form01.espessura_e.value);
-      form07.raiod.value = raio_e * espessura;
-      
-      
-     //ALTDB = RDB2 + ESPES
-      form09.alturadobra.value = (form07.raiod.value*1)  + (form06.espessura_d.value*1);
-      
       var alt_dobra = form09.alturadobra.value;
       var a1 = form01.etam_A.value;
       var b1 = form02.etam_B.value;
+      var B1 = form05.dtam_B.value;
       var c1 = form03.etam_C.value;
-      //A2 = A1 - 2 * ALTDB
-      form09.dtam_a.value = a1 - (2 * alt_dobra);
-      //B2 = B1 - 2 * ALTDB
-      form09.dtam_b.value = (b1 - (2 * alt_dobra)||0);
-      // RN = RDB2 + ESPES / 2
-      form08.raio_neutro.value = (form07.raiod.value*1)  + (form06.espessura_d.value*1/2);
-      //U = RN * 1.57
-      form10.ud.value = (form08.raio_neutro.value*10 * 1.57)/10;
-      //AB = A1 - ESPES      
-      form05.dtam_a1.value = a1-form06.espessura_d.value;
-      //BB = B1 - ESPES
-      form06.dtam_bbarra.value = b1 - form06.espessura_d.value;
-      //C2 = C1 - ALTDB
-      form10.dtam_c.value = c1 - alt_dobra;
-     // CB = C1 - ESPES / 2
-      form07.dtam_D.value = c1 - form06.espessura_d.value / 2;
-     //  FITA = 2 * C2 + 4 * U + 2 * B2 + A2
-      form10.largura_da.value = (2 * form10.dtam_c.value) + (4 * form10.ud.value) + (2 * form09.dtam_b.value) + (form09.dtam_a.value*10)/10;
-     // AREA1 = FITA * ESPES
-      form19.area_total.value = form10.largura_da.value * form06.espessura_d.value;
-      //CGX = B1 - ESPES / 2
-      form14.cgx.value = b1 - form06.espessura_d.value / 2;
-      //CGY = A1 / 2
-      form15.cgy.value = a1 / 2;
-
+      var espessura = parseFloat(form01.espessura_e.value);
       var raioneutro = parseInt(form08.raio_neutro.value);
-      
-      
       var B2 = parseInt(form09.dtam_b.value);
       var A2 = parseInt(form09.dtam_a.value);
-     
       var C2 = parseInt(form10.dtam_c.value);
       var U = parseFloat(form10.ud.value);
-      var b = A2 / 2 + raioneutro;
       var h = parseFloat(0.637);
-      var c = A2 / 2 + h * raioneutro;
-      
       var RN = parseFloat(form08.raio_neutro.value);
-      
-      var f = (A2-form10.dtam_c.value);
-      
-      var g = (form06.espessura_d.value);
-     
       var i = parseFloat(0.0417);
       var j = parseFloat(0.637);
       var l = parseFloat(0.0833);
@@ -202,74 +129,82 @@ function soma() {
       var p = parseFloat(0.5);
       var q = parseFloat(0.285);
       var r = parseFloat(0.137);
-      
-     
-     
-     
-      
-      
-     
-      //IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + _RN) ^ 2 + 2 * U * (A2 / 2 + 0.637 * RN) ^ 2 + 2 * 0.149 * RN ^ 3 + 0.0833 * C2 ^ 3 + C2 /4 * (A2 - C2) ^ 2)
-      form12.ixx.value = 2 * g * (i * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2) + 2 * U * Math.pow(A2 / 2 + h * RN,2) + 2 * m * Math.pow(RN,3) + l * Math.pow(C2,3) + C2 / 4 * Math.pow(A2-C2,2)).toFixed(2);
-
-      //IY = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3 + C2 * (B2 + 2 * RN)  ^ 2 + U * (B2 + 1.637 * RN) ^ 2 + 0.149 * RN ^ 3)       
-      form13.lyy.value = 2 * g * (B2 * Math.pow(B2 /2 + RN,2) + l * Math.pow(B2,3) + n * Math.pow(RN,3) + C2 * Math.pow(B2+2*RN,2) + U * Math.pow(B2+o * RN,2) + m * Math.pow(RN,3)).toFixed(2);
-      
-      //ixy = 2 * ESPES * (B2 * (A2 / 2 + RN) * (B2 / 2 + RN) _ + 0.5 * RN ^ 3 + 0.285 * A2 * RN ^ 2 + C2 *  (2 * RN + B2) * (A2 / 2 - C2 / 2) - 0.137 * RN ^ 3 + U * (B2 + 1.637 * RN) * (0.5 * A2 + _0.637 * RN))
+      var g = (form06.espessura_d.value);
       var s = parseFloat(form12.ixx.value);
       var t = parseFloat(form13.lyy.value);
-      form17.lxy.value = 2 * g * (B2 * (A2/2+RN)*(B2 / 2 + RN) + p * Math.pow(RN,3) + q * A2 * Math.pow(RN,2) + C2 * (2*RN+B2) * (A2 /2 - C2/2) - r * Math.pow(RN,3) + U * (B2 + o * RN) * (p * A2 + h * RN)).toFixed(2);
+      var AB = parseFloat(form05.dtam_a1.value); //AB b/
+      var BB = parseFloat(form06.dtam_bbarra.value); //BB a/
+      var CB = parseFloat(form07.dtam_D.value); //CB  C/
+      var cw1 = Math.pow(BB,2);
+      var cw2 = Math.pow(AB,2);
+      var cw3 = Math.pow(CB,2);
+      var area01 = parseFloat(0.001);
+      var area02 = parseFloat(7.85);
 
+      id('dtam_A').value = id('etam_A').value;
+      id('dtam_B').value = id('etam_B').value;
+      id('dtam_C').value = id('etam_C').value;
+      id('dtam_D').value = id('etam_D').value;
+      id('dtam_E').value = id('etam_E').value;
+      id('espessura_d').value = id('espessura_e').value;
+
+      //RDB2 = RDB1 * ESPES
+      form07.raiod.value = raio_e * form06.espessura_d.value;
+      // RN = RDB2 + ESPES / 2
+      form08.raio_neutro.value = (form07.raiod.value*1)  + (form06.espessura_d.value*1/2);
+      //ALTDB = RDB2 + ESPES / 2
+      form09.alturadobra.value = form08.raio_neutro.value*1 + form06.espessura_d.value / 2;
+      //A2 = A1 - 2 * ALTDB
+      form09.dtam_a.value = a1 - (2 * alt_dobra);
+      //B2 = B1 - ESPES / 2 - RN
+      form09.dtam_b.value = form05.dtam_B.value - form06.espessura_d.value / 2 - form08.raio_neutro.value||0;
+     
+      //U = RN * 1.57
+      form10.ud.value = (form08.raio_neutro.value*10 * 1.57)/10;
+      //AB = A1 - ESPES      
+      form05.dtam_a1.value = a1-form06.espessura_d.value;
+      //BB = B1 - ESPES
+      form06.dtam_bbarra.value = b1 - form06.espessura_d.value;
+      //C2 = C1 - ALTDB
+      form10.dtam_c.value = c1 - alt_dobra;
+      // CB = C1 - ESPES / 2
+      form07.dtam_D.value = c1 - form06.espessura_d.value / 2;
+      //  FITA = 2 * C2 + 4 * U + 2 * B2 + A2
+      form10.largura_da.value = (2 * form10.dtam_c.value) + (4 * form10.ud.value) + (2 * form09.dtam_b.value) + (form09.dtam_a.value*10)/10;
+      // AREA1 = FITA * ESPES
+      form19.area_total.value = form10.largura_da.value * form06.espessura_d.value;
+      //CGX = B1 - ESPES / 2
+      form14.cgx.value = b1 - form06.espessura_d.value / 2;
+      //CGY = A1 / 2
+      form15.cgy.value = a1 / 2;
+      var b = A2 / 2 + raioneutro;
+      var c = A2 / 2 + h * raioneutro;
+      //IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + _RN) ^ 2 + 2 * U * (A2 / 2 + 0.637 * RN) ^ 2 + 2 * 0.149 * RN ^ 3 + 0.0833 * C2 ^ 3 + C2 /4 * (A2 - C2) ^ 2)
+      form12.ixx.value = 2 * g * (i * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2) + 2 * U * Math.pow(A2 / 2 + h * RN,2) + 2 * m * Math.pow(RN,3) + l * Math.pow(C2,3) + C2 / 4 * Math.pow(A2-C2,2)).toFixed(2);
+      //IY = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3 + C2 * (B2 + 2 * RN)  ^ 2 + U * (B2 + 1.637 * RN) ^ 2 + 0.149 * RN ^ 3)       
+      form13.lyy.value = 2 * g * (B2 * Math.pow(B2 /2 + RN,2) + l * Math.pow(B2,3) + n * Math.pow(RN,3) + C2 * Math.pow(B2+2*RN,2) + U * Math.pow(B2+o * RN,2) + m * Math.pow(RN,3)).toFixed(2);
+      //ixy = 2 * ESPES * (B2 * (A2 / 2 + RN) * (B2 / 2 + RN) _ + 0.5 * RN ^ 3 + 0.285 * A2 * RN ^ 2 + C2 *  (2 * RN + B2) * (A2 / 2 - C2 / 2) - 0.137 * RN ^ 3 + U * (B2 + 1.637 * RN) * (0.5 * A2 + _0.637 * RN))
+      form17.lxy.value = 2 * g * (B2 * (A2/2+RN)*(B2 / 2 + RN) + p * Math.pow(RN,3) + q * A2 * Math.pow(RN,2) + C2 * (2*RN+B2) * (A2 /2 - C2/2) - r * Math.pow(RN,3) + U * (B2 + o * RN) * (p * A2 + h * RN)).toFixed(2);
       //IP = IX + IY
       form16.ip.value = (s +  t).toFixed(2);
-
       // J1 = FITA * ESPES ^ 3 / 3
       form12.j.value = (form10.largura_da.value  * Math.pow(g,3) / 3).toFixed(2);
-
-     // WX = IX / CGY
-     form18.wx.value = (form12.ixx.value / form15.cgy.value * 10 /10).toFixed(2);
-
-     //WY = IY / CGX
-     form13.wy.value = (form13.lyy.value / form14.cgx.value).toFixed(2);
-
-     //WT = J1 / ESPES
-     form14.wt.value = (form12.j.value / g).toFixed(2);
-
-    // Cw = ESPES * BB ^ 2 / 12 * (AB ^ 2 * (BB ^ 2 + _2 * AB * BB + 4 * BB * CB + 6 * AB * 
-    //CB) + 4 * _CB ^ 2 * (3 * AB ^ 2 + 3 * AB * BB + 4 * BB * _CB + 2 * AB * CB + CB ^ 2)) / (AB + 2 * BB + _2 * CB)
-   
-   
-    var AB = parseFloat(form05.dtam_a1.value); //AB b/
-    var BB = parseFloat(form06.dtam_bbarra.value); //BB a/
-    var CB = parseFloat(form07.dtam_D.value); //CB  C/
-    var cw1 = Math.pow(BB,2);
-    var cw2 = Math.pow(AB,2);
-    var cw3 = Math.pow(CB,2);
-
-    form16.cw.value = g * cw1 / 12 * (cw2 * (cw1 + 2 * AB * BB + 4 * BB * CB + 6 * AB * CB) + 4 
-    * cw3 * (3 * cw2 + 3 * AB * BB + 4 * BB * CB + 2 * AB * CB + cw3)) / (AB + 2 * BB + 2 * CB);
-
-    //IX1 = (IX / AREA1) ^ 0.5
-    form16.ixx.value = Math.pow(form12.ixx.value/form19.area_total.value,0.5).toFixed(2);
-
-    // IY1 = (IY / AREA1) ^ 0.5
-    form17.iy.value = Math.pow(form13.lyy.value/form19.area_total.value,0.5).toFixed(4);
-  //KGM = AREA1 * 0.001 * 7.85
-    var area01 = parseFloat(0.001);
-    var area02 = parseFloat(7.85);
-    form04.d_Peso.value = (form19.area_total.value * area01 * area02).toFixed(2);
-    
-
-    
-
-
-    
-     
-  
-    
-
-    
-     
+      // WX = IX / CGY
+      form18.wx.value = (form12.ixx.value / form15.cgy.value * 10 /10).toFixed(2);
+      //WY = IY / CGX
+      form13.wy.value = (form13.lyy.value / form14.cgx.value).toFixed(2);
+      //WT = J1 / ESPES
+      form14.wt.value = (form12.j.value / g).toFixed(2);
+      // Cw = ESPES * BB ^ 2 / 12 * (AB ^ 2 * (BB ^ 2 + _2 * AB * BB + 4 * BB * CB + 6 * AB * CB) + 4 * _CB ^ 2 * (3 * AB ^ 2 + 3 * AB * BB + 4 * BB * _CB + 2 * AB * CB + CB ^ 2)) / (AB + 2 * BB + _2 * CB)
+      form16.cw.value = g * cw1 / 12 * (cw2 * (cw1 + 2 * AB * BB + 4 * BB * CB + 6 * AB * CB) + 4 
+      * cw3 * (3 * cw2 + 3 * AB * BB + 4 * BB * CB + 2 * AB * CB + cw3)) / (AB + 2 * BB + 2 * CB);
+      //IX1 = (IX / AREA1) ^ 0.5
+      form16.ixx.value = Math.pow(form12.ixx.value/form19.area_total.value,0.5).toFixed(2);
+      // IY1 = (IY / AREA1) ^ 0.5
+      form17.iy.value = Math.pow(form13.lyy.value/form19.area_total.value,0.5).toFixed(4);
+      //KGM = AREA1 * 0.001 * 7.85
+      form04.d_Peso.value = (form19.area_total.value * area01 * area02).toFixed(2);
+           
       id('area_util').value = id('area_total').value;
       var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
       if(re_raiod.test(raiod.value)){
@@ -416,7 +351,7 @@ function soma() {
         bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
       }
       var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if(re_ixxx.test(ixx.value)){
+      if(re_ixx.test(ixx.value)){
         ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
       }
       
@@ -430,10 +365,7 @@ function soma() {
       }
     }
 
-    
-     
-     }
-    
+  }
     
   </script>
 
@@ -468,7 +400,7 @@ function soma() {
         <div class="container">
           <div class="row">
             <div class="thumbnail">
-              <img src="imagens\menu_principal_17.jpg" style="width:40%" class="center-block img-responsive img-rounded">
+              <img src="imagens\menu_principal_17b.jpg" style="width:40%" class="center-block img-responsive img-rounded">
               <ul class="pager"></ul>
             </div>
             <div class="well">

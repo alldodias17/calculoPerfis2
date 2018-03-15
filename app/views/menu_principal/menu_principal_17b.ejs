@@ -25,6 +25,7 @@ function validar (){
   var re_etam_A = /^([0-9]{0,3})([0-9]{0,3})$/;
   if(re_etam_A.test(etam_A.value)){
   etam_A.value = etam_A.value.replace(re_etam_A, "$1$2,00");
+ //teste
   }
   var form02 = document.getElementById("form02");
   var etam_B = form02.etam_B;

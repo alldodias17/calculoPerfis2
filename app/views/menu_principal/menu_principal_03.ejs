@@ -394,6 +394,33 @@ IY1 = iy11 + iy13 + iy14 + iy15 + iy16 + iy17;
 
 
 //IY2 = 2 * ESPES * B4 ^ 3 / 12 + a4 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B4 * (ALTDB + B4 / 2 - (B1 - CGX)) * (ALTDB + B4 / 2  - (B1 - CGX)) + 2 * U * ESPES * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) + a4 * ESPES * ((B1 - CGX) - ESPES / 2) ^ 2
+var iy2_1 = Math.pow(B4,3);
+var iy2_2 = Math.pow(form06.espessura_d.value,3);
+var iy2_3 = form05.dtam_B.value - form14.cgx.value;
+var iy2_4 = iy2_3 - form06.espessura_d.value / 2;
+var iy2_5 = B4 / 2;
+var iy2_6 = form06.espessura_d.value / 2;
+var iy2_7 = form09.alturadobra.value * form08.raio_neutro.value;
+var iy2_8 =form06.espessura_d.value / 2;
+var iy2_9 = form09.alturadobra.value * form08.raio_neutro.value;
+var iy2_10 = form05.dtam_B.value - form14.cgx.value;
+var iy2_11 = form09.alturadobra.value + iy2_5 - iy2_10;
+var iy2_12 = iy2_6 + form08.raio_neutro.value - iy2_7;
+var iy2_13 = iy2_8 + form08.raio_neutro.value - iy2_9;
+var iy2_14 = iy2_10 - iy2_6 + form08.raio_neutro.value - iy2_7;
+var iy2_15 = iy2_10 - iy2_13;
+var iy2_16 = 2 * form06.espessura_d.value * iy2_1;
+var iy2_17 = iy2_16 / 12;
+var iy2_18 = a4 * iy2_2;
+var iy2_19 = iy2_18 / 12;
+var iy2_20 = 2 * c * form08.raio_neutro.value * form06.espessura_d.value;
+var iy2_21 = 2 * form06.espessura_d.value* B4 * iy2_11 * iy2_11;
+var iy2_22 = 2 * U * form06.espessura_d.value * iy2_14 * iy2_15;
+var iy2_23 = a4 * form06.espessura_d.value * iy2_4;
+IY2 = iy2_17 + iy2_19 + iy2_20 + iy2_21 + iy2_22 + iy2_23;
+
+
+
 //XG1 = CGX - CGX1
 //XG2 = (B1 - CGX) - CGX2
 //Cw = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB))

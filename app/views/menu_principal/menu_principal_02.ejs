@@ -159,7 +159,6 @@ var y = form09.dtam_y.value;
 var U = form10.ud.value;
 var KGM = form04.d_Peso.value;
 var SCCG = form05.dtam_distancia.value;
-var lz1 = form14.lz.value;
 var ip = form16.ip.value;
 var ESPES = form06.espessura_d.value;
 var RDB1 = form03.raioe.value;
@@ -201,6 +200,9 @@ var z = Math.pow(AB,2);
 var z1 = Math.pow(BB,3);
 var z2 = Math.pow(AB,3);
 var z3 =  Math.pow(form05.dtam_X.value,3);
+var XB = form07.dtam_xx.value;
+var EME = form04.dtam_m.value;
+var IX = form12.ixx.value;
 
 //RDB2 = RDB1 * ESPES
 form07.raiod.value = RDB1 * ESPES;
@@ -282,11 +284,11 @@ form16.ip.value = (form12.ixx.value)*1 + (form13.lyy.value)*1 + (form19.area_tot
 //IP = CDbl(Mid(IX, 1, Len(Str(IX)) - 4)) + CDbl(Mid(IY, 1, Len(Str(IY)) - 7)) + AREA1 * (CDbl(Mid(EME, 1, Len(Str(EME)) - 10)) + CDbl(Mid(XB, 1, Len(Str(XB)) - 10))) ^ 2
 form12.j.value = Math.pow(ESPES,3) / 3 * form10.largura_da.value;
 //Cw = ESPES ^ 2 / AREA1 * (XB * AREA1 * AB ^ 2 / ESPES * (BB ^ 2 / 3 + EME ^ 2 - EME * BB)+ AREA1 / (3 * ESPES) * (EME ^ 2 * AB ^ 3 + BB ^ 2 * CB ^ 2 * (2 * CB + 3 * AB)) - IX * EME ^ 2 / ESPES * (2 * AB + 4 * CB) + EME * CB ^ 2 / 3 * (8 * BB ^ 2 * CB + 2 * EME * (2 * CB * (CB - AB) + BB * (2 * CB - 3 * AB))) + BB ^ 2 * AB ^ 2 / 6 * ((3 * CB + BB) * (4 * CB + AB) - 6 * CB ^ 2) - EME ^ 2 * AB ^ 4 / 4)
-form16.cw.value = Math.pow(ESPES,2) / parseInt(form19.area_total.value) * (form07.dtam_xx.value * form19.area_total.value * Math.pow(form05.dtam_a1.value,2) / ESPES * (Math.pow(form06.dtam_bbarra.value,2) / 3 + Math.pow(form04.dtam_m.value,2) - form04.dtam_m.value * form06.dtam_bbarra.value)+ form19.area_total.value / (3 * ESPES) * (Math.pow(form04.dtam_m.value,2) * Math.pow(form05.dtam_a1.value,3) + Math.pow(form06.dtam_bbarra.value,2) * Math.pow(form07.dtam_D.value,2) * (2 * form07.dtam_D.value + 3 * form05.dtam_a1.value)) - form12.ixx.value * Math.pow(form04.dtam_m.value,2) / ESPES * (2 * form05.dtam_a1.value + 4 * form07.dtam_D.value) + form04.dtam_m.value * Math.pow(form07.dtam_D.value,2) / 3 * (8 * Math.pow(form06.dtam_bbarra.value,2) * form07.dtam_D.value + 2 * form04.dtam_m.value * (2 * form07.dtam_D.value * (form07.dtam_D.value - form05.dtam_a1.value) + form06.dtam_bbarra.value * (2 * form07.dtam_D.value - 3 * form05.dtam_a1.value))) + Math.pow(form06.dtam_bbarra.value,2) * Math.pow(form05.dtam_a1.value,2) / 6 * ((3 * form07.dtam_D.value + form06.dtam_bbarra.value) * (4 * form07.dtam_D.value + AB) - 6 * Math.pow(form07.dtam_D.value,2)) - Math.pow(form04.dtam_m.value,2) * Math.pow(form05.dtam_a1.value,4) / 4);
+
 BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.dtam_a1.value,3)) + ESPES * Math.pow(form07.dtam_xx.value,3) * form05.dtam_a1.value);
-//BETAF = ESPES / 2 * ((BB - XB) ^ 4 - XB ^ 4) + ESPES * AB ^ 2 / 4 * ((BB - XB) ^ 2 - XB ^ 2)
-//BETAL = 2 * CB * ESPES * (BB - XB) ^ 3 + 2 / 3 * ESPES * (BB - XB) * ((AB / 2) ^ 3 - (AB / 2 - CB) ^ 3)
-//J2 = 1 / (2 * IY) * (BETAW + BETAF + BETAL) - x0
+BETAF = ESPES / 2 * (Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),4 - Math.pow(form07.dtam_xx.value,4) + ESPES * Math.pow(form05.dtam_a1.value,2) / 4 * (Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),2 - Math.pow(form07.dtam_xx.value,2)));
+BETAL = 2 * form07.dtam_D.value * ESPES * Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),3 + 2 / 3 * ESPES * (form06.dtam_bbarra.value - form07.dtam_xx.value) * (Math.pow(form05.dtam_a1.value / 2),3 - Math.pow(form05.dtam_a1.value / 2 - form07.dtam_D.value),3);
+J2 = 1 / (2 * form13.lyy.value) * (BETAW + BETAF + BETAL) - form05.dtam_X.value;
 
       //AREAU = AREA1
       id('area_util').value = id('area_total').value;
@@ -426,20 +428,42 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
       if (re_wy.test(wy.value)) {
         wy.value = wy.value.replace(re_wy, "$1$20.00");
       }
-      var re_iii = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_iii.test(iii.value)) {
-        iii.value = iii.value.replace(re_iii, "$1$20.00");
-      }
       var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_bbb.test(bbb.value)) {
         bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
       }
       var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_ixxx.test(ixx.value)) {
-        ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
+      if (re_ixx.test(ixx.value)) {
+        ixx.value = ixx.value.replace(re_ixx, "$1$20.00");
       }
-
-
+      var re_lz1 = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lz1.test(lz1.value)) {
+        lz1.value = lz1.value.replace(re_lz1, "$1$20.00");
+      }
+      var re_lv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lv.test(lv.value)) {
+        lv.value = lv.value.replace(re_lv, "$1$20.00");
+      }
+      var re_lxy = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lxy.test(lxy.value)) {
+        lxy.value = lxy.value.replace(re_lxy, "$1$20.00");
+      }
+      var re_wv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_wv.test(wv.value)) {
+        wv.value = wv.value.replace(re_wv, "$1$20.00");
+      }
+      var re_iz = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_iz.test(iz.value)) {
+        iz.value = iz.value.replace(re_iz, "$1$20.00");
+      }
+      var re_iv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_iv.test(iv.value)) {
+        iv.value = iv.value.replace(re_iv, "$1$20.00");
+      }
+      var re_zer0 = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_zer0.test(zer0.value)) {
+        zer0.value = zer0.value.replace(re_zer0, "$1$20.00");
+      }
 
 
 
@@ -784,15 +808,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">Ix</label>
-                          <input class="form-control" type="text" id="ixx" placeholder="mm">
+                          <input class="form-control" type="text" id="ixx" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wz</label>
-                          <input class="form-control" id="wz" type="text" placeholder="mm">
+                          <input class="form-control" id="wz" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">J</label>
-                          <input class="form-control" id="j" type="text" placeholder="mm">
+                          <input class="form-control" id="j" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -800,15 +824,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">ly</label>
-                          <input class="form-control" id="lyy" type="text" placeholder="mm">
+                          <input class="form-control" id="lyy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm">
+                          <input class="form-control" id="wy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">i</label>
-                          <input class="form-control" id="iii" type="text" placeholder="mm">
+                          <input class="form-control" id="iii" type="text" placeholder="Falta Formula" readonly="true">
                         </div>
                         <p align="right">
                           <button type="button" class="btn btn-default" style="width: 100px">
@@ -820,15 +844,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">lz</label>
-                          <input class="form-control" id="lz" type="text" placeholder="mm">
+                          <input class="form-control" id="lz1" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wt</label>
-                          <input class="form-control" id="wt" type="text" placeholder="mm">
+                          <input class="form-control" id="wt" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">CGx</label>
-                          <input class="form-control" id="cgx" type="text" placeholder="mm">
+                          <input class="form-control" id="cgx" type="text" placeholder="mm" readonly="true">
                         </div>
 
                         </a>
@@ -843,15 +867,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">lv</label>
-                          <input class="form-control" id="lv" type="text" placeholder="mm">
+                          <input class="form-control" id="lv" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2"></label>
-                          <input class="form-control" input="" type="hidden" id="ex2">
+                          <input class="form-control" input="" type="hidden" id="ex2" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">CGy</label>
-                          <input class="form-control" id="cgy" type="text" placeholder="mm">
+                          <input class="form-control" id="cgy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <a href="guardadorrebanhos.html">
                         </a>
@@ -866,15 +890,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">ip</label>
-                          <input class="form-control" id="ip" type="text" placeholder="mm">
+                          <input class="form-control" id="ip" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">ix</label>
-                          <input class="form-control" id="ixis" name="ixis" type="text" placeholder="mm">
+                          <input class="form-control" id="ixis" name="ixis" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Cw</label>
-                          <input class="form-control" id="cw" type="text" placeholder="mm">
+                          <input class="form-control" id="cw" type="text" placeholder="Refazer" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -882,15 +906,15 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">lxy</label>
-                          <input class="form-control" id="lxy" type="text" placeholder="mm">
+                          <input class="form-control" id="lxy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iy</label>
-                          <input class="form-control" id="iy" type="text" placeholder="mm">
+                          <input class="form-control" id="iy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">b</label>
-                          <input class="form-control" id="bbb" type="text" placeholder="mm">
+                          <input class="form-control" id="bbb" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -898,31 +922,31 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">Wx</label>
-                          <input class="form-control" id="wx" type="text" placeholder="mm">
+                          <input class="form-control" id="wx" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iz</label>
-                          <input class="form-control" id="iz" type="text" placeholder="mm">
+                          <input class="form-control" id="iz" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">0</label>
-                          <input class="form-control" id="zer0" type="text" placeholder="mm">
+                          <input class="form-control" id="zer0" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>
                     <form name="form19">
                       <div class="form-group row">
                         <div class="col-xs-2">
-                          <label for="ex1">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm">
+                          <label for="ex1">Wv</label>
+                          <input class="form-control" id="wv" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iv</label>
-                          <input class="form-control" id="iv" type="text" placeholder="mm">
+                          <input class="form-control" id="iv" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Área Total</label>
-                          <input class="form-control" id="area_total" type="text" placeholder="mm">
+                          <input class="form-control" id="area_total" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -930,7 +954,7 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1"></label>
-                          <input class="form-control" input="" type="hidden" id="ex1">
+                          <input class="form-control" input="" type="hidden" id="ex1" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2"></label>
@@ -938,7 +962,7 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Área Útil</label>
-                          <input class="form-control" id="area_util" type="text" placeholder="mm">
+                          <input class="form-control" id="area_util" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>

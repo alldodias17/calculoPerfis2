@@ -130,123 +130,295 @@
 
 
 
+      id('dtam_A').value = id('etam_A').value;
+      id('dtam_B').value = id('etam_B').value;
+      id('dtam_C').value = id('etam_C').value;
+      id('dtam_D').value = id('etam_D').value;
+      id('dtam_E').value = id('etam_E').value;
+      id('espessura_d').value = id('espessura_e').value;
 
-id('dtam_A').value = id('etam_A').value;
-id('dtam_B').value = id('etam_B').value;
-id('dtam_C').value = id('etam_C').value;
-id('dtam_D').value = id('etam_D').value;
-id('dtam_E').value = id('etam_E').value;
-id('espessura_d').value = id('espessura_e').value;
 
 
-var A1 = form04.dtam_A.value;
-var B1 = form05.dtam_B.value;
 var C1 = form06.dtam_C.value;
 var E1 = form08.dtam_E.value;
-var A2 = form09.dtam_a.value; 
-var B2 = form09.dtam_b.value; 
+ 
+
 var C2 = form10.dtam_c.value; 
 var D2 = form11.dtam_d.value; 
 var E2 = form04.dtam_e.value;
-var AB = form05.dtam_a1.value; 
-var BB = form06.dtam_bbarra.value;
+
+
 var CB = form07.dtam_D.value;
 var DB = form07.dtam_dd.value;
 var EB = form08.dtam_ee.value;
-var u2 = form10.u2.value;
-var u3 = form11.dtam_d.value;
-var EME  = form04.dtam_m.value;
+var U2 = form10.u2.value;
+var U3 = form11.dtam_d.value;
 var xa = form05.dtam_X.value; 
 var ya = form06.dtam_Y.value; 
-var x = form07.dtam_xx.value;
 var y = form09.dtam_y.value;
-var U = form10.ud.value;
+
 var KGM = form04.d_Peso.value;
 var SCCG = form05.dtam_distancia.value;
-var IX = form12.IXX.value;
-var IY = form13.lyy.value;
-var lz = form14.lz.value;
-var lv = form15.lv.value;
 var ip = form16.ip.value;
-var lxy = form17.lxy.value;
-var ESPES = form06.espessura_d.value;
+
 var RDB1 = form03.raioe.value;
-var RDB2 = form07.raiod.value; 
-var RN = form08.raio_neutro.value;
-var ALTDB = form10.ud.value;
-var FITA = form10.largura_da.value;
-var Wx = form18.wx.value;
+
+
+
+
 var Wz = form12.wz.value;
 var wy = form13.wy.value;
 var Wt = form14.wt.value;
-var ix = form16.ixx.value;
-var iy = form17.lxy.value;
-var iz = form18.iz.value;
-var iv = form19.iv.value;
+var iz1 = form18.iz.value;
+var iv1 = form19.iv.value;
 var J1 = form12.j.value;
 var I1 = form13.iii.value;
-var CGX =form14.cgx.value;
-var CGY = form15.cgy.value;
-var Cw = form16.cw.value;
 var BETA = form17.bbb.value;
 var TETA = form18.zer0.value; 
 var AREA1 = form19.area_total.value;
 var AREAU = form20.area_util.value;
+var a = parseFloat(0.0417);
+var b = parseFloat(0.637);
+var c = parseFloat(0.149);
+var d = Math.pow(A2,3);
+var e = A2 / 2;
+var g = Math.pow(e*1 + RN*1,2);
+var h = Math.pow((A2 / 2 + 0.637*1 * RN*1),2);
+var f = Math.pow(RN,3);
+var i = parseFloat(0.001);
+var j = parseFloat(7.85);
+var l = parseFloat(0.363);
+var m = B2 / 2 + RN*1;
+var o = Math.pow(m,2);
+var p = parseFloat(0.0833);
+var q = Math.pow(B2,3);
+var r = parseFloat(0.356);
+var s = Math.pow(B2 / 2 + RN*1,2);
+var t = Math.pow(RN,3);
+var dtam_X = form05.dtam_X.value;
+var z = Math.pow(AB,2);
+var z1 = Math.pow(BB,3);
+var z2 = Math.pow(AB,3);
+var z3 =  Math.pow(form05.dtam_X.value,3);
+var XB = form07.dtam_xx.value;
+var EME = form04.dtam_m.value;
+var IX = form12.ixx.value;
 
-RDB2 = RDB1 * ESPES;
-RN = RDB2 + ESPES / 2;
-ALTDB = (RDB2*1 + ESPES*1);
-U = (RN*10 * 1.57)/10;
-A2 = A1 - (2 * RN + ESPES);
-B2 = B1 - (RN + ESPES / 2);
-AB = A1 - ESPES;
-BB = B1 - (ESPES / 2);
-a3 = A1 - (2 * ESPES + 1);
-b3 = B1 - (ESPES + 5);
-a4 = A2 - 2 * ESPES - 1;
-B4 = B2 - ESPES - 5;
-AB1 = a3 - ESPES;
-BB1 = b3 - (ESPES / 2);
-CGY = A1 / 2;
-IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + U * (A2 / 2 + 0.637 * RN) ^ 2 + 0.149 * RN ^ 3);
-IX2 = 2 * ESPES * (0.0417 * a4 ^ 3 + B4 * (a4 / 2 + RN) ^ 2 + U * (a4 / 2 + 0.637 * RN) ^ 2 + 0.149 * RN ^ 3);
-EME = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
-EME1 = BB1 * ESPES / (12 * IX2) * (3 * BB1 * AB1 ^ 2);
-DIST = (EME - EME1).toFixed(2);
-FITA = 2 * B2 + A2 + 2 * U;
-FITA2 = 2 * B4 + a4 + 2 * U;
-AREA1 = FITA * ESPES;
-AREA2 = FITA2 * ESPES;
-XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN);
-XB1 = 2 * ESPES / AREA2 * (B4 * (B4 / 2 + RN) + U * 0.363 * RN);
-CGX2 = XB1 + ESPES / 2;
-//CGX = (CGX1 * AREA1 + AREA2 * (B1 - CGX2)) / (AREA1 + AREA2);
-IY = 2 * ESPES * B2 ^ 3 / 12 + A2 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B2 *(ALTDB + B2 / 2 - CGX) ^ 2 + 2 * U * ESPES *(CGX - (ESPES / 2 + RN - 0.637 * RN)) ^ 2 + A2 * ESPES * (CGX - ESPES / 2) ^ 2;
-IY2 = 2 * ESPES * B4 ^ 3 / 12 + a4 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B4 * (ALTDB + B4 / 2 - (B1 - CGX)) * (ALTDB + B4 / 2 (B1 - CGX)) + 2 * U * ESPES * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) + a4 * ESPES * ((B1 - CGX) - ESPES / 2) ^ 2;
-XG1 = CGX - CGX1;
-XG2 = (B1 - CGX) - CGX2;
-Cw = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB));
-CW1 = (ESPES * AB1 ^ 2 * BB1 ^ 3) / 12 * ((3 * BB1 + 2 * AB1) / (6 * BB1 + AB1));
-Cw = Cw - CW1;
-IX = IX + IX2;
-WX = IX / CGY;
-IY = IY + IY2;
-WY = IY / CGX;
-WT = 2 * (A1 - ESPES) * (B1 - ESPES) * ESPES;
-AREA1 = AREA1 + AREA2;
-AREAU = AREA1;;
-EME = 0;
-XB = 0;
-IP = IX + IY + DIST ^ 2 * AREA1;
-KGM = AREA1 * 0.001 * 7.85;
-IX1 = (IX / AREA1) ^ 0.5;
-IY1 = (IY / AREA1) ^ 0.5;
-J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - ESPES) / ESPES);
+//RDB2 = RDB1 * ESPES
+var ESPES = form06.espessura_d.value;
+var RDB1 = form03.raioe.value;
+var RDB2 = form07.raiod.value; 
+form07.raiod.value = RDB1 * ESPES
+
+//RN = RDB2 + ESPES / 2
+var RN = form08.raio_neutro.value;
+form08.raio_neutro.value = form07.raiod.value*1 + (form06.espessura_d.value / 2);
+
+//ALTDB = RDB2 + ESPES
+var ALTDB = form09.alturadobra.value;
+form09.alturadobra.value = (form07.raiod.value*1 + form06.espessura_d.value*1);
+
+//U = RN * 1.57
+var U = form10.ud.value;
+var U1 = parseFloat(1.57);
+form10.ud.value = (form08.raio_neutro.value * 10 * 1.57) / 10;
+
+//A2 = A1 - (2 * RN + ESPES)
+var A2 = form09.dtam_a.value;
+var A1 = form04.dtam_A.value;
+form09.dtam_a.value = form04.dtam_A.value*1 - (2 * form08.raio_neutro.value + form06.espessura_d.value*1);
+
+//B2 = B1 - (RN + ESPES / 2)
+var B2 = form09.dtam_b.value; 
+var B1 = form05.dtam_B.value;
+form09.dtam_b.value = form05.dtam_B.value*1 - (form08.raio_neutro.value*1 + form06.espessura_d.value / 2);
+
+//AB = A1 - ESPES
+var AB = form05.dtam_a1.value; 
+form05.dtam_a1.value = form04.dtam_A.value - form06.espessura_d.value;
+
+//BB = B1 - (ESPES / 2)
+var BB = form06.dtam_bbarra.value;
+form06.dtam_bbarra.value = form05.dtam_B.value*1 - (form06.espessura_d.value / 2);
+
+//a3 = A1 - (2 * ESPES + 1)
+a3 = form04.dtam_A.value*1 - (2 * form06.espessura_d.value + 1);
+
+//b3 = B1 - (ESPES + 5)
+b3 = form05.dtam_B.value - (form06.espessura_d.value*1 + 5*1);
+
+//a4 = A2 - 2 * ESPES - 1
+a4 = form09.dtam_a.value*1 - 2 * form06.espessura_d.value - 1;
+
+//B4 = B2 - ESPES - 5
+B4 = form09.dtam_b.value - form06.espessura_d.value - 5;
+
+//AB1 = a3 - ESPES
+AB1 = a3 - form06.espessura_d.value;
+
+//BB1 = b3 - (ESPES / 2)
+BB1 = b3 - (form06.espessura_d.value / 2);
+
+//CGY = A1 / 2
+var CGY = form15.cgy.value;
+form15.cgy.value = A1 / 2;
+
+//IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + U * (A2 / 2 + 0.637 * RN) ^ 2 + 0.149 * RN ^ 3)
+var IX = form12.ixx.value;
+var ixx1 = Math.pow(form09.dtam_a.value,3);
+var ixx2 = form09.dtam_a.value / 2 + form08.raio_neutro.value*1;
+var ixx3 = Math.pow(ixx2,2);
+var ixx4 = form09.dtam_a.value / 2 + b * form08.raio_neutro.value;
+var ixx5 = Math.pow(ixx4,2);
+var ixx6 = Math.pow(form08.raio_neutro.value,3);
+var ixx7 = a * ixx1;
+var ixx8 = form09.dtam_b.value * ixx3;
+var ixx9 = form10.ud.value * ixx5;
+var ixx10 = c * ixx6;
+var ixx11 = ixx7 + ixx8;
+var ixx12 = ixx9 + c * ixx6;
+var ixx13 = ixx11 + ixx12;
+form12.ixx.value = (2 * form06.espessura_d.value*1 * ixx13*1).toFixed(2);
+
+//IX2 = 2 * ESPES * (0.0417 * a4 ^ 3 + B4 * (a4 / 2 + RN) ^ 2 + U * (a4 / 2 + 0.637 * RN) ^ 2 + 0.149 * RN ^ 3)
+var ix1 = Math.pow(a4,3);
+var ix2 = a4 / 2 + form08.raio_neutro.value*1;
+var ix3 = Math.pow(ix2,2);
+var ix4 = a4 / 2 + b * form08.raio_neutro.value;
+var ix5 = Math.pow(ix4,2);
+var ix6 = Math.pow(form08.raio_neutro.value,3);
+var ix7 = a * ix1;
+var ix8 = B4 * ix3;
+var ix9 = form10.ud.value * ix5;
+var ix10 = c * ix6;
+var ix11 = ix7 + ix8;
+var ix12 = ix11 + ix9 + ix10;
+IX2 = (2 * form06.espessura_d.value * ix12).toFixed(2);
+
+//EME = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2)
+var eme1 = Math.pow(form05.dtam_a1.value,2);
+var eme2 = 12 * form12.ixx.value;
+var eme3 = 3 * form06.dtam_bbarra.value * eme1;
+var eme4 = form06.dtam_bbarra.value * form06.espessura_d.value;
+var eme5 = eme2 * eme3;
+EME = eme4*1 / eme5*1;
+
+
+//EME1 = BB1 * ESPES / (12 * IX2) * (3 * BB1 * AB1 ^ 2)
+var em1 = Math.pow(AB1,2);
+var em2 = 12 * parseFloat(IX2);
+var em3 = 3 * BB1 * em1;
+var em4 = BB1 * form06.espessura_d.value;
+var em5 = em2 * em3;
+EME1 = em4*1 / em5*1;
+
+
+//DIST = EME - EME1
+form05.dtam_distancia.value = EME1 - EME;
+
+//FITA = 2 * B2 + A2 + 2 * U
+var FITA = form10.largura_da.value;
+var fita01 = 2 * form09.dtam_b.value;
+var fita02 = 2 * form10.ud.value;
+form10.largura_da.value = fita01*1 + form09.dtam_a.value*1 + fita02*1;
+
+//FITA2 = 2 * B4 + a4 + 2 * U
+var fita02_1 = 2 * B4;
+var fita02_2 = 2 * form10.ud.value;
+FITA2 = fita02_1 + a4 + fita02_2;
+
+
+//AREA1 = FITA * ESPES
+var AREA1 = form19.area_total.value;
+AREA01 = form10.largura_da.value * form06.espessura_d.value;
+
+//AREA2 = FITA2 * ESPES
+var AREAU = form20.area_util.value;
+AREA02 = FITA2 * form06.espessura_d.value;
+
+//XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN)
+var xb01 = form09.dtam_b.value / 2;
+var xb02 = xb01*1 + form08.raio_neutro.value*1;
+var xb03 = form09.dtam_b.value * xb02;
+var xb04 = form10.ud.value * l * form08.raio_neutro.value;
+var xb05 = xb03 + parseFloat(xb04);
+var xb06 = 2 * form06.espessura_d.value;
+var xb07 = AREA01 * parseFloat(xb05);
+XB = xb06 / parseFloat(xb07);
+
+//XB1 = 2 * ESPES / AREA2 * (B4 * (B4 / 2 + RN) + U * 0.363 * RN)
+var xb1_01 = B4 / 2 + form08.raio_neutro.value*1;
+var xb1_02 = B4 * xb1_01;
+var xb1_03 = form10.ud.value * l * form08.raio_neutro.value;
+var xb1_04 = xb1_02 + xb1_03;
+var xb1_05 = 2 * form06.espessura_d.value;
+var xb1_06 = AREA02 * parseFloat(xb1_04);
+XB1 = xb1_05 / xb1_06;
+
+//CGX1 = XB + ESPES / 2
+CGX1 = XB*1 + form06.espessura_d.value / 2;
+
+//CGX2 = XB1 + ESPES / 2
+CGX2 = XB1*1 + form06.espessura_d.value / 2;
+
+//CGX = (CGX1 * AREA1 + AREA2 * (B1 - CGX2)) / (AREA1 + AREA2)
+var cgx1 = form05.dtam_B.value - CGX2;
+var cgx2 = CGX1 * AREA01;
+var cgx3 = AREA02 * cgx1;
+var cgx4 = cgx2 + cgx3;
+var cgx5 = AREA01 + AREA02;
+form14.cgx.value = (cgx4 / cgx5).toFixed(2);
+
+//IY = 2 * ESPES * B2 ^ 3 / 12 + A2 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B2 * (ALTDB + B2 / 2 - CGX) ^ 2 + 2 * U * ESPES * (CGX - (ESPES / 2 + RN - 0.637 * RN)) ^ 2 + A2 * ESPES * (CGX - ESPES / 2) ^ 2
+var iy1 = Math.pow(form09.dtam_b.value,3); 
+var iy2 = Math.pow(ESPES,3);
+var iy3 = ALTDB + form09.dtam_b.value / 2 - CGX;
+var iy4 = Math.pow(iy3,2);
+var iy5 = ESPES / 2 + RN - 0.637 * RN;
+var iy6 = CGX - iy5;
+var iy7 = Math.pow(iy6,2);
+var iy8 = CGX - ESPES / 2;
+var iy9 = Math.pow(iy8,2);
+var iy10 = 2 * ESPES * iy1; 
+var iy11 = iy10 / 12;
+var iy12 = A2 * iy2;
+var iy13 = iy12 / 12;
+var iy14 = 2 * 0.149 * RN * ESPES;
+var iy15 = 2 * ESPES * form09.dtam_b.value * iy4;
+var iy16 = 2 * U * ESPES * iy7;
+var iy17 = A2 * ESPES * iy9;
+IY1 = iy11 + iy13 + iy14 + iy15 + iy16 + iy17;
 
 
 
 
 
+//IY2 = 2 * ESPES * B4 ^ 3 / 12 + a4 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B4 * (ALTDB + B4 / 2 - (B1 - CGX)) * (ALTDB + B4 / 2  - (B1 - CGX)) + 2 * U * ESPES * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) * ((B1 - CGX) - (ESPES / 2 + RN - 0.637 * RN)) + a4 * ESPES * ((B1 - CGX) - ESPES / 2) ^ 2
+//XG1 = CGX - CGX1
+//XG2 = (B1 - CGX) - CGX2
+//Cw = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB))
+//CW1 = (ESPES * AB1 ^ 2 * BB1 ^ 3) / 12 * ((3 * BB1 + 2 * AB1) / (6 * BB1 + AB1))
+//Cw = Cw - CW1
+//IX = IX + IX2
+//WX = IX / CGY
+//IY = IY + IY2
+//WY = IY / CGX
+//WT = 2 * (A1 - ESPES) * (B1 - ESPES) * ESPES
+//AREA1 = AREA1 + AREA2
+//AREAU = AREA1
+//EME = 0
+//XB = 0
+//IP = IX + IY + DIST ^ 2 * AREA1
+//KGM = AREA1 * 0.001 * 7.85
+//IX1 = (IX / AREA1) ^ 0.5
+//IY1 = (IY / AREA1) ^ 0.5
+//J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - ESPES) / ESPES)
+    
+
+
+
+
+      //AREAU = AREA1
       id('area_util').value = id('area_total').value;
       var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_raiod.test(raiod.value)) {
@@ -362,7 +534,7 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
       }
       var re_dtam_xx = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_dtam_xx.test(dtam_xx.value)) {
-        dtam_xx.value = dtam_xx.value.replace(re_dtam_xx, "$1$20.00");
+        dtam_xx.value = dtam_xx.value.replace(re_dtam_xx, "$1$2.00");
       }
       var re_dtam_z = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_dtam_z.test(dtam_z.value)) {
@@ -384,20 +556,42 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
       if (re_wy.test(wy.value)) {
         wy.value = wy.value.replace(re_wy, "$1$20.00");
       }
-      var re_iii = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_iii.test(iii.value)) {
-        iii.value = iii.value.replace(re_iii, "$1$20.00");
-      }
       var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_bbb.test(bbb.value)) {
         bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
       }
       var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_ixxx.test(ixx.value)) {
-        ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
+      if (re_ixx.test(ixx.value)) {
+        ixx.value = ixx.value.replace(re_ixx, "$1$20.00");
       }
-
-
+      var re_lz1 = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lz1.test(lz1.value)) {
+        lz1.value = lz1.value.replace(re_lz1, "$1$20.00");
+      }
+      var re_lv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lv.test(lv.value)) {
+        lv.value = lv.value.replace(re_lv, "$1$20.00");
+      }
+      var re_lxy = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_lxy.test(lxy.value)) {
+        lxy.value = lxy.value.replace(re_lxy, "$1$20.00");
+      }
+      var re_wv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_wv.test(wv.value)) {
+        wv.value = wv.value.replace(re_wv, "$1$20.00");
+      }
+      var re_iz = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_iz.test(iz.value)) {
+        iz.value = iz.value.replace(re_iz, "$1$20.00");
+      }
+      var re_iv = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_iv.test(iv.value)) {
+        iv.value = iv.value.replace(re_iv, "$1$20.00");
+      }
+      var re_zer0 = /^([0-9]{0,4})([0-9]{0,4})$/;
+      if (re_zer0.test(zer0.value)) {
+        zer0.value = zer0.value.replace(re_zer0, "$1$20.00");
+      }
 
 
 
@@ -539,14 +733,14 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                       </div>
 
                       <p align="right" class="btn-lg">
-                        <button type="button" onclick="validar(); soma(); " class="btn btn-success" style="width: 100px">Calcular</button>
+                        <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px">Calcular</button>
                       </p>
                     </form>
 
                     <form class="form-inline" action="/action_page.php" id="form03">
                       <div class="form-group col-xs-2">
                         <label for="ex1">Tamanho de C</label>
-                        <input type="text" class="form-control" id="etam_C" onkeypress='return SomenteNumero(event)' placeholder="mm" name="etam_C">
+                        <input type="text" class="form-control" id="etam_C"  placeholder="mm" name="etam_C" disabled>
                       </div>
                       <div class="form-group col-xs-2">
                         <label for="ex1">Raio da Dobra</label>
@@ -742,15 +936,15 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">Ix</label>
-                          <input class="form-control" type="text" id="IXX" placeholder="mm"readonly="true">
+                          <input class="form-control" type="text" id="ixx" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wz</label>
-                          <input class="form-control" id="wz" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control"  type="text" id="wz" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">J</label>
-                          <input class="form-control" id="j" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="j" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -758,15 +952,15 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">ly</label>
-                          <input class="form-control" id="lyy" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="lyy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="wy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">i</label>
-                          <input class="form-control" id="iii" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="iii" type="text" placeholder="Falta Formula" readonly="true">
                         </div>
                         <p align="right">
                           <button type="button" class="btn btn-default" style="width: 100px">
@@ -778,7 +972,7 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                       <div class="form-group row">
                         <div class="col-xs-2">
                           <label for="ex1">lz</label>
-                          <input class="form-control" id="lz" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="lz1" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wt</label>
@@ -828,11 +1022,11 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">ix</label>
-                          <input class="form-control" id="ixx" name="ixx" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="ixis" name="ixis" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Cw</label>
-                          <input class="form-control" id="cw" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="cw" type="text" placeholder="Refazer" readonly="true">
                         </div>
                     </form>
                     </div>
@@ -871,8 +1065,8 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                     <form name="form19">
                       <div class="form-group row">
                         <div class="col-xs-2">
-                          <label for="ex1">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm" readonly="true">
+                          <label for="ex1">Wv</label>
+                          <input class="form-control" id="wv" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iv</label>
@@ -892,7 +1086,7 @@ J1 = (2 * (A1 - ESPES) ^ 2 * (B1 - ESPES) ^ 2) / ((B1 - ESPES) / ESPES + (A1 - E
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2"></label>
-                          <input class="form-control" input="" type="hidden" id="ex2" readonly="true">
+                          <input class="form-control" input="" type="hidden" id="ex2">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Área Útil</label>

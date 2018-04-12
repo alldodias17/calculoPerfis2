@@ -371,22 +371,22 @@ form14.cgx.value = (cgx4 / cgx5).toFixed(2);
 
 //IY = 2 * ESPES * B2 ^ 3 / 12 + A2 * ESPES ^ 3 / 12 + 2 * 0.149 * RN * ESPES + 2 * ESPES * B2 * (ALTDB + B2 / 2 - CGX) ^ 2 + 2 * U * ESPES * (CGX - (ESPES / 2 + RN - 0.637 * RN)) ^ 2 + A2 * ESPES * (CGX - ESPES / 2) ^ 2
 var iy1 = Math.pow(form09.dtam_b.value,3); 
-var iy2 = Math.pow(ESPES,3);
-var iy3 = ALTDB + form09.dtam_b.value / 2 - CGX;
+var iy2 = Math.pow(form06.espessura_d.value,3);
+var iy3 = form09.alturadobra.value + form09.dtam_b.value / 2 - form14.cgx.value;
 var iy4 = Math.pow(iy3,2);
-var iy5 = ESPES / 2 + RN - 0.637 * RN;
-var iy6 = CGX - iy5;
+var iy5 = form06.espessura_d.value / 2 + form08.raio_neutro.value - b * form08.raio_neutro.value;
+var iy6 = form14.cgx.value - iy5;
 var iy7 = Math.pow(iy6,2);
-var iy8 = CGX - ESPES / 2;
+var iy8 = form14.cgx.value - form06.espessura_d.value / 2;
 var iy9 = Math.pow(iy8,2);
-var iy10 = 2 * ESPES * iy1; 
+var iy10 = 2 * form06.espessura_d.value * iy1; 
 var iy11 = iy10 / 12;
-var iy12 = A2 * iy2;
+var iy12 = form09.dtam_a.value * iy2;
 var iy13 = iy12 / 12;
-var iy14 = 2 * 0.149 * RN * ESPES;
-var iy15 = 2 * ESPES * form09.dtam_b.value * iy4;
-var iy16 = 2 * U * ESPES * iy7;
-var iy17 = A2 * ESPES * iy9;
+var iy14 = 2 * c * form08.raio_neutro.value * form06.espessura_d.value;
+var iy15 = 2 * form06.espessura_d.value * form09.dtam_b.value * iy4;
+var iy16 = 2 * form08.raio_neutro.value * form06.espessura_d.value * iy7;
+var iy17 = form09.dtam_a.value * form06.espessura_d.value * iy9;
 IY1 = iy11 + iy13 + iy14 + iy15 + iy16 + iy17;
 
 

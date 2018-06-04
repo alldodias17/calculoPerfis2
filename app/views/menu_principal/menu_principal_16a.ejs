@@ -6,442 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="estilo.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-
-
-
-
-  <script type="text/javascript">
-
-    window.onload = function () {
-      document.getElementById("etam_A").focus();
-    };
-
-
-
-    $(document).ready(function () {
-      $("#etam_A").focus(function () {
-        $(this).css("background-color", "#F0F8FF");
-
-      });
-      $("#etam_B").blur(function () {
-        $(this).css("background-color", "#F0F8FF");
-      });
-      $("#etam_C").blur(function () {
-        $(this).css("background-color", "#F0F8FF");
-      });
-      $("#espessura_e").blur(function () {
-        $(this).css("background-color", "#F0F8FF");
-      });
-      $("#raioe").blur(function () {
-        $(this).css("background-color", "#F0F8FF");
-      });
-
-
-
-    });
-
-    function validar() {
-      var form01 = document.getElementById("form01");
-      var etam_A = form01.etam_A;
-      var re_etam_A = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_etam_A.test(etam_A.value)) {
-        etam_A.value = etam_A.value.replace(re_etam_A, "$1$2,00");
-      }
-      var form02 = document.getElementById("form02");
-      var etam_B = form02.etam_B;
-      var re_etam_B = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_etam_B.test(etam_B.value)) {
-        etam_B.value = etam_B.value.replace(re_etam_B, "$1$2,00");
-
-      }
-      var form03 = document.getElementById("form03");
-      var etam_C = form03.etam_C;
-      var re_etam_C = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_etam_C.test(etam_C.value)) {
-        etam_C.value = etam_C.value.replace(re_etam_C, "$1$2,00");
-      }
-      var form03 = document.getElementById("form03");
-      var raioe = form03.raioe;
-      var re_raioe = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_raioe.test(raioe.value)) {
-        raioe.value = raioe.value.replace(re_raioe, "$1$2,00");
-      }
-      var form01 = document.getElementById("form01");
-      var espessura_e = form01.espessura_e;
-      var re_espessura_e = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_espessura_e.test(espessura_e.value)) {
-        espessura_e.value = espessura_e.value.replace(re_espessura_e, "$1$2,00");
-      }
-
-
-      var str = document.getElementById("etam_A").value;
-      var res = str.replace(",", ".");
-      document.getElementById("etam_A").value = res;
-      var str = document.getElementById("etam_B").value;
-      var res = str.replace(",", ".");
-      document.getElementById("etam_B").value = res;
-      var str = document.getElementById("etam_C").value;
-      var res = str.replace(",", ".");
-      document.getElementById("etam_C").value = res;
-      var str = document.getElementById("raioe").value;
-      var res = str.replace(",", ".");
-      document.getElementById("raioe").value = res;
-      var str = document.getElementById("espessura_e").value;
-      var res = str.replace(",", ".");
-      document.getElementById("espessura_e").value = res;
-      var str = document.getElementById("eangulo").value;
-      var res = str.replace(",", ".");
-      document.getElementById("eangulo").value = res;
-      var str = document.getElementById("eangulo").value;
-      var res = str.replace(",", ".");
-      document.getElementById("eangulo").value = res;
-      var str = document.getElementById("dtam_a").value;
-      var res = str.replace(",", ".");
-      document.getElementById("dtam_a").value = res;
-      var str = document.getElementById("ud").value;
-      var res = str.replace(",", ".");
-      document.getElementById("ud").value = res;
-
-
-
-    }
-
-
-    function SomenteNumero(e) {
-      var tecla = (window.event) ? event.keyCode : e.which;
-      if ((tecla > 43 && tecla < 58)) return true;
-      else {
-        if (tecla == 8 || tecla == 0) return true;
-        else return false;
-      }    
-}
-
-
-    function id(el) {
-      return document.getElementById(el);
-    }
-
-
-    function soma() {
-
-
-
-
-id('dtam_A').value = id('etam_A').value;
-id('dtam_B').value = id('etam_B').value;
-id('dtam_C').value = id('etam_C').value;
-id('dtam_D').value = id('etam_D').value;
-id('dtam_E').value = id('etam_E').value;
-id('espessura_d').value = id('espessura_e').value;
-
-
-var A1 = form04.dtam_A.value;
-var B1 = form05.dtam_B.value;
-var C1 = form06.dtam_C.value;
-var E1 = form08.dtam_E.value;
-var A2 = form09.dtam_a.value; 
-var B2 = form09.dtam_b.value; 
-var C2 = form10.dtam_c.value; 
-var D2 = form11.dtam_d.value; 
-var E2 = form04.dtam_e.value;
-var AB = form05.dtam_a1.value; 
-var BB = form06.dtam_bbarra.value;
-var CB = form07.dtam_D.value;
-var DB = form07.dtam_dd.value;
-var EB = form08.dtam_ee.value;
-var u2 = form10.u2.value;
-var u3 = form11.dtam_d.value;
-var EME  = form04.dtam_m.value;
-var xa = form05.dtam_X.value; 
-var ya = form06.dtam_Y.value; 
-var x = form07.dtam_xx.value;
-var y = form09.dtam_y.value;
-var U = form10.ud.value;
-var KGM = form04.d_Peso.value;
-var SCCG = form05.dtam_distancia.value;
-var IX = form12.IXX.value;
-var IY = form13.lyy.value;
-var lz = form14.lz.value;
-var lv = form15.lv.value;
-var ip = form16.ip.value;
-var lxy = form17.lxy.value;
-var ESPES = form06.espessura_d.value;
-var RDB1 = form03.raioe.value;
-var RDB2 = form07.raiod.value; 
-var RN = form08.raio_neutro.value;
-var ALTDB = form10.ud.value;
-var FITA = form10.largura_da.value;
-var Wx = form18.wx.value;
-var Wz = form12.wz.value;
-var wy = form13.wy.value;
-var Wt = form14.wt.value;
-var ix = form16.ixx.value;
-var iy = form17.lxy.value;
-var iz = form18.iz.value;
-var iv = form19.iv.value;
-var J1 = form12.j.value;
-var I1 = form13.iii.value;
-var CGX =form14.cgx.value;
-var CGY = form15.cgy.value;
-var Cw = form16.cw.value;
-var BETA = form17.bbb.value;
-var TETA = form18.zer0.value; 
-var AREA1 = form19.area_total.value;
-var AREAU = form20.area_util.value;
-
-form07.raiod.value = RDB1 * ESPES;
-form08.raio_neutro.value = RDB2 + ESPES / 2;
-form10.ud.value = RDB2 + ESPES;
-form10.ud.value = RN * 1.57;
-form09.dtam_a.value  = A1 - (2 * RN + ESPES);
-form09.dtam_b.value = B1 - (RN + ESPES / 2);
-form05.dtam_a1.value = A1 - ESPES;
-form06.dtam_bbarra.value = B1 - ESPES / 2;
-form15.cgy.value = A1 / 2;
-form16.ixx.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
-form18.wx.value = IX / CGY;
-form10.largura_da.value = 2 * B2 + A2 + 2 * U;
-form19.area_total.value = FITA * ESPES;
-form20.area_util.value = AREA1;
-form04.d_Peso.value = AREA1 * 0.001 * 7.85;
-//XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN);
-//form17.lxy.value = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3) - AREA1 * XB ^ 2;
-//form14.cgx.value = XB + ESPES / 2;
-//form13.wy.value = IY / (BB - XB);
-form14.wt.value = FITA * (ESPES ^ 2) / 3;
-form16.ixx.value = (IX / AREA1) ^ 0.5;
-form17.lxy.value = (IY / AREA1) ^ 0.5;
-form04.dtam_m.value = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
-//x0 = -(XB + EME);
-//DIST = -x0;
-//IP = CDbl(Mid(IX, 1, Len(Str(IX)) - 4)) + CDbl(Mid(IY, 1, Len(Str(IY)) - 7)) + AREA1 * (CDbl(Mid(EME, 1, Len(Str(EME)) - 10)) + CDbl(Mid(XB, 1, Len(Str(XB)) - 10))) ^ 2;
-//form12.j.value = ESPES ^ 3 / 3 * FITA;
-form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB));
-//BETAW = -(0.0833 * ESPES * XB * AB ^ 3 + ESPES * XB ^ 3 * AB);
-//BETAF = ESPES / 2 * ((BB - XB) ^ 4 - XB ^ 4) + (ESPES * AB ^ 2) / 4 * ((BB - XB) ^ 2 - XB ^ 2);
-//J2 = 1 / (2 * IY) * (BETAW + BETAF) + XB + EME;
-    
-
-
-
-
-
-
-
-
-
-
-      id('area_util').value = id('area_total').value;
-      var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_raiod.test(raiod.value)) {
-        raiod.value = raiod.value.replace(re_raiod, "$1$2.00");
-      }
-      var re_raio_neutro = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_raio_neutro.test(raio_neutro.value)) {
-        raio_neutro.value = raio_neutro.value.replace(re_raio_neutro, "$1$2.00");
-      }
-      var re_alturadobra = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_alturadobra.test(alturadobra.value)) {
-        alturadobra.value = alturadobra.value.replace(re_alturadobra, "$1$2.00");
-      }
-      var re_ud = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_ud.test(ud.value)) {
-        ud.value = ud.value.replace(re_ud, "$1$2.00");
-      }
-      var re_dtam_a = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_a.test(dtam_a.value)) {
-        dtam_a.value = dtam_a.value.replace(re_dtam_a, "$1$2.00");
-      }
-      var re_dtam_b = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_b.test(dtam_b.value)) {
-        dtam_b.value = dtam_b.value.replace(re_dtam_b, "$1$2.00");
-      }
-      var re_dtam_c = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_c.test(dtam_c.value)) {
-        dtam_c.value = dtam_c.value.replace(re_dtam_c, "$1$2.00");
-      }
-      var re_dtam_a1 = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_a1.test(dtam_a1.value)) {
-        dtam_a1.value = dtam_a1.value.replace(re_dtam_a1, "$1$2.00");
-      }
-      var re_dtam_bbarra = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_bbarra.test(dtam_bbarra.value)) {
-        dtam_bbarra.value = dtam_bbarra.value.replace(re_dtam_bbarra, "$1$2.00");
-      }
-      var re_cgx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_cgx.test(cgx.value)) {
-        cgx.value = cgx.value.replace(re_cgx, "$1$2.00");
-      }
-      var re_cgy = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_cgy.test(cgy.value)) {
-        cgy.value = cgy.value.replace(re_cgy, "$1$2.00");
-      }
-      var re_raioe = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_raioe.test(raioe.value)) {
-        raioe.value = raioe.value.replace(re_raioe, "$1$2.00");
-      }
-      var re_area_total = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_area_total.test(area_total.value)) {
-        area_total.value = area_total.value.replace(re_area_total, "$1$2.00");
-      }
-      var re_area_util = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_area_util.test(area_util.value)) {
-        area_util.value = area_util.value.replace(re_area_util, "$1$2.00");
-      }
-      var re_ip = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_ip.test(ip.value)) {
-        ip.value = ip.value.replace(re_ip, "$1$2.00");
-      }
-      var re_dtam_D = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_D.test(dtam_D.value)) {
-        dtam_D.value = dtam_D.value.replace(re_dtam_D, "$1$2.00");
-      }
-      var re_largura_da = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_largura_da.test(largura_da.value)) {
-        largura_da.value = largura_da.value.replace(re_largura_da, "$1$2.00");
-      }
-      var re_lxy = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_lxy.test(ip.value)) {
-        lxy.value = lxy.value.replace(re_lxy, "$1$2.00");
-      }
-      var re_dtam_E = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_E.test(dtam_E.value)) {
-        dtam_E.value = dtam_E.value.replace(re_dtam_E, "$1$20.00");
-      }
-      var re_dtam_d = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_d.test(dtam_d.value)) {
-        dtam_d.value = dtam_d.value.replace(re_dtam_d, "$1$20.00");
-      }
-      var re_dtam_e = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_e.test(dtam_e.value)) {
-        dtam_e.value = dtam_e.value.replace(re_dtam_e, "$1$20.00");
-      }
-      var re_dtam_dd = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_dd.test(dtam_dd.value)) {
-        dtam_dd.value = dtam_dd.value.replace(re_dtam_dd, "$1$20.00");
-      }
-      var re_dtam_ee = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_ee.test(dtam_ee.value)) {
-        dtam_ee.value = dtam_ee.value.replace(re_dtam_ee, "$1$20.00");
-      }
-      var re_u2 = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_u2.test(u2.value)) {
-        u2.value = u2.value.replace(re_u2, "$1$20.00");
-      }
-      var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_u3.test(dtam_u3.value)) {
-        dtam_u3.value = dtam_u3.value.replace(re_dtam_u3, "$1$20.00");
-      }
-      var re_dtam_m = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_m.test(dtam_m.value)) {
-        dtam_m.value = dtam_m.value.replace(re_dtam_m, "$1$20.00");
-      }
-      var re_dtam_X = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_X.test(dtam_X.value)) {
-        dtam_X.value = dtam_X.value.replace(re_dtam_X, "$1$20.00");
-      }
-      var re_dtam_Y = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_Y.test(dtam_Y.value)) {
-        dtam_Y.value = dtam_Y.value.replace(re_dtam_Y, "$1$20.00");
-      }
-      var re_dtam_xx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_xx.test(dtam_xx.value)) {
-        dtam_xx.value = dtam_xx.value.replace(re_dtam_xx, "$1$20.00");
-      }
-      var re_dtam_z = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_z.test(dtam_z.value)) {
-        dtam_z.value = dtam_z.value.replace(re_dtam_z, "$1$20.00");
-      }
-      var re_dtam_distancia = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_distancia.test(dtam_distancia.value)) {
-        dtam_distancia.value = dtam_distancia.value.replace(re_dtam_distancia, "$1$20.00");
-      }
-      var re_dtam_y = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_dtam_y.test(dtam_y.value)) {
-        dtam_y.value = dtam_y.value.replace(re_dtam_y, "$1$20.00");
-      }
-      var re_wz = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_wz.test(wz.value)) {
-        wz.value = wz.value.replace(re_wz, "$1$20.00");
-      }
-      var re_wy = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_wy.test(wy.value)) {
-        wy.value = wy.value.replace(re_wy, "$1$20.00");
-      }
-      var re_iii = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_iii.test(iii.value)) {
-        iii.value = iii.value.replace(re_iii, "$1$20.00");
-      }
-      var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_bbb.test(bbb.value)) {
-        bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
-      }
-      var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
-      if (re_ixxx.test(ixx.value)) {
-        ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
-      }
-
-
-
-
-
-      window.onload = function () {
-        id('copiar').onclick = function () {
-          soma();
-        }
-      }
-
-
-
-    }
-
-
-  </script>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="jQuery.weightMask.js"></script>
+  <script src="jquery/jquery.min.js"></script> 
+  <script src="javascript/menu_principal/menu_principal_16a_1.js"></script>
 
 
 </head>
 
-<body>
+<body style="overflow-y: hidden; overflow-x: hidden;">
   <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid ">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">PerfisCalc - Altamira</a>
-      </div>
+    <div class="container ">
+      
       <ul class="nav navbar-nav">
-        <li>
-          <a href="/">Perfis</a>
-        </li>
-        <li>
-          <a href="barras_comprimidas">Barras Comprimidas</a>
-        </li>
-        <li>
-          <a href="calc_vigas">Cálculo de Vigas</a>
-        </li>
-        <li>
-          <a href="menu_prateleiras">Prateleiras</a>
-        </li>
-        <li>
-          <a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a>
-        </li>
-        <li>
-          <a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a>
-        </li>
-        <li>
-          <a href="menu_pisos">Pisos</a>
-        </li>
-        <li>
-          <a href="entrada_laterais">Entrada de Laterias Novas</a>
-        </li>
-
+        <li><a href="/">Perfis Normais</a> </li>
+        <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+        <li><a href="calc_vigas">Cálc. de Vigas</a></li>
+        <li><a href="menu_prateleiras">Prateleiras</a></li>
+        <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conj.)</a></li>
+        <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Ind.)</a></li>
+        <li><a href="menu_pisos">Pisos</a></li>
+        <li><a href="entrada_laterais">Laterias Novas</a></li>
+        
     </div>
-    </div>
+  </div>
   </nav>
 
   <br>
+  
   <div class="container">
     <div class="row">
 
@@ -449,9 +42,10 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
         <div class="container">
           <div class="row">
             <div class="thumbnail">
-              <img src="imagens\menu_principal_16a.jpg" style="width:40%" class="center-block img-responsive img-rounded">
-              <ul class="pager"></ul>
+              <img src="imagens\menu_principal_01.bmp" style="width:50%" class="center-block img-responsive img-rounded">
+              
             </div>
+            
             <div class="well">
 
               <ul class="nav nav-tabs">
@@ -468,16 +62,16 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
 
 
 
-              <br>
+              
               <div class="tab-content">
                 <div id="entrada_Dados" class="tab-pane fade in active">
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optradio">Perfis Normais</label>
+                      <input type="radio" name="optradio" checked>Perfis Normais</label>
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optradio">Perfis Perfurados</label>
+                      <input type="radio" name="optradio" >Perfis Perfurados</label>
                   </div>
 
 
@@ -488,73 +82,82 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
 
 
 
-                    <form class="form-inline" action="/action_page.php" id="form01">
-                      <div class="form-group col-xs-2">
-                        <label for="etamA">Tamanho de A</label>
-                        <input type="text" class="form-control" id="etam_A" onkeypress='return SomenteNumero(event)' placeholder="mm" name="etam_A"
+                    <form class="form-group" action="/action_page.php" id="form01">
+                      <div class="form-group col-xs-4">
+                        <label for="email">Tamanho de A</label>
+                        <input type="text" class="form-control" id="etam_A" onkeypress='return SomenteNumero(event)' style="width:60%;" placeholder="mm" name="etam_A"
                         />
                       </div>
-                      <div class="form-group col-xs-2">
-                        <label for="ext0">Tamanho de D</label>
-                        <input type="text" class="form-control" id="etam_D" font-color="black" placeholder="" name="tamanhod" disabled>
+                      <div class="form-group col-xs-4">
+                        <label for="email">Tamanho de D</label>
+                        <input type="text" class="form-control" id="etam_D" font-color="black" style="width:60%;" placeholder="" name="tamanhod" disabled>
                       </div>
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Espessura (t)</label>
-                        <input type="text" class="form-control" id="espessura_e" onkeypress='return SomenteNumero(event)' placeholder="mm" name="espessura_e">
+                      <div class="form-group col-xs-4">
+                        <label for="email">Espessura (t)</label>
+                        <input type="text" class="form-control" id="espessura_e" onkeypress='return SomenteNumero(event)' style="width:60%;" placeholder="mm" name="espessura_e">
                       </div>
                       <div>
 
-                        <p align="right" class="btn-lg">
-
-                          <a href="/">
-                            <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
-                          </a>
-                        </p>
+                        
                     </form>
                     </div>
-                    <form class="form-inline" action="/action_page.php" id="form02">
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Tamanho de B</label>
-                        <input type="text" class="form-control" id="etam_B" onkeypress='return SomenteNumero(event)' placeholder="mm" name="tamanhob_">
+                    <form class="form-group" action="/action_page.php" id="form02">
+                      <div class="form-group col-xs-4">
+                        <label for="email">Tamanho de B</label>
+                        <input type="text" class="form-control" id="etam_B" onkeypress='return SomenteNumero(event)' style="width:60%;" placeholder="mm" name="tamanhob_">
                       </div>
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Tamanho de E</label>
-                        <input type="text" class="form-control" id="etam_E" placeholder="" disabled>
+                      <div class="form-group col-xs-4">
+                        <label for="email">Tamanho de E</label>
+                        <input type="text" class="form-control" id="etam_E" style="width:60%;" placeholder="" disabled>
                       </div>
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Ângulo</label>
-                        <input type="text" class="form-control" id="eangulo" placeholder="mm" name="eangulo" disabled>
+                      <div class="form-group col-xs-4">
+                        <label for="email">Ângulo</label>
+                        <input type="text" class="form-control" id="eangulo" style="width:60%;" placeholder="" name="eangulo" disabled>
                       </div>
 
-                      <p align="right" class="btn-lg">
-                        <button type="button" onclick="validar(); soma(); " class="btn btn-success" style="width: 100px">Calcular</button>
-                      </p>
+                      
                     </form>
 
-                    <form class="form-inline" action="/action_page.php" id="form03">
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Tamanho de C</label>
-                        <input type="text" class="form-control" id="etam_C" onkeypress='return SomenteNumero(event)' placeholder="mm" name="etam_C">
+                    <form class="form-group" action="/action_page.php" id="form03">
+                      <div class="form-group col-xs-4">
+                        <label for="email">Tamanho de C</label>
+                        <input type="text" class="form-control" id="etam_C" style="width:60%;"  placeholder="" name="etam_C" disabled>
                       </div>
-                      <div class="form-group col-xs-2">
-                        <label for="ex1">Raio da Dobra</label>
-                        <input type="text" class="form-control" id="raioe" onkeypress='return SomenteNumero(event)' placeholder="mm" name="raioee">
+                      <div class="form-group col-xs-4">
+                        <label for="email">Raio da Dobra</label>
+                        <input type="text" class="form-control" id="raioe" style="width:60%;" onkeypress='return SomenteNumero(event)' placeholder="mm" name="raioee">
+                      </div>
+                      <div class="form-group col-xs-4">
+                        <label for="email"></label>
+                        <input type="text" class="hidden" id="" onkeypress='return SomenteNumero(event)'  placeholder="mm" name="raioee">
                       </div>
                     </form>
-                  </div>
+                    </div>
+                    
+                    
+                      <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
+                    
+                    
+
+                      <a href="/">
+                        <button type="button" class="btn btn-primary" style="width: 100px; ">Voltar</button>
+                      </a>
+                    </p>
+                  
+                  
                 </div>
                 <div id="dimensoes_Perfil" class="tab-pane fade">
                   <div class="container-fluid">
                     <br>
-                    <form name="form04">
-                      <div class="form-group row">
+                    <form class="form-group" name="form04">
+                      
                         <div class="col-xs-2">
                           <label for="ex1a">A</label>
                           <input type="text" class="form-control" id="dtam_A" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">e</label>
-                          <input name="text" class="form-control" id="dtam_e" type="text" placeholder="" disabled>
+                          <input name="text" class="form-control" id="dtam_e" type="text" placeholder="0.00" disabled>
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">m</label>
@@ -565,9 +168,9 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                           <input name="text" class="form-control" id="d_Peso" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form05">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form05">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">B</label>
                           <input type="text" class="form-control" id="dtam_B" type="text" placeholder="mm" readonly="true">
@@ -585,12 +188,12 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                           <input name="text" class="form-control" id="dtam_distancia" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form06">
-                      <div class="form-group row" name="form06">
+                    
+                    <form class="form-group" name="form06">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">C</label>
-                          <input name="text" class="form-control" id="dtam_C" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_C" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">b/</label>
@@ -598,29 +201,26 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Y@</label>
-                          <input name="text" class="form-control" id="dtam_Y" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_Y" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Espessura (t)</label>
                           <input name="text" class="form-control" id="espessura_d" type="text" placeholder="mm" readonly="true">
                         </div>
 
-                        </a>
-                        <p align="right" width="90" class="btn-lg">
-                          <button type="button" class="btn btn-primary" style="width: 100px">
-                            <a href="/"> </a>Voltar</button>
-                        </p>
+                        
+                        
                     </form>
-                    </div>
-                    <form name="form07">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form07">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">c/</label>
-                          <input name="text" class="form-control" id="dtam_D" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_D" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">d/</label>
-                          <input name="text" class="form-control" id="dtam_dd" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_dd" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">x/</label>
@@ -631,36 +231,31 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                           <input name="text" class="form-control" id="raiod" type="text" placeholder="mm" readonly="true">
                         </div>
 
-                        </a>
-                        <p align="right" class="btn-lg" width="90">
-                          <a href="menu_principal_17">
-                            <button type="button" class="btn btn-danger" style="width: 100px">Cancela</button>
-                          </a>
-                        </p>
+                        
                     </form>
-                    </div>
-                    <form name="form08">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form08">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">E</label>
-                          <input name="text" class="form-control" id="dtam_E" type="text" placeholder="" disabled>
+                          <input name="text" class="form-control" id="dtam_E" type="text" placeholder="0.00" disabled>
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">e/</label>
-                          <input name="text" class="form-control" id="dtam_ee" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_ee" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">z/</label>
-                          <input name="text" class="form-control" id="dtam_z" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_z" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Raio Neutro</label>
                           <input name="text" class="form-control" id="raio_neutro" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form09">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form09">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">b</label>
                           <input name="text" class="form-control" id="dtam_b" type="text" placeholder="mm" readonly="true">
@@ -672,43 +267,43 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">y/</label>
-                          <input name="text" class="form-control" id="dtam_y" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_y" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Altura Dobra</label>
                           <input name="text" class="form-control" id="alturadobra" name="alturadobra" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form10">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form10">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">c</label>
-                          <input name="text" class="form-control" id="dtam_c" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_c" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">u2</label>
-                          <input name="text" class="form-control" id="u2" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="u2" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">u</label>
-                          <input name="text" class="form-control" type="text" id="ud" name="ud" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" type="text" id="ud" name="ud" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Largura DA</label>
                           <input name="text" class="form-control" id="largura_da" name="largura_da" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form11">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form11">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">d</label>
-                          <input name="text" class="form-control" id="dtam_d" type="text" placeholder="" disabled>
+                          <input name="text" class="form-control" id="dtam_d" type="text" placeholder="0.00" disabled>
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">u3</label>
-                          <input name="text" class="form-control" id="dtam_u3" type="text" placeholder="mm" readonly="true">
+                          <input name="text" class="form-control" id="dtam_u3" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3"></label>
@@ -718,55 +313,78 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                           <label for="ex2"></label>
                           <input name="text" class="form-control" input="" type="hidden" id="ex2" readonly="true">
                         </div>
+                        <br>
+                        
+                        
+                                               
                     </form>
-                    </div>
-
+                    
+                    
+                   <form>
                   </div>
-                </div>
+                  <form>
+                      
+                    <button type="button" class="btn btn-primary" style="width: 100px; ">
+                      <a href="/"> </a>Voltar</button>
+                  
+
+
+</a>
+                  
+                    <a href="menu_principal_17">
+                      <button type="button" class="btn btn-danger" style="width: 100px; ">Cancela</button>
+                    </a>
+                  </form> 
+                  
+
+                  
+                
+            </div>
+
+        
                 <div id="propriedades_Geometricas" class="tab-pane fade">
                   <div class="container-fluid">
                     <br>
-                    <form name="form12">
-                      <div class="form-group row">
+                
+                    <form class="form-group" name="form12">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">Ix</label>
-                          <input class="form-control" type="text" id="IXX" placeholder="mm"readonly="true">
+                          <input class="form-control" type="text" id="ixx" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wz</label>
-                          <input class="form-control" id="wz" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control"  type="text" id="wz" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">J</label>
-                          <input class="form-control" id="j" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="j" type="text" placeholder="mm" readonly="true">
                         </div>
+                      
                     </form>
-                    </div>
-                    <form name="form13">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form13">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">ly</label>
-                          <input class="form-control" id="lyy" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="iyy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="wy" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">i</label>
-                          <input class="form-control" id="iii" type="text" placeholder="mm"readonly="true">
+                          <input class="form-control" id="iii" type="text" placeholder="0.00" readonly="true">
                         </div>
-                        <p align="right">
-                          <button type="button" class="btn btn-default" style="width: 100px">
-                            <span class="glyphicon glyphicon-print"></span>Imprimir</button>
-                        </p>
+                        
                     </form>
-                    </div>
-                    <form name="form14">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form14">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">lz</label>
-                          <input class="form-control" id="lz" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="lz1" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wt</label>
@@ -777,58 +395,43 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                           <input class="form-control" id="cgx" type="text" placeholder="mm" readonly="true">
                         </div>
 
-                        </a>
-                        <p align="right">
-                          <a href="/">
-                            <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
-                          </a>
-                        </p>
+                        
                     </form>
-                    </div>
-                    <form name="form15">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form15">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">lv</label>
-                          <input class="form-control" id="lv" type="text" placeholder="mm" readonly="true">
-                        </div>
-                        <div class="col-xs-2">
-                          <label for="ex2"></label>
-                          <input class="form-control" input="" type="hidden" id="ex2" readonly="true">
+                          <input class="form-control" id="lv" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">CGy</label>
                           <input class="form-control" id="cgy" type="text" placeholder="mm" readonly="true">
                         </div>
-                        <a href="guardadorrebanhos.html">
-                        </a>
-                        <p align="right">
-                          <a href="menu_principal_17">
-                            <button type="button" class="btn btn-danger" style="width: 100px">Cancela</button>
-                          </a>
-                        </p>
+                        
                     </form>
-                    </div>
-                    <form name="form16">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form16">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">ip</label>
-                          <input class="form-control" id="ip" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="ip" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">ix</label>
-                          <input class="form-control" id="ixx" name="ixx" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="ixis" name="ixis" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Cw</label>
-                          <input class="form-control" id="cw" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="cw" type="text" placeholder="Refazer" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form17">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form17">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">lxy</label>
-                          <input class="form-control" id="lxy" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="lxy" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iy</label>
@@ -836,59 +439,60 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">b</label>
-                          <input class="form-control" id="bbb" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="bbb" type="text" placeholder="0.00" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form18">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form18">
+                      
                         <div class="col-xs-2">
                           <label for="ex1">Wx</label>
                           <input class="form-control" id="wx" type="text" placeholder="mm" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iz</label>
-                          <input class="form-control" id="iz" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="iz" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">0</label>
-                          <input class="form-control" id="zer0" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="zer0" type="text" placeholder="0.00" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form19">
-                      <div class="form-group row">
+                    
+                    <form class="form-group" name="form19">
+                      
                         <div class="col-xs-2">
-                          <label for="ex1">Wy</label>
-                          <input class="form-control" id="wy" type="text" placeholder="mm" readonly="true">
+                          <label for="ex1">Wv</label>
+                          <input class="form-control" id="wv" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">iv</label>
-                          <input class="form-control" id="iv" type="text" placeholder="mm" readonly="true">
+                          <input class="form-control" id="iv" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Área Total</label>
                           <input class="form-control" id="area_total" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
-                    <form name="form20">
-                      <div class="form-group row">
-                        <div class="col-xs-2">
-                          <label for="ex1"></label>
-                          <input class="form-control" input="" type="hidden" id="ex1" readonly="true">
-                        </div>
-                        <div class="col-xs-2">
-                          <label for="ex2"></label>
-                          <input class="form-control" input="" type="hidden" id="ex2" readonly="true">
-                        </div>
+                    
+                    <form class="form-group" name="form20">
+                      
+                        
                         <div class="col-xs-2">
                           <label for="ex3">Área Útil</label>
                           <input class="form-control" id="area_util" type="text" placeholder="mm" readonly="true">
                         </div>
                     </form>
-                    </div>
+                  
                   </div>
+                  
+                  
+                  
+                      <button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button>
+                      <button type="button" class="btn btn-danger" style="width: 100px ;">Cancela</button>
+                      <button type="button" class="btn btn-default" style="width: 100px;">
+                      <span class="glyphicon glyphicon-print" ></span>Imprimir</button>
+                  
                 </div>
 
 
@@ -896,6 +500,7 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
               </div>
               <!--/.nav-collapse -->
             </div>
+            
 
           </div>
         </div>
@@ -907,7 +512,9 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
   </div>
   </div>
 
-
+  <div class="footer">
+      <p>PerfisCalc</p>
+    </div>
 
 
 
@@ -934,3 +541,4 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
 </body>
 
 </html>
+

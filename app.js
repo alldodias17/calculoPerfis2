@@ -1,4 +1,4 @@
-var app = require('./config/server');
+var app =  require('./config/server');
 
 var pagina_principal = require('./app/routes/pagina_principal')(app);
 var menu_principal_01 = require('./app/routes/menu_principal/menu_principal_01')(app);
@@ -28,7 +28,9 @@ var menu_principal_21a = require('./app/routes/menu_principal/menu_principal_21a
 var menu_principal_21b = require('./app/routes/menu_principal/menu_principal_21b')(app);
 var menu_principal_22 = require('./app/routes/menu_principal/menu_principal_22')(app);
 var menu_principal_23a = require('./app/routes/menu_principal/menu_principal_23a')(app);
+var menu_principal_23b = require('./app/routes/menu_principal/menu_principal_23b')(app);
 var menu_principal_24a = require('./app/routes/menu_principal/menu_principal_24a')(app);
+var menu_principal_24b = require('./app/routes/menu_principal/menu_principal_24b')(app);
 var menu_principal_25 = require('./app/routes/menu_principal/menu_principal_25')(app);
 var menu_principal_26 = require('./app/routes/menu_principal/menu_principal_26')(app);
 var menu_principal_27 = require('./app/routes/menu_principal/menu_principal_27')(app);

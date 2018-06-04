@@ -11,11 +11,14 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
-    "ejs": "^2.5.7",
+    "ejs": "^2.5.9",
     "express": "^4.15.3",
     "express-validator": "^4.3.0",
     "gerador-validador-cpf": "^3.1.1",
+    "intl": "^1.2.5",
+    "is-empty": "^1.2.0",
     "jquery": "^3.3.1",
+    "jquery-inputmask": "^1.0.1",
     "nodemon": "^1.14.7"
   },
   "devDependencies": {

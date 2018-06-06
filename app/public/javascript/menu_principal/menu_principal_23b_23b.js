@@ -33,6 +33,12 @@ window.onload = function () {
     if (re_etam_A.test(etam_A.value)) {
       etam_A.value = etam_A.value.replace(re_etam_A, "$1$2,00");
     }
+    var form01 = document.getElementById("form01");
+    var espessura_e = form01.espessura_e;
+    var re_espessura_e = /^([0-9]{0,3})([0-9]{0,3})$/;
+    if (re_espessura_e.test(espessura_e.value)) {
+      espessura_e.value = espessura_e.value.replace(re_espessura_e, "$1$2,00");
+    }
     
   
   

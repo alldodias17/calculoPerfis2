@@ -112,7 +112,7 @@ window.onload = function () {
   
   id('dtam_A').value = id('etam_A').value || 0.00;
   id('dtam_B').value = id('etam_B').value || 0.00;
-  id('dtam_C').value = id('etam_C').value || 0.00;
+  
   id('dtam_D').value = id('etam_E').value || 0.00;
   id('espessura_d').value = id('espessura_e').value || 0.00;
   
@@ -130,19 +130,19 @@ window.onload = function () {
   var i = parseFloat(1.5);
   
   //RDB2 = RDB1 * ESPES
-  var ESPES = parseInt(form06.espessura_d.value);
-  var RDB1 = parseInt(form03.raioe.value);
+  var ESPES = parseFloat(form06.espessura_d.value);
+  var RDB1 = parseFloat(form03.raioe.value);
   form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-  var RDB2 = parseInt(form07.raiod.value);
+  var RDB2 = parseFloat(form07.raiod.value);
 
   //RN = RDB2 + ESPES / 2
   form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-  var RN = parseInt(form08.raio_neutro.value);
+  var RN = parseFloat(form08.raio_neutro.value);
   
 
   //ALTDB = RDB2 + ESPES
   form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-  var ALTDB = parseInt(form09.alturadobra.value);
+  var ALTDB = parseFloat(form09.alturadobra.value);
 
   //U = RN * 1.57
   var U1 = parseFloat(1.57);
@@ -150,22 +150,22 @@ window.onload = function () {
   var U = parseFloat(form10.ud.value);
 
   //A2 = A1 - 2 * ALTDB
-  var A1 = parseInt(form04.dtam_A.value);
+  var A1 = parseFloat(form04.dtam_A.value);
   form09.dtam_a.value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
-  var A2 = parseInt(form09.dtam_a.value);
+  var A2 = parseFloat(form09.dtam_a.value);
 
   //B2 = B1 - 2 * ALTDB
-  var B1 = parseInt(form05.dtam_B.value);
+  var B1 = parseFloat(form05.dtam_B.value);
   form09.dtam_b.value = (B1 - 2 * ALTDB).toFixed(2) || 0.00;
-  var B2 = parseInt(form09.dtam_b.value);
+  var B2 = parseFloat(form09.dtam_b.value);
 
   //AB = A1 - ESPES
   form05.dtam_a1.value = (A1 - ESPES).toFixed(2) || 0.00;
-  var AB = parseInt(form05.dtam_a1.value);
+  var AB = parseFloat(form05.dtam_a1.value);
 
   //BB = B1 - ESPES
   form06.dtam_bbarra.value = (B1 - ESPES).toFixed(2) || 0.00;
-  var BB = parseInt(form06.dtam_bbarra.value);
+  var BB = parseFloat(form06.dtam_bbarra.value);
 
   //FITA = 2 * A2 + 2 * B2 + 4 * U
   form10.largura_da.value = 2 * A2 + 2 * B2 + 4 * U;
@@ -200,7 +200,7 @@ window.onload = function () {
 
   //CGY = A1 / 2
   form15.cgy.value = A1 / 2;
-  var CGY = parseInt(form15.cgy.value);
+  var CGY = parseFloat(form15.cgy.value);
 
   //WX = IX / CGY
   form18.wx.value = (IX / CGY).toFixed(2);

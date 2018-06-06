@@ -219,10 +219,6 @@ var WT = parseFloat(form14.wt.value);
   if (re_ip.test(ip.value)) {
     ip.value = ip.value.replace(re_ip, "$1$2.00");
   }
-  var re_dtam_D = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_D.test(dtam_D.value)) {
-    dtam_D.value = dtam_D.value.replace(re_dtam_D, "$1$20.00");
-  }
   var re_largura_da = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_largura_da.test(largura_da.value)) {
     largura_da.value = largura_da.value.replace(re_largura_da, "$1$20.00");
@@ -331,9 +327,9 @@ var WT = parseFloat(form14.wt.value);
   if (re_dtam_ccc.test(dtam_ccc.value)) {
     dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$20.00");
   }
-  var re_dtam_zz = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_zz.test(dtam_zz.value)) {
-    dtam_zz.value = dtam_zz.value.replace(re_dtam_zz, "$1$20.00");
+  var re_dtam_z = /^([0-9]{0,4})([0-9]{0,4})$/;
+  if (re_dtam_z.test(dtam_z.value)) {
+    dtam_z.value = dtam_z.value.replace(re_dtam_z, "$1$20.00");
   }
   var re_j = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_j.test(j.value)) {

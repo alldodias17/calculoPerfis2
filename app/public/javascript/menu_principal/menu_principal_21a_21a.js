@@ -123,8 +123,8 @@ window.onload = function () {
 
   
 //AREA1 = A1 * B1
-var A1 = parseInt(form04.dtam_A.value);
-var B1 = parseInt(form05.dtam_B.value);
+var A1 = parseFloat(form04.dtam_A.value);
+var B1 = parseFloat(form05.dtam_B.value);
 form19.area_total.value = (A1 * B1).toFixed(2) || 0.00;
 var AREA01 = parseFloat(form19.area_total.value);
 
@@ -137,7 +137,7 @@ var KGM = parseFloat(form04.d_Peso.value);
 
 //CGX = B1 / 2
 form14.cgx.value = B1 / 2;
-var CGX = parseInt(form14.cgx.value);
+var CGX = parseFloat(form14.cgx.value);
 
 //CGY = A1 / 2
 form15.cgy.value = A1 / 2;
@@ -313,7 +313,7 @@ var WT = parseFloat(form14.wt.value);
     }
     var re_dtam_dd = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_dd.test(dtam_dd.value)) {
-      dtam_dd.value = dtam_dd.value.replace(re_dtam_dd, "$1$2.00");
+      dtam_dd.value = dtam_dd.value.replace(re_dtam_dd, "$1$20.00");
     }
     var re_dtam_ee = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_ee.test(dtam_ee.value)) {
@@ -401,7 +401,7 @@ var WT = parseFloat(form14.wt.value);
     }
     var re_dtam_ccc = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_ccc.test(dtam_ccc.value)) {
-      dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$2.00");
+      dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$20.00");
     }
     var re_dtam_zz = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_zz.test(dtam_zz.value)) {

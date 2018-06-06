@@ -145,8 +145,8 @@ var y = form09.dtam_y.value;
 var U = form10.ud.value;
 var KGM = form04.d_Peso.value;
 var SCCG = form05.dtam_distancia.value;
-var IX = form12.IXX.value;
-var IY = form13.lyy.value;
+var IX = form12.ixx.value;
+var IY = form13.iyy.value;
 var lz = form14.lz.value;
 var lv = form15.lv.value;
 var ip = form16.ip.value;
@@ -161,7 +161,7 @@ var Wx = form18.wx.value;
 var Wz = form12.wz.value;
 var wy = form13.wy.value;
 var Wt = form14.wt.value;
-var ix = form16.ixx.value;
+var ixis = form16.ixis.value;
 var iy = form17.lxy.value;
 var iz = form18.iz.value;
 var iv = form19.iv.value;
@@ -184,7 +184,7 @@ form09.dtam_b.value = B1 - (RN + ESPES / 2);
 form05.dtam_a1.value = A1 - ESPES;
 form06.dtam_bbarra.value = B1 - ESPES / 2;
 form15.cgy.value = A1 / 2;
-form16.ixx.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
+form16.ixis.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
 form18.wx.value = IX / CGY;
 form10.largura_da.value = 2 * B2 + A2 + 2 * U;
 form19.area_total.value = FITA * ESPES;
@@ -195,7 +195,7 @@ form04.d_Peso.value = AREA1 * 0.001 * 7.85;
 //form14.cgx.value = XB + ESPES / 2;
 //form13.wy.value = IY / (BB - XB);
 form14.wt.value = FITA * (ESPES ^ 2) / 3;
-form16.ixx.value = (IX / AREA1) ^ 0.5;
+form16.ixis.value = (IX / AREA1) ^ 0.5;
 form17.lxy.value = (IY / AREA1) ^ 0.5;
 form04.dtam_m.value = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
 //x0 = -(XB + EME);
@@ -363,8 +363,8 @@ form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB 
       bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
     }
     var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_ixxx.test(ixx.value)) {
-      ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
+    if (re_ixx.test(ixx.value)) {
+      ixx.value = ixx.value.replace(re_ixx, "$1$20.00");
     }
 
 

@@ -123,18 +123,18 @@ var z = parseFloat(1.637);
 var c = parseFloat(0.149);
 
 //RDB2 = RDB1 * ESPES
-var ESPES = parseInt(form06.espessura_d.value);
-var RDB1 = parseInt(form03.raioe.value);
+var ESPES = parseFloat(form06.espessura_d.value);
+var RDB1 = parseFloat(form03.raioe.value);
 form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-var RDB2 = parseInt(form07.raiod.value);
+var RDB2 = parseFloat(form07.raiod.value);
 
 //RN = RDB2 + ESPES / 2
 form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-var RN = parseInt(form08.raio_neutro.value);
+var RN = parseFloat(form08.raio_neutro.value);
 
 //ALTDB = RDB2 + ESPES
 form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-var ALTDB = parseInt(form09.alturadobra.value);
+var ALTDB = parseFloat(form09.alturadobra.value);
 
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
@@ -142,26 +142,26 @@ form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.
 var U = parseFloat(form10.ud.value);
 
 //A2 = A1 - (2 * RN + ESPES)
-var A1 = parseInt(form04.dtam_A.value);
+var A1 = parseFloat(form04.dtam_A.value);
 form09.dtam_a.value = (form04.dtam_A.value*1 - (2 * form08.raio_neutro.value + form06.espessura_d.value*1)).toFixed(2) || 0.00;
-var A2 = parseInt(form09.dtam_a.value);
+var A2 = parseFloat(form09.dtam_a.value);
 
 //B2 = B1 - (RN + ESPES / 2)
-var B1 = parseInt(form05.dtam_B.value);
+var B1 = parseFloat(form05.dtam_B.value);
 form09.dtam_b.value = (form05.dtam_B.value*1 - (form08.raio_neutro.value*1 + form06.espessura_d.value / 2)).toFixed(2) || 0.00;
-var B2 = parseInt(form09.dtam_b.value);
+var B2 = parseFloat(form09.dtam_b.value);
 
 //AB = A1 - ESPES
 form05.dtam_a1.value = (form04.dtam_A.value - form06.espessura_d.value).toFixed(2) || 0.00;
-var AB = parseInt(form05.dtam_a1.value); 
+var AB = parseFloat(form05.dtam_a1.value); 
 
 //BB = B1 - ESPES / 2
 form06.dtam_bbarra.value = (form05.dtam_B.value*1 - (form06.espessura_d.value / 2)).toFixed(2) || 0.00;
-var BB = parseInt(form06.dtam_bbarra.value);
+var BB = parseFloat(form06.dtam_bbarra.value);
 
 //CGY = A1 / 2
 form15.cgy.value = (A1 / 2).toFixed(2) || 0.00;
-var CGY = parseInt(form15.cgy.value);
+var CGY = parseFloat(form15.cgy.value);
 
 //FITA = 2 * B2 + A2 + 2 * U
 form10.largura_da.value = (2 * B2 + A2 + 2 * U).toFixed(2) || 0.00;

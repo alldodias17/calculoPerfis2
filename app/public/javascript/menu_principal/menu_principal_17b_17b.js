@@ -159,10 +159,19 @@ window.onload = function () {
     //CGY = A1 / 2
     form15.cgy.value = a1 / 2;
 
-    var raioneutro = parseInt(form08.raio_neutro.value);
-    var B2 = parseInt(form09.dtam_b.value);
-    var A2 = parseInt(form09.dtam_a.value);
-    var C2 = parseInt(form10.dtam_c.value);
+    //X = ((B2 - ESPES / 2 - RN) ^ 2 + (AB - 2 * RN) ^ 2) ^ 0.5
+    X = Math.pow(Math.pow(form09.dtam_b.value - form06.espessura_d.value / 2 - form08.raio_neutro.value,2) + Math.pow(form05.dtam_a1.value - 2 * form08.raio_neutro.value,2),0.5);
+
+    //Y = (X ^ 2 / 4 - RN ^ 2) ^ 0.5
+    Y = Math.pow(Math.pow(X,2) / 4 - Math.pow(form08.raio_neutro.value,2),0.5);
+
+    //AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN)
+    AUX0 = (form09.dtam_b.value - form06.espessura_d.value / 2 - form08.raio_neutro.value) / (form05.dtam_a1.value - 2 * form08.raio_neutro.value);
+
+    var raioneutro = parseFloat(form08.raio_neutro.value);
+    var B2 = parseFloat(form09.dtam_b.value);
+    var A2 = parseFloat(form09.dtam_a.value);
+    var C2 = parseFloat(form10.dtam_c.value);
     var U = parseFloat(form10.ud.value);
     var b = A2 / 2 + raioneutro;
     var h = parseFloat(0.637);
@@ -190,11 +199,11 @@ window.onload = function () {
     form12.ixx.value = 2 * g * (i * Math.pow(A2, 3) + B2 * Math.pow(A2 / 2 + RN, 2) + 2 * U * Math.pow(A2 / 2 + h * RN, 2) + 2 * m * Math.pow(RN, 3) + l * Math.pow(C2, 3) + C2 / 4 * Math.pow(A2 - C2, 2)).toFixed(2);
 
     //IY = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3 + C2 * (B2 + 2 * RN)  ^ 2 + U * (B2 + 1.637 * RN) ^ 2 + 0.149 * RN ^ 3)       
-    form13.lyy.value = 2 * g * (B2 * Math.pow(B2 / 2 + RN, 2) + l * Math.pow(B2, 3) + n * Math.pow(RN, 3) + C2 * Math.pow(B2 + 2 * RN, 2) + U * Math.pow(B2 + o * RN, 2) + m * Math.pow(RN, 3)).toFixed(2);
+    form13.iyy.value = 2 * g * (B2 * Math.pow(B2 / 2 + RN, 2) + l * Math.pow(B2, 3) + n * Math.pow(RN, 3) + C2 * Math.pow(B2 + 2 * RN, 2) + U * Math.pow(B2 + o * RN, 2) + m * Math.pow(RN, 3)).toFixed(2);
 
     //ixy = 2 * ESPES * (B2 * (A2 / 2 + RN) * (B2 / 2 + RN) _ + 0.5 * RN ^ 3 + 0.285 * A2 * RN ^ 2 + C2 *  (2 * RN + B2) * (A2 / 2 - C2 / 2) - 0.137 * RN ^ 3 + U * (B2 + 1.637 * RN) * (0.5 * A2 + _0.637 * RN))
     var s = parseFloat(form12.ixx.value);
-    var t = parseFloat(form13.lyy.value);
+    var t = parseFloat(form13.iyy.value);
     form17.lxy.value = 2 * g * (B2 * (A2 / 2 + RN) * (B2 / 2 + RN) + p * Math.pow(RN, 3) + q * A2 * Math.pow(RN, 2) + C2 * (2 * RN + B2) * (A2 / 2 - C2 / 2) - r * Math.pow(RN, 3) + U * (B2 + o * RN) * (p * A2 + h * RN)).toFixed(2);
 
     //IP = IX + IY
@@ -207,7 +216,7 @@ window.onload = function () {
     form18.wx.value = (form12.ixx.value / form15.cgy.value * 10 / 10).toFixed(2);
 
     //WY = IY / CGX
-    form13.wy.value = (form13.lyy.value / form14.cgx.value).toFixed(2);
+    form13.wy.value = (form13.iyy.value / form14.cgx.value).toFixed(2);
 
     //WT = J1 / ESPES
     form14.wt.value = (form12.j.value / g).toFixed(2);
@@ -227,10 +236,10 @@ window.onload = function () {
       * cw3 * (3 * cw2 + 3 * AB * BB + 4 * BB * CB + 2 * AB * CB + cw3)) / (AB + 2 * BB + 2 * CB);
 
     //IX1 = (IX / AREA1) ^ 0.5
-    form16.ixx.value = Math.pow(form12.ixx.value / form19.area_total.value, 0.5).toFixed(2);
+    form16.ixis.value = Math.pow(form12.ixx.value / form19.area_total.value, 0.5).toFixed(2);
 
     // IY1 = (IY / AREA1) ^ 0.5
-    form17.iy.value = Math.pow(form13.lyy.value / form19.area_total.value, 0.5).toFixed(4);
+    form17.iy.value = Math.pow(form13.iyy.value / form19.area_total.value, 0.5).toFixed(4);
     //KGM = AREA1 * 0.001 * 7.85
     var area01 = parseFloat(0.001);
     var area02 = parseFloat(7.85);

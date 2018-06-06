@@ -121,92 +121,119 @@ id('dtam_E').value = id('etam_E').value;
 id('espessura_d').value = id('espessura_e').value;
 
 
-var A1 = form04.dtam_A.value;
-var B1 = form05.dtam_B.value;
-var C1 = form06.dtam_C.value;
-var E1 = form08.dtam_E.value;
-var A2 = form09.dtam_a.value; 
-var B2 = form09.dtam_b.value; 
-var C2 = form10.dtam_c.value; 
-var D2 = form11.dtam_d.value; 
-var E2 = form04.dtam_e.value;
-var AB = form05.dtam_a1.value; 
-var BB = form06.dtam_bbarra.value;
-var CB = form07.dtam_D.value;
-var DB = form07.dtam_dd.value;
-var EB = form08.dtam_ee.value;
-var u2 = form10.u2.value;
-var u3 = form11.dtam_d.value;
-var EME  = form04.dtam_m.value;
-var xa = form05.dtam_X.value; 
-var ya = form06.dtam_Y.value; 
-var x = form07.dtam_xx.value;
-var y = form09.dtam_y.value;
-var U = form10.ud.value;
-var KGM = form04.d_Peso.value;
-var SCCG = form05.dtam_distancia.value;
-var IX = form12.IXX.value;
-var IY = form13.lyy.value;
-var lz = form14.lz.value;
-var lv = form15.lv.value;
-var ip = form16.ip.value;
-var lxy = form17.lxy.value;
-var ESPES = form06.espessura_d.value;
-var RDB1 = form03.raioe.value;
-var RDB2 = form07.raiod.value; 
-var RN = form08.raio_neutro.value;
-var ALTDB = form10.ud.value;
-var FITA = form10.largura_da.value;
-var Wx = form18.wx.value;
-var Wz = form12.wz.value;
-var wy = form13.wy.value;
-var Wt = form14.wt.value;
-var ix = form16.ixx.value;
-var iy = form17.lxy.value;
-var iz = form18.iz.value;
-var iv = form19.iv.value;
-var J1 = form12.j.value;
-var I1 = form13.iii.value;
-var CGX =form14.cgx.value;
-var CGY = form15.cgy.value;
-var Cw = form16.cw.value;
-var BETA = form17.bbb.value;
-var TETA = form18.zer0.value; 
-var AREA1 = form19.area_total.value;
-var AREAU = form20.area_util.value;
-
-form07.raiod.value = RDB1 * ESPES;
-form08.raio_neutro.value = RDB2 + ESPES / 2;
-form10.ud.value = RDB2 + ESPES;
-form10.ud.value = RN * 1.57;
-form09.dtam_a.value  = A1 - (2 * RN + ESPES);
-form09.dtam_b.value = B1 - (RN + ESPES / 2);
-form05.dtam_a1.value = A1 - ESPES;
-form06.dtam_bbarra.value = B1 - ESPES / 2;
-form15.cgy.value = A1 / 2;
-form16.ixx.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
-form18.wx.value = IX / CGY;
-form10.largura_da.value = 2 * B2 + A2 + 2 * U;
-form19.area_total.value = FITA * ESPES;
-form20.area_util.value = AREA1;
-form04.d_Peso.value = AREA1 * 0.001 * 7.85;
-//XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN);
-//form17.lxy.value = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3) - AREA1 * XB ^ 2;
-//form14.cgx.value = XB + ESPES / 2;
-//form13.wy.value = IY / (BB - XB);
-form14.wt.value = FITA * (ESPES ^ 2) / 3;
-form16.ixx.value = (IX / AREA1) ^ 0.5;
-form17.lxy.value = (IY / AREA1) ^ 0.5;
-form04.dtam_m.value = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
-//x0 = -(XB + EME);
-//DIST = -x0;
-//IP = CDbl(Mid(IX, 1, Len(Str(IX)) - 4)) + CDbl(Mid(IY, 1, Len(Str(IY)) - 7)) + AREA1 * (CDbl(Mid(EME, 1, Len(Str(EME)) - 10)) + CDbl(Mid(XB, 1, Len(Str(XB)) - 10))) ^ 2;
-//form12.j.value = ESPES ^ 3 / 3 * FITA;
-form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB));
-//BETAW = -(0.0833 * ESPES * XB * AB ^ 3 + ESPES * XB ^ 3 * AB);
-//BETAF = ESPES / 2 * ((BB - XB) ^ 4 - XB ^ 4) + (ESPES * AB ^ 2) / 4 * ((BB - XB) ^ 2 - XB ^ 2);
-//J2 = 1 / (2 * IY) * (BETAW + BETAF) + XB + EME;
-  
+//RDB2 = RDB1 * ESPES
+//RN = RDB2 + ESPES / 2
+//ALTDB = RDB2 + ESPES
+//U = RN * 1.57
+//A2 = A1 - 2 * ALTDB
+//B2 = B1 - 2 * ALTDB
+//C2 = C1 - ALTDB
+//D2 = D1 - ALTDB
+//AB = A1 - ESPES
+//BB = B1 - ESPES
+//CB = C1 - ESPES / 2
+//DB = D1 - ESPES / 2
+//FITA = C2 + 3 * U + B2 + A2 + D2
+//AREA1 = FITA * ESPES
+//AREAU = AREA1
+//X = (C2 * ESPES * (DB + BB) + U * ESPES * (DB + BB - RN + 0.637 * RN) + B2 * ESPES * (D2 + 2 * RN + B2 / 2) + U * ESPES * (DB + RN - 0.637 * RN) + A2 * ESPES * DB + U * ESPES * (DB - RN + 0.637 * RN) + D2 * ESPES * D2 / 2) / AREA1
+//CGX = X
+//If A1 = B1 And C1 = D1 Then
+//Y = X
+//Else
+//Y = (C2 * ESPES * C2 / 2 + U * ESPES * (CB - RN + 0.637 * RN) + B2 * ESPES * CB + U * ESPES * (C2 + 2 * RN - 0.637 * RN) + A2 * ESPES * (C2 + 2 * RN + A2 / 2) + U * ESPES * (CB + AB - RN + 0.637 * RN) + D2 * ESPES * (CB + AB)) / AREA1
+//CGY = Y
+//IX = ESPES * C2 ^ 3 / 12 + 3 * 0.149 * RN * ESPES + B2 * ESPES ^ 3 / 12 + ESPES * A2 ^ 3 / 12 + D2 * ESPES ^ 3 / 12 + C2 * ESPES * (Y - C2 / 2) ^ 2 + U * ESPES * (Y - CB + RN - 0.637 * RN) ^ 2 + B2 * ESPES * (Y - CB) ^ 2 + U * ESPES * (Y - CB - RN + 0.637 * RN) ^ 2 + A2 * ESPES * (-Y +  CB + RN + A2 / 2) ^ 2 + U * ESPES * (-Y + CB - RN + AB + 0.637 * RN) ^ 2 + D2 * ESPES * (CB + AB - Y) ^ 2
+//End If
+//If A1 = B1 And C1 = D1 Then
+//IY = IX
+//Else
+//IY = ESPES * D2 ^ 3 / 12 + 3 * 0.149 * RN * ESPES + A2 * ESPES ^ 3 / 12 + ESPES * B2 ^ 3 / 12 + C2 * ESPES ^ 3 / 12 + D2 * ESPES * (X - D2 / 2) ^ 2 + U * ESPES * (X - DB + RN - 0.637 * RN) ^ 2 + A2 * ESPES * (X - DB) ^ 2 + U * ESPES * (X - DB - RN + 0.637 * RN) ^ 2 + B2 * ESPES * (-X + DB + RN + B2 / 2) ^ 2 + U * ESPES * (-X  - RN + DB + BB + 0.637 * RN) ^ 2 + C2 * ESPES * _(DB + BB - X) ^ 2
+//ixy = C2 * ESPES * (DB + BB - X) * (Y - C2 / 2) + _U * ESPES * (DB + BB - RN + 0.637 * RN - X) * (Y - CB + RN - 0.637 * RN) + B2 * ESPES * (X - D2 - 2 * RN - B2 / 2) * (Y - CB) + U * ESPES * (-X + D2 + 2 * RN - 0.637 * RN) * (Y - CB - RN + 0.637 * RN) + A2 * ESPES * (DB - X) * (Y -CB - AB / 2) + U * ESPES * (DB - RN + 0.637 * RN - X) * (Y - CB - AB + RN - 0.637 * RN) + D2 * ESPES * (D2 / 2 - X) * (CB + AB - Y)
+//End If
+//If A1 = B1 And C1 = D1 Then
+//IV = IX + ixy
+//iz = IX - ixy
+//Else
+//IV = (IX + IY) / 2 + (((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy) ^ 0.5
+//iz = (IX + IY) / 2 - (((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy) ^ 0.5
+//W1 = CB * (X - DB - BB)
+//W2 = W1 + BB * (Y - CB)
+//W3 = W2 + AB * (X - DB)
+//W4 = W3 + DB * (Y - CB - AB)
+//RO1 = DB + BB - X
+//RO3 = DB - X
+//RO4 = -X
+//JWX = (W1 * RO1 * ESPES * CB + (W1 * RO1 + W2 * RO3) * ESPES * BB + (W2 * RO3 + W3 * RO3) * ESPES * AB + (W3 * RO3 + W4 * RO4) * ESPES * DB) / 3 + (W1 * RO1 * ESPES * CB + (W1 * RO3 + W2 * RO1) * ESPES * BB + (W2 * RO3 + W3 * RO3) * ESPES * AB + (W3 * RO4 + W4 * RO3) * ESPES * DB) / 6
+//y0 = -JWX / IY
+//End If
+//If A1 = B1 And C1 = D1 Then
+//x0 = -y0
+//Else
+//RO1 = Y - CB
+//RO3 = Y - CB - AB
+//JWY = (W1 * RO1 * ESPES * CB + (W1 * RO1 + W2 * RO1) * ESPES * BB + (W2 * RO1 + W3 * RO3) * ESPES * AB + (W3 * RO3 + W4 * RO3) * ESPES * DB) / 3 + (W1 * Y * ESPES * CB + (W1 * RO1 + W2 * RO1) * ESPES * BB + (W2 * RO3 + W3 * RO1) * ESPES * AB + (W3 * RO3 + W4 * RO3) * ESPES * DB) / 6
+//x0 = JWY / IX
+//DIST = (x0 * x0 + y0 * y0) ^ 0.5
+//IP = IX + IY + AREA1 * DIST ^ 2
+//AUX2 = (CB + AB) / 2
+//End If
+//If AUX2 > Y Then
+//WX = IX / (CB + AB - Y + ESPES / 2)
+//Else
+//WX = IX / Y
+//End If
+//AUX2 = (DB + BB) / 2
+//If AUX2 > X Then
+//WY = IY / (DB + BB - X + ESPES / 2)
+//Else
+//WY = IY / X
+//End If
+//WT = FITA * ESPES ^ 2 / 3
+//J1 = WT * ESPES
+//IX1 = (IX / AREA1) ^ 0.5
+//IY1 = (IY / AREA1) ^ 0.5
+//iz1 = (iz / AREA1) ^ 0.5
+//iv1 = (IV / AREA1) ^ 0.5
+//RO1 = -(DB + BB - X - x0)
+//RO2 = Y - y0 - CB
+//RO3 = X + x0 - DB
+//If RO3 < 0 Then RO3 = -RO3
+//RO4 = Y - y0 - CB - AB
+//W1 = RO1 * CB
+//W2 = W1 + RO2 * BB
+//If x0 < 0 Then x0 = -x0
+//AUX0 = CGX - DB
+//If AUX0 > x0 Then
+//W3 = W2 + RO3 * AB
+//Else
+//W3 = W2 - RO3 * AB
+//End If
+//W4 = W3 + RO4 * DB
+//WN0 = (W1 * ESPES * CB + (W1 + W2) * ESPES * BB + (W2 + W3) * ESPES * AB + (W3 + W4) * ESPES *  DB) / (2 * AREA1)
+//WN1 = WN0 - W1
+//WN2 = WN0 - W2
+//WN3 = WN0 - W3
+//WN4 = WN0 - W4
+//Cw = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * CB + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * ESPES * BB + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * ESPES * AB + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * ESPES * DB) / 3
+//If A1 = B1 And C1 = D1 Then
+//TETA = 45
+//Else
+//IXY1 = ixy
+//AUX2 = 2 * IXY1 / (IX - IY)
+//parametro = AUX2
+//Indice = 1
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//ATAN1 = Resultado
+//TETA = 90 - ATAN1 / 2
+//End If
+//TETA_AUX = TETA
+//TETA_AUX1 = TETA - TETA_AUX
+//TETA_AUX1 = TETA_AUX1 * 60
+//KGM = AREA1 * 0.001 * 7.85
+//XB = X
+//YB = Y
 
 
 

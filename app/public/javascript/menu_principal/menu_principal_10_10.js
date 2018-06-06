@@ -95,92 +95,138 @@ id('dtam_C').value = id('etam_C').value;
 id('dtam_D').value = id('etam_D').value;
 id('dtam_E').value = id('etam_E').value;
 id('espessura_d').value = id('espessura_e').value;
-var A1 = form04.dtam_A.value;
-var B1 = form05.dtam_B.value;
-var C1 = form06.dtam_C.value;
-var E1 = form08.dtam_E.value;
-var A2 = form09.dtam_a.value; 
-var B2 = form09.dtam_b.value; 
-var C2 = form10.dtam_c.value; 
-var D2 = form11.dtam_d.value; 
-var E2 = form04.dtam_e.value;
-var AB = form05.dtam_a1.value; 
-var BB = form06.dtam_bbarra.value;
-var CB = form07.dtam_D.value;
-var DB = form07.dtam_dd.value;
-var EB = form08.dtam_ee.value;
-var u2 = form10.u2.value;
-var u3 = form11.dtam_d.value;
-var EME  = form04.dtam_m.value;
-var xa = form05.dtam_X.value; 
-var ya = form06.dtam_Y.value; 
-var x = form07.dtam_xx.value;
-var y = form09.dtam_y.value;
-var U = form10.ud.value;
-var KGM = form04.d_Peso.value;
-var SCCG = form05.dtam_distancia.value;
-var IX = form12.IXX.value;
-var IY = form13.lyy.value;
-var lz = form14.lz.value;
-var lv = form15.lv.value;
-var ip = form16.ip.value;
-var lxy = form17.lxy.value;
-var ESPES = form06.espessura_d.value;
-var RDB1 = form03.raioe.value;
-var RDB2 = form07.raiod.value; 
-var RN = form08.raio_neutro.value;
-var ALTDB = form10.ud.value;
-var FITA = form10.largura_da.value;
-var Wx = form18.wx.value;
-var Wz = form12.wz.value;
-var wy = form13.wy.value;
-var Wt = form14.wt.value;
-var ix = form16.ixx.value;
-var iy = form17.lxy.value;
-var iz = form18.iz.value;
-var iv = form19.iv.value;
-var J1 = form12.j.value;
-var I1 = form13.iii.value;
-var CGX =form14.cgx.value;
-var CGY = form15.cgy.value;
-var Cw = form16.cw.value;
-var BETA = form17.bbb.value;
-var TETA = form18.zer0.value; 
-var AREA1 = form19.area_total.value;
-var AREAU = form20.area_util.value;
-form07.raiod.value = RDB1 * ESPES;
-form08.raio_neutro.value = RDB2 + ESPES / 2;
-form10.ud.value = RDB2 + ESPES;
-form10.ud.value = RN * 1.57;
-form09.dtam_a.value  = A1 - (2 * RN + ESPES);
-form09.dtam_b.value = B1 - (RN + ESPES / 2);
-form05.dtam_a1.value = A1 - ESPES;
-form06.dtam_bbarra.value = B1 - ESPES / 2;
-form15.cgy.value = A1 / 2;
-form16.ixx.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
-form18.wx.value = IX / CGY;
-form10.largura_da.value = 2 * B2 + A2 + 2 * U;
-form19.area_total.value = FITA * ESPES;
-form20.area_util.value = AREA1;
-form04.d_Peso.value = AREA1 * 0.001 * 7.85;
-//XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN);
-//form17.lxy.value = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3) - AREA1 * XB ^ 2;
-//form14.cgx.value = XB + ESPES / 2;
-//form13.wy.value = IY / (BB - XB);
-form14.wt.value = FITA * (ESPES ^ 2) / 3;
-form16.ixx.value = (IX / AREA1) ^ 0.5;
-form17.lxy.value = (IY / AREA1) ^ 0.5;
-form04.dtam_m.value = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
-//x0 = -(XB + EME);
-//DIST = -x0;
-//IP = CDbl(Mid(IX, 1, Len(Str(IX)) - 4)) + CDbl(Mid(IY, 1, Len(Str(IY)) - 7)) + AREA1 * (CDbl(Mid(EME, 1, Len(Str(EME)) - 10)) + CDbl(Mid(XB, 1, Len(Str(XB)) - 10))) ^ 2;
-//form12.j.value = ESPES ^ 3 / 3 * FITA;
-form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB));
-//BETAW = -(0.0833 * ESPES * XB * AB ^ 3 + ESPES * XB ^ 3 * AB);
-//BETAF = ESPES / 2 * ((BB - XB) ^ 4 - XB ^ 4) + (ESPES * AB ^ 2) / 4 * ((BB - XB) ^ 2 - XB ^ 2);
-//J2 = 1 / (2 * IY) * (BETAW + BETAF) + XB + EME;
 
+var a = parseFloat(0.363);
+var b = parseFloat(0.149);
+var d = parseFloat(0.358);
+var p = parseFloat(0.0833)
+var z = parseFloat(1.637);
+var c = parseFloat(0.149);
+var e = parseFloat(0.637);
+var f = parseFloat(0.001);
+var g = parseFloat(7.85);
+var h = parseFloat(0.0417);
+
+//RDB2 = RDB1 * ESPES
+var ESPES = parseFloat(form06.espessura_d.value);
+var RDB1 = parseFloat(form03.raioe.value);
+form07.raiod.value = (RDB1 * ESPES || 0.00 ).toFixed(2);
+var RDB2 = parseFloat(form07.raiod.value);
+
+//RN = RDB2 + ESPES / 2
+form08.raio_neutro.value = (form07.raiod.value*1 + (form06.espessura_d.value / 2) || 0.00).toFixed(2);
+var RN = parseFloat(form08.raio_neutro.value);
+
+//ALTDB = RDB2 + ESPES
+form09.alturadobra.value = (form07.raiod.value*1 + form06.espessura_d.value*1 || 0.00).toFixed(2);
+var ALTDB = parseFloat(form09.alturadobra.value);
+
+//U = RN * 1.57
+var U1 = parseFloat(1.57);
+form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10 || 0.00).toFixed(2);
+var U = parseFloat(form10.ud.value);
+
+//A2 = A1 - (2 * RN + ESPES)
+var A1 = parseFloat(form04.dtam_A.value);
+form09.dtam_a.value = (form04.dtam_A.value*1 - (2 * form08.raio_neutro.value + form06.espessura_d.value*1) || 0.00).toFixed(2);
+var A2 = parseFloat(form09.dtam_a.value);
+
+//B2 = B1 - 2 * ALTDB
+var B1 = parseFloat(form05.dtam_B.value);
+form09.dtam_b.value = ((B1 - 2 * ALTDB) || 0.00).toFixed(2);
+var B2 = parseFloat(form09.dtam_b.value); 
+
+//C2 = C1 - ALTDB
+var C1 = form03.etam_C.value
+form10.dtam_c.value = form03.etam_C.value - ALTDB;
+var C2 = form10.dtam_c.value;
+
+//AB = A1 - ESPES
+form05.dtam_a1.value = (form04.dtam_A.value - form06.espessura_d.value || 0.00).toFixed(2);
+var AB = parseFloat(form05.dtam_a1.value); 
+
+//BB = B1 - ESPES
+form06.dtam_bbarra.value = (B1 - ESPES || 0.00).toFixed(2);
+var BB = parseFloat(form06.dtam_bbarra.value);
+
+//CB = C1 - ESPES / 2
+form07.dtam_D.value = C1 - (ESPES / 2);
+var CB = form07.dtam_D.value;
+
+//CGY = A1 / 2
+form15.cgy.value = (A1 / 2 || 0.00).toFixed(2);
+var CGY = parseFloat(form15.cgy.value);
+
+//YB = AB / 2
+form09.dtam_y.value = (AB / 2).toFixed(2) || 0.00;
+var YB = parseFloat(form09.dtam_y.value)
+
+//EME = YB
+form04.dtam_m.value = YB || 0.00;
+var EME = form04.dtam_m.value;
+
+//IX = 4 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + 2 * U * (A2 / 2 + 0.637 * RN) ^ 2 + 2 * 0.149 * RN ^ 3 + 0.0833 * C2 ^ 3 + C2 / 4 * (A2 - C2) ^ 2)
+form12.ixx.value = 4 * ESPES * (h * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2) + 2 * U * Math.pow(A2 / 2 + e * RN,2) + 2 * b * Math.pow(RN,3) + p * Math.pow(C2,3) + C2 / 4 * Math.pow(A2 - C2,2));
+var IX = parseFloat(form12.ixx.value);
+
+//IY = C2 * ESPES ^ 3 / 3 + 8 * 0.149 * RN * ESPES + ESPES * B2 ^ 3 / 3 + A2 * ESPES ^ 3 / 6 + 4 * C2 * ESPES * (ESPES / 2) ^ 2 + 4 * U * ESPES * (RN + ESPES / 2 - 0.637 * RN) ^ 2 + 4 * B2 * ESPES * (B1 / 2) ^ 2 + 4 * U * ESPES * (B1 - ESPES / 2 - RN + 0.637 * RN) ^ 2 + 2 * A2 * ESPES * (B1 - ESPES / 2) ^ 2
+form13.iyy.value = C2 * Math.pow(ESPES,3) / 3 + 8 * 0.149 * RN * ESPES + ESPES * Math.pow(B2,3) / 3 + A2 * Math.pow(ESPES,3) / 6 + 4 * C2 * ESPES * Math.pow(ESPES / 2,2) + 4 * U * ESPES * Math.pow(RN + ESPES / 2 - 0.637 * RN,2) + 4 * B2 * ESPES * Math.pow(B1 / 2,2) + 4 * U * ESPES * Math.pow(B1 - ESPES / 2 - RN + 0.637 * RN,2) + 2 * A2 * ESPES * Math.pow(B1 - ESPES / 2,2); 
+var IY = parseFloat(form13.iyy.value);
+
+//IP = IX + IY
+form16.ip.value = (IX*1 + IY*1).toFixed(2) || 0.00;
+var IP = parseFloat(form16.ip.value);
+
+//WX = IX / CGY
+form18.wx.value = (IX / CGY).toFixed(2);
+var WX = parseFloat(form18.wx.value);
+
+//FITA = 2 * C2 + 2 * B2 + A2 + 4 * U
+form10.largura_da.value = (2 * C2 + 2 * B2 + A2 + 4 * U).toFixed(2) || 0.00;
+var FITA = parseFloat(form10.largura_da.value);
+
+//AREA1 = 2 * FITA * ESPES
+form19.area_total.value = (2 * FITA * ESPES || 0.00).toFixed(2);
+var AREA01 = form19.area_total.value;
+
+//AREAU = AREA1
 id('area_util').value = id('area_total').value;
+
+//CGX = B1
+form14.cgx.value = B1;
+var CGX = parseFloat(form14.cgx.value);
+
+
+//WY = IY / CGX
+form13.wy.value = (IY / CGX).toFixed(2) || 0.00;
+var WY = parseFloat(form13.wy.value);
+
+//WT = 2 * (AB * 2 * (BB + ESPES / 2) - 4 * CB * ESPES) * ESPES
+form14.wt.value =  2 * (AB * 2 * (BB + ESPES / 2) - 4 * CB * ESPES) * ESPES;
+var WT = parseFloat(form14.wt.value);
+
+//IX1 = (IX / AREA1) ^ 0.5
+form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+var IX1 = form16.ixis.value;
+
+//IY1 = (IY / AREA1) ^ 0.5
+form17.iy.value = Math.pow(IY / AREA01,0.5).toFixed(2) || 0.00;
+var IY1 = form17.iy.value;
+
+//J1 = 2 * (AB * 2 * (BB + ESPES / 2) - 4 * CB * ESPES) ^ 2 * ESPES / FITA
+form12.j.value = 2 * Math.pow(AB * 2 * (BB + ESPES / 2) - 4 * CB * ESPES,2) * ESPES / FITA;
+var J1 = form12.j.value;
+
+//KGM = AREA1 * 0.001 * 7.85
+form04.d_Peso.value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00
+var KGM = form04.d_Peso.value;
+
+
+
+
+
+
+
       var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
       if (re_raiod.test(raiod.value)) {
         raiod.value = raiod.value.replace(re_raiod, "$1$2.00");

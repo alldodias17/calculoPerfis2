@@ -125,7 +125,7 @@ id('dtam_A').value = id('etam_A').value || 0.00;
 id('dtam_B').value = id('etam_B').value || 0.00;
 id('dtam_C').value = id('etam_C').value || 0.00;
 id('tam_DD').value = id('etam_D').value || 0.00;
-id('dtam_D').value = id('etam_E').value || 0.00;
+
 id('espessura_d').value = id('espessura_e').value || 0.00;
 
 
@@ -142,18 +142,18 @@ var h = parseFloat(0.0417);
 var i = parseFloat(1.5);
 
 //RDB2 = RDB1 * ESPES
-var ESPES = parseInt(form06.espessura_d.value);
-var RDB1 = parseInt(form03.raioe.value);
+var ESPES = parseFloat(form06.espessura_d.value);
+var RDB1 = parseFloat(form03.raioe.value);
 form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-var RDB2 = parseInt(form07.raiod.value);
+var RDB2 = parseFloat(form07.raiod.value);
 
 //RN = RDB2 + ESPES / 2
 form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-var RN = parseInt(form08.raio_neutro.value);
+var RN = parseFloat(form08.raio_neutro.value);
 
 //ALTDB = RDB2 + ESPES
 form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-var ALTDB = parseInt(form09.alturadobra.value);
+var ALTDB = parseFloat(form09.alturadobra.value);
 
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
@@ -161,40 +161,40 @@ form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.
 var U = parseFloat(form10.ud.value);
 
 //A2 = A1 - 2 * ALTDB
-var A1 = parseInt(form04.dtam_A.value);
+var A1 = parseFloat(form04.dtam_A.value);
 form09.dtam_a.value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
-var A2 = parseInt(form09.dtam_a.value);
+var A2 = parseFloat(form09.dtam_a.value);
 
 //B2 = B1 - 2 * ALTDB
-var B1 = parseInt(form05.dtam_B.value);
+var B1 = parseFloat(form05.dtam_B.value);
 form09.dtam_b.value = (B1 - 2 * ALTDB).toFixed(2) || 0.00;
-var B2 = parseInt(form09.dtam_b.value);
+var B2 = parseFloat(form09.dtam_b.value);
 
 //C2 = C1 - 2 * ALTDB
 var C1 = form03.etam_C.value
 form10.dtam_c.value = form03.etam_C.value - 2 * ALTDB;
-var C2 = parseInt(form10.dtam_c.value);
+var C2 = parseFloat(form10.dtam_c.value);
 
 //D2 = D1 - ALTDB
 var D1 = form01.etam_D.value;
 form11.dtam_d.value= D1 - ALTDB;
-var D2 = parseInt(form11.dtam_d.value);
+var D2 = parseFloat(form11.dtam_d.value);
 
 //AB = A1 - ESPES
 form05.dtam_a1.value = (A1 - ESPES).toFixed(2) || 0.00;
-var AB = parseInt(form05.dtam_a1.value);
+var AB = parseFloat(form05.dtam_a1.value);
 
 //BB = B1 - ESPES
 form06.dtam_bbarra.value = (B1 - ESPES).toFixed(2) || 0.00;
-var BB = parseInt(form06.dtam_bbarra.value);
+var BB = parseFloat(form06.dtam_bbarra.value);
 
 //CB = C1 - ESPES
-form08.dtam_ccc.value = C1 - ESPES;
-var CB = parseInt(form08.dtam_ccc.value);
+form07.dtam_ccc.value = C1 - ESPES;
+var CB = parseFloat(form07.dtam_ccc.value);
 
 //DB = D1 - ESPES / 2
 form07.dtam_dd.value  = D1 - ESPES / 2;
-var DB = parseInt(form07.dtam_dd.value);
+var DB = parseFloat(form07.dtam_dd.value);
 
 //If C2 < 0 Then C2 = C2 * -1
 if  (C2 < 0){ 
@@ -230,7 +230,7 @@ var CGX = parseFloat(form14.cgx.value);
 
 //CGY = C1 - ESPES + A1 / 2
 form15.cgy.value = C1 - ESPES + A1 / 2;
-var CGY = parseInt(form15.cgy.value);
+var CGY = parseFloat(form15.cgy.value);
 
 //IX = D2 * ESPES ^ 3 / 6 + 6 * 0.149 * RN * ESPES + ESPES * C2 ^ 3 / 6 + B2 * ESPES ^ 3 / 6 + ESPES * A2 ^ 3 / 12 + 2 * D2 * ESPES * (CB + AB / 2) ^ 2 + 2 * U * ESPES * (CB + AB / 2 - RN + 0.637 * RN) ^ 2 + 2 * C2 * ESPES * (AB / 2 + CB / 2) ^ 2 + 2 * U * ESPES * (AB / 2 + RN  - 0.637 * RN) ^ 2 + 2 * B2 * ESPES * (AB / 2) ^ 2 + 2 * U * ESPES * (AB / 2 - RN + 0.637 * RN) ^ 2
 form12.ixx.value = D2 * Math.pow(ESPES,3) / 6 + 6 * 0.149 * RN * ESPES + ESPES * Math.pow(C2,3) / 6 + B2 * Math.pow(ESPES,3) / 6 + ESPES * Math.pow(A2,3) / 12 + 2 * D2 * ESPES * Math.pow(CB + AB / 2,2) + 2 * U * ESPES * Math.pow(CB + AB / 2 - RN + 0.637 * RN,2) + 2 * C2 * ESPES * Math.pow(AB / 2 + CB / 2,2) + 2 * U * ESPES * Math.pow(AB / 2 + RN  - 0.637 * RN,2) + 2 * B2 * ESPES * Math.pow(AB / 2,2) + 2 * U * ESPES * Math.pow(AB / 2 - RN + 0.637 * RN,2);
@@ -487,10 +487,6 @@ var Cw = form16.cw.value;
   if (re_ip.test(ip.value)) {
     ip.value = ip.value.replace(re_ip, "$1$20.00");
   }
-  var re_dtam_D = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_D.test(dtam_D.value)) {
-    dtam_D.value = dtam_D.value.replace(re_dtam_D, "$1$2.00");
-  }
   var re_largura_da = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_largura_da.test(largura_da.value)) {
     largura_da.value = largura_da.value.replace(re_largura_da, "$1$20.00");
@@ -509,15 +505,12 @@ var Cw = form16.cw.value;
   }
   var re_dtam_dd = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_dd.test(dtam_dd.value)) {
-    dtam_dd.value = dtam_dd.value.replace(re_dtam_dd, "$1$20.00");
+    dtam_dd.value = dtam_dd.value.replace(re_dtam_dd, "$1$2.00");
   }
   var re_dtam_ee = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_ee.test(dtam_ee.value)) {
     dtam_ee.value = dtam_ee.value.replace(re_dtam_ee, "$1$20.00");
-  }
-  var re_u2 = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_u2.test(u2.value)) {
-    u2.value = u2.value.replace(re_u2, "$1$20.00");
+  
   }
   var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_u3.test(dtam_u3.value)) {
@@ -601,7 +594,7 @@ var Cw = form16.cw.value;
   }
   var re_dtam_ccc = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_ccc.test(dtam_ccc.value)) {
-    dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$20.00");
+    dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$2.00");
   }
   var re_dtam_zz = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_zz.test(dtam_zz.value)) {

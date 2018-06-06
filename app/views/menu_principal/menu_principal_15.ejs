@@ -21,14 +21,13 @@
       
       <ul class="nav navbar-nav">
         <li><a href="/">Perfis Normais</a></li>
-        <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
-        <li><a href="calc_vigas">Cálc. de Vigas</a></li>
-        <li><a href="menu_prateleiras">Prateleiras</a></li>
-        <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conj.)</a></li>
-        <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Ind.)</a></li>
-        <li><a href="menu_pisos">Pisos</a></li>
-        <li><a href="entrada_laterais">Laterias Novas</a></li>
-        
+        <li><a href="">Barras Comprimidas</a></li>
+        <li><a href="">Cálc. de Vigas</a></li>
+        <li><a href="">Prateleiras</a></li>
+        <li><a href="">Pratelerias Porta-Pallets (Conj.)</a></li>
+        <li><a href="">Pratelerias Porta-Pallets (Ind.)</a></li>
+        <li><a href="">Pisos</a></li>
+        <li><a href="">Laterias Novas</a></li>
     </div>
   </div>
   </nav>
@@ -90,7 +89,7 @@
                       </div>
                       <div class="form-group col-xs-4">
                         <label for="email">Tamanho de D</label>
-                        <input type="text" class="form-control" id="etam_D" font-color="black" style="width:60%;" placeholder="" name="tamanhod" disabled>
+                        <input type="text" class="form-control" id="etam_D" font-color="black" style="width:60%;" placeholder="mm" name="tamanhod">
                       </div>
                       <div class="form-group col-xs-4">
                         <label for="email">Espessura (t)</label>
@@ -121,7 +120,7 @@
                     <form class="form-group" action="/action_page.php" id="form03">
                       <div class="form-group col-xs-4">
                         <label for="email">Tamanho de C</label>
-                        <input type="text" class="form-control" id="etam_C" style="width:60%;"  placeholder="" name="etam_C" disabled>
+                        <input type="text" class="form-control" id="etam_C" style="width:60%;"  placeholder="mm" name="etam_C" >
                       </div>
                       <div class="form-group col-xs-4">
                         <label for="email">Raio da Dobra</label>
@@ -216,7 +215,7 @@
                       
                         <div class="col-xs-2">
                           <label for="ex1">c/</label>
-                          <input name="text" class="form-control" id="dtam_D" type="text" placeholder="0.00" readonly="true">
+                          <input name="text" class="form-control" id="dtam_ccc" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">d/</label>
@@ -282,8 +281,8 @@
                           <input name="text" class="form-control" id="dtam_c" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
-                          <label for="ex2">u2</label>
-                          <input name="text" class="form-control" id="u2" type="text" placeholder="0.00" readonly="true">
+                          <label for="ex2">D</label>
+                          <input name="text" class="form-control" id="tam_DD" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">u</label>
@@ -384,7 +383,7 @@
                       
                         <div class="col-xs-2">
                           <label for="ex1">lz</label>
-                          <input class="form-control" id="lz1" type="text" placeholder="0.00" readonly="true">
+                          <input class="form-control" id="lz" type="text" placeholder="0.00" readonly="true">
                         </div>
                         <div class="col-xs-2">
                           <label for="ex2">Wt</label>

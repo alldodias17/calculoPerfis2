@@ -135,18 +135,18 @@ var h = parseFloat(0.0417);
 var i = parseFloat(1.5);
 
 //RDB2 = RDB1 * ESPES
-var ESPES = parseInt(form06.espessura_d.value);
-var RDB1 = parseInt(form03.raioe.value);
+var ESPES = parseFloat(form06.espessura_d.value);
+var RDB1 = parseFloat(form03.raioe.value);
 form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-var RDB2 = parseInt(form07.raiod.value);
+var RDB2 = parseFloat(form07.raiod.value);
 
 //RN = RDB2 + ESPES / 2
 form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-var RN = parseInt(form08.raio_neutro.value);
+var RN = parseFloat(form08.raio_neutro.value);
 
 //ALTDB = RDB2 + ESPES
 form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-var ALTDB = parseInt(form09.alturadobra.value);
+var ALTDB = parseFloat(form09.alturadobra.value);
 
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
@@ -154,22 +154,22 @@ form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.
 var U = parseFloat(form10.ud.value);
 
 //A2 = A1 - 2 * ALTDB
-var A1 = parseInt(form04.dtam_A.value);
+var A1 = parseFloat(form04.dtam_A.value);
 form09.dtam_a.value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
-var A2 = parseInt(form09.dtam_a.value);
+var A2 = parseFloat(form09.dtam_a.value);
 
 //B2 = B1 - ALTDB
-var B1 = parseInt(form05.dtam_B.value);
+var B1 = parseFloat(form05.dtam_B.value);
 form09.dtam_b.value = (B1 - ALTDB).toFixed(2) || 0.00;
-var B2 = parseInt(form09.dtam_b.value);
+var B2 = parseFloat(form09.dtam_b.value);
 
 //AB = A1 - ESPES
 form05.dtam_a1.value = (A1 - ESPES).toFixed(2) || 0.00;
-var AB = parseInt(form05.dtam_a1.value);
+var AB = parseFloat(form05.dtam_a1.value);
 
 //BB = B1 - ESPES / 2
 form06.dtam_bbarra.value = (B1 - ESPES / 2).toFixed(2) || 0.00;
-var BB = parseInt(form06.dtam_bbarra.value);
+var BB = parseFloat(form06.dtam_bbarra.value);
 
 //FITA = 2 * B2 + 2 * A2 + 3 * U
 form10.largura_da.value = (2 * B2 + 2 * A2 + 3 * U).toFixed(2) || 0.00;
@@ -189,7 +189,7 @@ var XB = parseFloat(form07.dtam_xx.value);
 
 //YB = XB
 form09.dtam_y.value = XB;
-var YB = parseInt(form09.dtam_y.value);
+var YB = parseFloat(form09.dtam_y.value);
 
 //CGX = XB + ESPES / 2
 form14.cgx.value = (XB + ESPES / 2).toFixed(2) || 0.00;
@@ -197,7 +197,7 @@ var CGX = parseFloat(form14.cgx.value);
 
 //CGY = CGX
 form15.cgy.value = CGX;
-var CGY = parseInt(form15.cgy.value);
+var CGY = parseFloat(form15.cgy.value);
 
 //IX = B2 ^ 3 * ESPES / 12 + 3 * 0.149 * RN * ESPES + A2 * ESPES ^ 3 / 12 + ESPES * A2 ^ 3 / 12 + B2 * ESPES ^ 3 / 12 + B2 * ESPES * (YB - B2 / 2 - RN) ^ 2 + 2 * U * ESPES * (YB - RN + 0.637  * RN) ^ 2 + A2 * ESPES * YB ^ 2 + A2 * ESPES * (RN + A2 / 2 - YB) ^ 2 + U * ESPES * (AB - RN + 0.637 * RN - YB) ^ 2 + B2 * ESPES * (AB - YB) ^ 2
 form12.ixx.value = (Math.pow(B2,3) * ESPES / 12 + 3 * b * RN * ESPES + A2 * Math.pow(ESPES,3) / 12 + ESPES * Math.pow(A2,3) / 12 + B2 * Math.pow(ESPES,3) / 12 + B2 * ESPES * Math.pow(YB - B2 / 2 - RN,2) + 2 * U * ESPES * Math.pow(YB - RN + e  * RN,2) + A2 * ESPES * Math.pow(YB,2) + A2 * ESPES * Math.pow(RN + A2 / 2 - YB,2) + U * ESPES * Math.pow(AB - RN + e * RN - YB,2) + B2 * ESPES * Math.pow(AB - YB,2)).toFixed(2) || 0.00;;

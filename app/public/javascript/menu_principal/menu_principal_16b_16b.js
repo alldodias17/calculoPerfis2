@@ -121,99 +121,293 @@ id('dtam_E').value = id('etam_E').value;
 id('espessura_d').value = id('espessura_e').value;
 
 
-var A1 = form04.dtam_A.value;
-var B1 = form05.dtam_B.value;
-var C1 = form06.dtam_C.value;
-var E1 = form08.dtam_E.value;
-var A2 = form09.dtam_a.value; 
-var B2 = form09.dtam_b.value; 
-var C2 = form10.dtam_c.value; 
-var D2 = form11.dtam_d.value; 
-var E2 = form04.dtam_e.value;
-var AB = form05.dtam_a1.value; 
-var BB = form06.dtam_bbarra.value;
-var CB = form07.dtam_D.value;
-var DB = form07.dtam_dd.value;
-var EB = form08.dtam_ee.value;
-var u2 = form10.u2.value;
-var u3 = form11.dtam_d.value;
-var EME  = form04.dtam_m.value;
-var xa = form05.dtam_X.value; 
-var ya = form06.dtam_Y.value; 
-var x = form07.dtam_xx.value;
-var y = form09.dtam_y.value;
-var U = form10.ud.value;
-var KGM = form04.d_Peso.value;
-var SCCG = form05.dtam_distancia.value;
-var IX = form12.ixx.value;
-var IY = form13.iyy.value;
-var lz = form14.lz.value;
-var lv = form15.lv.value;
-var ip = form16.ip.value;
-var lxy = form17.lxy.value;
+
+
+var a = parseFloat(0.363);
+var b = parseFloat(0.149);
+var d = parseFloat(0.358);
+var p = parseFloat(0.0833)
+var z = parseFloat(1.637);
+var c = parseFloat(0.149);
+var e = parseFloat(0.637);
+var f = parseFloat(0.001);
+var g = parseFloat(7.85);
+var h = parseFloat(0.0417);
+var i = parseFloat(3.1416);
+var j = parseFloat(180);
+var l = parseFloat(360);
+      
+//RDB2 = RDB1 * ESPES
 var ESPES = form06.espessura_d.value;
 var RDB1 = form03.raioe.value;
-var RDB2 = form07.raiod.value; 
-var RN = form08.raio_neutro.value;
-var ALTDB = form10.ud.value;
-var FITA = form10.largura_da.value;
-var Wx = form18.wx.value;
-var Wz = form12.wz.value;
-var wy = form13.wy.value;
-var Wt = form14.wt.value;
-var ixis = form16.ixis.value;
-var iy = form17.lxy.value;
-var iz = form18.iz.value;
-var iv = form19.iv.value;
+form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
+var RDB2 = parseFloat(form07.raiod.value);
+
+//RN = RDB2 + ESPES / 2
+form08.raio_neutro.value = (RDB2*1 + ESPES / 2).toFixed(2) || 0.00;
+var RN = parseFloat(form08.raio_neutro.value);
+
+//BB = B1 - ESPES / 2
+form06.dtam_bbarra.value = (form05.dtam_B.value*1 - (form06.espessura_d.value / 2)).toFixed(2) || 0.00;
+var BB = parseFloat(form06.dtam_bbarra.value);
+
+//B2 = BB - RN
+var B1 = form05.dtam_B.value;
+form09.dtam_b.value = (BB - RN).toFixed(2) || 0.00;
+var B2 = parseFloat(form09.dtam_b.value);
+
+//AB = A1 - ESPES
+form05.dtam_a1.value = (form04.dtam_A.value - form06.espessura_d.value).toFixed(2) || 0.00;
+var AB = form05.dtam_a1.value; 
+
+//X = ((B2 - ESPES / 2 - RN) ^ 2 + (AB - 2 * RN) ^ 2) ^ 0.5
+var X;
+X = Math.pow(Math.pow(B2 - ESPES / 2 - RN,2) + Math.pow(AB - 2 * RN,2),0.5);
+
+//Y = (X ^ 2 / 4 - RN ^ 2) ^ 0.5
+var Y;
+Y = Math.pow(Math.pow(X,2) / 4 - Math.pow(RN,2),0.5);
+
+
+//AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN)
+var AUXO;
+AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN);
+
+//parametro = AUX0
+//Indice = 1
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//ALFA1 = Resultado
+var pi = 4 * Math.atan(1);
+parametro = AUX0;
+Resultado = parametro;
+Resultado_01 = Resultado / (pi / j);
+ALFA1 = Resultado_01;
+
+//AUX0 = RN / Y
+//parametro = AUX0
+//Indice = 1
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//ALFA2 = Resultado
+AUX0 = RN / Y;
+parametro = AUX0;
+Resultado_02_2 = parametro;
+Resultado_02 = Resultado_02_2 / (pi / j);
+ALFA2 = Resultado_02;
+
+//alfa = 90 - (ALFA1 + ALFA2)
+//parametro = alfa
+//Indice = 3
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//dblSENO = Resultado
+alfa = 90 - (ALFA1*1 + ALFA2*1);
+parametro_03 = alfa;
+parametro_03_3 = parametro_03 * (pi / j);
+Resultado_03 = Math.sin(parametro_03_3);
+dblSENO = Resultado_03;
+
+//A2 = 2 * Y * dblSENO
+var A1 = parseFloat(form04.dtam_A.value);
+form09.dtam_a.value = 2 * Y * dblSENO;
+var A2 = parseFloat(form09.dtam_a.value);
+
+//AUX1 = 180 - alfa
+AUX1 = 180 - alfa;
+
+//u2 = 3.1416 * RN * AUX1 / 180
+form10.u2.value = 3.1416 * RN * AUX1 / j;
+var u2 = parseFloat(form10.u2.value);
+
+//FITA = 2 * B2 + 2 * Y + 2 * u2
+form10.largura_da.value = (2 * B2 + 2 * Y + 2 * u2).toFixed(2) || 0.00;
+var FITA = parseFloat(form10.largura_da.value);
+
+//KGM = FITA * ESPES * 0.007848
+form04.d_Peso.value = (FITA * ESPES * 0.007848).toFixed(2) || 0.00;
+var KGM = parseFloat(form04.d_Peso.value);
+
+//ALTDB = RN + ESPES / 2
+form09.alturadobra.value = (RN*1 + ESPES / 2).toFixed(2) || 0.00;
+var ALTDB = parseFloat(form09.alturadobra.value);
+
+//CGX = B1 / 2
+form14.cgx.value = B1 / 2;
+var CGX = parseFloat(form14.cgx.value);
+
+//CGY = A1 / 2
+form15.cgy.value = (A1 / 2 || 0.00).toFixed(2);
+var CGY = parseFloat(form15.cgy.value);
+
+//AREA1 = FITA * ESPES
+form19.area_total.value = ( FITA * ESPES || 0.00).toFixed(2);
+var AREA01 = parseFloat(form19.area_total.value);
+
+//AREAU = AREA1
+id('area_util').value = id('area_total').value;
+
+//parametro = AUX1
+//Indice = 3
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//SENO1 = Resultado
+parametro_04 = AUX1;
+parametro_04_4 = parametro_04 * (pi / j);
+Resultado_04 = Math.sin(parametro_04_4);
+SENO1 = Resultado_04;
+
+
+//CA1 = SENO1 * 180 * RN / (AUX1 * 3.1416)
+//parametro = alfa
+//Indice = 2
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//dblCos = Resultado
+CA1 = SENO1 * 180 * RN / (AUX1 * i);
+parametro_05 = alfa;
+parametro_05_5 = parametro_05 * (pi / j);
+Resultado_05 = Math.cos(parametro_05_5);
+dblCos = Resultado_05;
+
+//parametro = AUX1
+//Indice = 2
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//COS1 = Resultado
+parametro_06 = AUX1;
+parametro_06_6 = parametro_06 * (pi / j);
+Resultado_06 = Math.cos(parametro_06_6);
+COS1 = Resultado_06;
+
+//CA2 = ((1 - COS1) / AUX1) * (180 / 3.1416) * RN
+var CA2;
+CA2 = ((1 - COS1) / AUX1) * (j / 3.1416) * RN;
+
+//I1 = (((AUX1 * 3.1416 + SENO1 * COS1 * 180) / 360) - (SENO1 ^ 2 * 180 / (AUX1 * 3.1416))) * RN ^ 3
+var I1;
+I1 = (((AUX1 * i + SENO1 * COS1 * j) / l) - (Math.pow(SENO1,2) * 180 / (AUX1 * 3.1416))) * Math.pow(RN,3);
+
+//IX = 2 * (B2 * ESPES ^ 3 / 12) + ESPES * A2 ^ 2 * 2 * Y / 12 + 2 * I1 * ESPES + 2 * B2 * ESPES * (AB / 2) ^ 2 + u2 * ESPES * (A1 / 2 - ESPES / 2 - RN + CA1) ^ 2 * 2
+form12.ixx.value = 2 * (B2 * Math.pow(ESPES,3) / 12) + ESPES * Math.pow(A2,2) * 2 * parseFloat(Y) / 12 + 2 * parseFloat(I1) * ESPES + 2 * B2 * ESPES * Math.pow(AB / 2,2) + u2 * ESPES * Math.pow(A1 / 2 - ESPES / 2 - RN + CA1,2) * 2;
+var IX = parseFloat(form12.ixx.value);
+
+//I2 = ((AUX1 * 3.1416 - SENO1 * COS1 * 180) / 360 - ((1 - COS1) ^ 2 * 180 / (AUX1 * 3.1416))) * RN ^ 3
+var I2;
+I2 = ((AUX1 * 3.1416 - SENO1 * COS1 * j) / 360 - (Math.pow(1 - COS1,2) * 180 / (AUX1 * 3.1416))) * Math.pow(RN,3);
+
+//IY = 2 * (ESPES * B2 ^ 3 / 12) + ESPES * Y ^ 3 * dblCos ^ 2 / 1.5 + 2 * I2 * ESPES + u2 * ESPES * (B1 / 2 - RN + CA2) ^ 2 * 2 + 2 * ESPES * B2 * (B1 / 2 - B2 / 2) ^ 2
+form13.iyy.value = 2 * (ESPES * Math.pow(B2,3) / 12) + ESPES * Math.pow(Y,3) * Math.pow(dblCos,2) / 1.5 + 2 * I2 * ESPES + u2 * ESPES * Math.pow(B1 / 2 - RN + CA2,2) * 2 + 2 * ESPES * B2 * Math.pow(B1 / 2 - B2 / 2,2);
+var IY = parseFloat(form13.iyy.value);
+
+//IP = IX + IY
+form16.ip.value = (IX + IY).toFixed(2) || 0.00;;
+var IP = parseFloat(form16.ip.value);
+
+//ixy = (2 * B2 * ESPES * (AB / 2) * (B1 / 2 - B2 / 2)) - (2 * Y * ESPES * dblSENO * Y / 2 * dblCos * Y / 2) - (2 * u2 * ESPES * (AB / 2 - CA1) * (B1 / 2 - ESPES / 2 - CA2))
+form17.lxy.value = (2 * B2 * ESPES * (AB / 2) * (B1 / 2 - B2 / 2)) - (2 * Y * ESPES * dblSENO * Y / 2 * dblCos * Y / 2) - (2 * u2 * ESPES * (AB / 2 - CA1) * (B1 / 2 - ESPES / 2 - CA2));
+var ixy = parseFloat(form17.lxy.value);
+
+//AUX2 = -2 * ixy / (IX - IY)
+//parametro = AUX2
+//Indice = 1
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//ATAN1 = Resultado
+AUX2 = -2 * ixy / (IX - IY);
+parametro_07 = AUX2;
+Resultado_07 = Math.atan(parametro_07);
+Resultado_07_7 = Resultado_07 / (pi / j);
+ATAN1 = Resultado_07_7;
+
+//TETA = ATAN1 / 2
+TETA = ATAN1 / 2;
+
+//WX = 2 * IX / A1
+form18.wx.value = 2 * IX / A1;
+var WX = form18.wx.value;
+
+//WY = 2 * IY / B1
+form13.wy.value = 2 * IY / B1;
+var WY = form13.wy.value;
+
+//IV = (IX + IY) / 2 + (((IX - IY) / 2) ^ 2 + ixy * ixy) ^ 0.5
+form15.lv.value = (IX + IY) / 2 + Math.pow(Math.pow((IX - IY) / 2,2) + ixy * ixy,0.5);
+var IV = parseFloat(form15.lv.value);
+
+//iz = (IX + IY) / 2 - (((IX - IY) / 2) ^ 2 + ixy * ixy) ^ 0.5
+iz = (IX*1 + IY*1) / 2 - Math.pow(Math.pow((IX - IY) / 2,2) + ixy * ixy,0.5);
+
+//parametro = TETA
+//Indice = 2
+//rot_trig 'Parametro, Indice
+//'CALL "rot_trig" USING parametro resultado indice
+//COS2 = Resultado
+parametro_08 = TETA;
+parametro_08_8 = parametro_08 * (pi / j);
+Resultado = Math.cos(parametro_08_8);
+
+//WT = (FITA * ESPES ^ 2) / 3
+form14.wt.value =  (FITA * Math.pow(ESPES,2)) / 3;
+var WT = form14.wt.value;
+
+//IX1 = (IX / AREA1) ^ 0.5
+form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+var IX1 = form16.ixis.value;
+
+//IY1 = (IY / AREA1) ^ 0.5
+form17.iy.value = Math.pow(IY / AREA01,0.5);
+var IY1 = form17.iy.value;
+
+//iz1 = (iz / AREA1) ^ 0.5
+iz1 = Math.pow(iz / AREA01,0.5);
+
+//iv1 = (IV / AREA1) ^ 0.5
+iv1 = Math.pow(IV / AREA01,0.5);
+
+//J1 = WT * ESPES
+form12.j.value = WT * ESPES;
 var J1 = form12.j.value;
-var I1 = form13.iii.value;
-var CGX =form14.cgx.value;
-var CGY = form15.cgy.value;
-var Cw = form16.cw.value;
-var BETA = form17.bbb.value;
-var TETA = form18.zer0.value; 
-var AREA1 = form19.area_total.value;
-var AREAU = form20.area_util.value;
 
-form07.raiod.value = RDB1 * ESPES;
-form08.raio_neutro.value = RDB2 + ESPES / 2;
-form10.ud.value = RDB2 + ESPES;
-form10.ud.value = RN * 1.57;
-form09.dtam_a.value  = A1 - (2 * RN + ESPES);
-form09.dtam_b.value = B1 - (RN + ESPES / 2);
-form05.dtam_a1.value = A1 - ESPES;
-form06.dtam_bbarra.value = B1 - ESPES / 2;
-form15.cgy.value = A1 / 2;
-form16.ixis.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2)+ U * Math.pow(A2 / 2 + 0.637 * RN,2) + 0.149 * Math.pow(RN,3));
-form18.wx.value = IX / CGY;
-form10.largura_da.value = 2 * B2 + A2 + 2 * U;
-form19.area_total.value = FITA * ESPES;
-form20.area_util.value = AREA1;
-form04.d_Peso.value = AREA1 * 0.001 * 7.85;
-//XB = 2 * ESPES / AREA1 * (B2 * (B2 / 2 + RN) + U * 0.363 * RN);
-//form17.lxy.value = 2 * ESPES * (B2 * (B2 / 2 + RN) ^ 2 + 0.0833 * B2 ^ 3 + 0.356 * RN ^ 3) - AREA1 * XB ^ 2;
-//form14.cgx.value = XB + ESPES / 2;
-//form13.wy.value = IY / (BB - XB);
-form14.wt.value = FITA * (ESPES ^ 2) / 3;
-form16.ixis.value = (IX / AREA1) ^ 0.5;
-form17.lxy.value = (IY / AREA1) ^ 0.5;
-form04.dtam_m.value = BB * ESPES / (12 * IX) * (3 * BB * AB ^ 2);
-//x0 = -(XB + EME);
-//DIST = -x0;
-//IP = CDbl(Mid(IX, 1, Len(Str(IX)) - 4)) + CDbl(Mid(IY, 1, Len(Str(IY)) - 7)) + AREA1 * (CDbl(Mid(EME, 1, Len(Str(EME)) - 10)) + CDbl(Mid(XB, 1, Len(Str(XB)) - 10))) ^ 2;
-//form12.j.value = ESPES ^ 3 / 3 * FITA;
-form16.cw.value = (ESPES * AB ^ 2 * BB ^ 3) / 12 * ((3 * BB + 2 * AB) / (6 * BB + AB));
-//BETAW = -(0.0833 * ESPES * XB * AB ^ 3 + ESPES * XB ^ 3 * AB);
-//BETAF = ESPES / 2 * ((BB - XB) ^ 4 - XB ^ 4) + (ESPES * AB ^ 2) / 4 * ((BB - XB) ^ 2 - XB ^ 2);
-//J2 = 1 / (2 * IY) * (BETAW + BETAF) + XB + EME;
-  
+//RO1 = AB / 2
+RO1 = AB / 2;
 
+//RO3 = -AB / 2
+RO3 = -AB / 2;
 
+//W1 = RO1 * BB
+W1 = RO1 * BB;
 
+//W3 = W1 + RO3 * BB
+W3 = W1 + RO3 * BB;
 
+//WN0 = (W1 * ESPES * BB + (W1 + W1) * ESPES * AB / dblSENO + (W1 + W3) * ESPES * BB) / (2 * AREA1)
+WN0 = (W1 * ESPES * BB + (W1 + W1) * ESPES * AB / dblSENO + (W1 + W3) * ESPES * BB) / (2 * AREA01);
 
+//WN1 = WN0 - W1
+WN1 = WN0 - W1;
 
+//WN3 = WN0 - W3
+WN3 = WN0 - W3;
 
+//Cw = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * BB + (WN1 * WN1 + WN1 * WN1 + WN1 * WN1) * ESPES * AB / dblSENO + (WN1 * WN1 + WN1 * WN3 + WN3 * WN3) * ESPES * BB) / 3
+form16.cw.value = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * BB + (WN1 * WN1 + WN1 * WN1 + WN1 * WN1) * ESPES * AB / dblSENO + (WN1 * WN1 + WN1 * WN3 + WN3 * WN3) * ESPES * BB) / 3;
+
+//ALFA_AUX = alfa
+//ALFA_AUX1 = alfa - ALFA_AUX
+//ALFA_AUX1 = ALFA_AUX1 * 60
+//TETA_AUX = TETA
+//TETA_AUX1 = TETA - TETA_AUX
+//TETA_AUX1 = TETA_AUX1 * 60
+ALFA_AUX = alfa;
+ALFA_AUX1 = alfa - ALFA_AUX;
+ALFA_AUX1 = ALFA_AUX1 * 60;
+TETA_AUX = TETA = TETA;
+TETA_AUX1 = TETA - TETA_AUX;
+TETA_AUX1 = TETA_AUX1 * 60;
+form18.teta.value = TETA;
+form17.alpha.value = alfa;
+form02.eangulo.value = alfa;
 
 
 

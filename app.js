@@ -91,4 +91,5 @@ var entrada_laterais = require ('./app/routes/menu_entrada_laterais/entrada_late
 
 app.listen(3000, function(){
     console.log("Servidor ON");
+    
 })

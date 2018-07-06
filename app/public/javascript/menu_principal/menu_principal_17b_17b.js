@@ -182,12 +182,12 @@ window.onload = function () {
     var CGY = parseFloat(form15.cgy.value);
 
     //X = ((B2 - ESPES / 2 - RN) ^ 2 + (AB - 2 * RN) ^ 2) ^ 0.5
-    
-
     X = Math.pow(Math.pow(B2 - ESPES / 2 - RN,2) + Math.pow(AB - 2 * RN,2),0.5);
+    parseFloat(X);
 
     //Y = (X ^ 2 / 4 - RN ^ 2) ^ 0.5
     Y = Math.pow(Math.pow(X,2) / 4 - Math.pow(RN,2),0.5);
+    parseFloat(Y);
 
     //AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN)
     //parametro = AUX0
@@ -195,12 +195,14 @@ window.onload = function () {
     //rot_trig 'Parametro, Indice
     //'CALL "rot_trig" USING parametro resultado indice
     //ALFA1 = Resultado
-    AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN);
     pi = 4 * Math.atan(1);
-    parametro_01 = AUX0;
-    Resultado_01 = Math.atan(parametro_01);
-    Resultado_01_1 = parseFloat(Resultado_01) / (parseFloat(pi) / 180);
-    ALFA1 = Resultado_01_1;
+    AUX0 = (B2 - ESPES / 2 - RN) / (AB - 2 * RN);
+    parametro = AUX0;
+    Resultado = Math.atan(parametro);
+    Resultado_01 = Resultado / (pi / 180);
+    ALFA1 = Resultado_01;
+
+
 
     //AUX0 = RN / Y
     //parametro = AUX0
@@ -209,10 +211,10 @@ window.onload = function () {
     //'CALL "rot_trig" USING parametro resultado indice
     //ALFA2 = Resultado
     AUX0 = RN / Y;
-    parametro_02 = AUX0;
-    Resultado_02 = Math.atan(parametro_02);
-    Resultado_02_2 = Resultado_02 / (pi / 180);
-    ALFA2 = Resultado_02_2;
+    parametro = AUX0;
+    Resultado = Math.atan(parametro);
+    Resultado_01 = Resultado / (pi / 180);
+    ALFA2 = Resultado_01;
 
     //alfa = 90 - (ALFA1 + ALFA2)
     alfa = 90 - (ALFA1 + ALFA2);
@@ -234,18 +236,18 @@ window.onload = function () {
     var A2 = parseFloat(form09.dtam_a.value);
 
     //B2 = BB - 2 * RN
-    form09.dtam_b.value = BB - 2 * RN;
+    form09.dtam_b.value = BB - (2 * RN);
     var B2 = parseFloat(form09.dtam_b.value);
 
     //AUX1 = 180 - alfa
     AUX1 = 180 - alfa;
 
     //u2 = 3.1416 * RN * AUX1 / 180
-    u2 = 3.1416 * RN * AUX1 / 180;
+    form10.u2.value = 3.1416 * RN * AUX1 / 180;
+    var u2 = parseFloat(form10.u2.value);
 
     //FITA = 2 * C2 + 2 * B2 + 2 * Y + 2 * U + 2 * u2
     
-
     form10.largura_da.value = (2 * C2 + 2 * B2 + 2 * Y + 2 * U + 2 * u2 + 2).toFixed(2);
     var FITA = parseFloat(form10.largura_da.value);
     
@@ -269,7 +271,7 @@ window.onload = function () {
     parametro_04 = AUX1;
     parametro_04_4 = parametro_04 * (pi / 180);
     Resultado_04 = Math.sin(parametro_04_4);
-    SENO1 = Resultado_04
+    SENO1 = Resultado_04;
 
 
     //CA1 = SENO1 * 180 * RN / (AUX1 * 3.1416)
@@ -329,7 +331,7 @@ window.onload = function () {
     //TETA = ATAN1 / 2
     AUX2 = 2 * ixy / (IX - IY);
     parametro_07 = AUX2;
-    Resultado_07 = Math.atan(parametro_07);
+    Resultado_07 = Math.tan(parametro_07);
     Resultado_07_7 = Resultado_07 / (pi / 180);
     ATAN1 = Resultado_07_7;
     TETA = ATAN1 / 2;

@@ -5,6 +5,7 @@
   "main": "noticias.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "author": "Clodoaldo Dias",
   "license": "ISC",
@@ -19,7 +20,8 @@
     "is-empty": "^1.2.0",
     "jquery": "^3.3.1",
     "jquery-inputmask": "^1.0.1",
-    "nodemon": "^1.14.7"
+    "nodemon": "^1.14.7",
+    "nodewebkit": "^0.11.6"
   },
   "devDependencies": {
     "inputmask": "^3.3.11"

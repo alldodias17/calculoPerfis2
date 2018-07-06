@@ -469,7 +469,7 @@ var Cw = form16.cw.value;
   }
   var re_cgy = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_cgy.test(cgy.value)) {
-    cgy.value = cgy.value.replace(re_cgy, "$1$20.00");
+    cgy.value = cgy.value.replace(re_cgy, "$1$2.00");
   }
   var re_raioe = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_raioe.test(raioe.value)) {

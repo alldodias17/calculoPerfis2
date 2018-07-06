@@ -240,7 +240,9 @@ BETAW = -(parseFloat(0.0833) * (ESPES * form07.dtam_xx.value * Math.pow(form05.d
 BETAF = ESPES / 2 * (Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),4 - Math.pow(form07.dtam_xx.value,4) + ESPES * Math.pow(form05.dtam_a1.value,2) / 4 * (Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),2 - Math.pow(form07.dtam_xx.value,2)));
 BETAL = 2 * form07.dtam_D.value * ESPES * Math.pow(form06.dtam_bbarra.value - form07.dtam_xx.value),3 + 2 / 3 * ESPES * (form06.dtam_bbarra.value - form07.dtam_xx.value) * (Math.pow(form05.dtam_a1.value / 2),3 - Math.pow(form05.dtam_a1.value / 2 - form07.dtam_D.value),3);
 J2 = (1 / (2 * form13.iyy.value) * (BETAW + BETAF + BETAL) - form05.dtam_X.value);
-  //AREAU = AREA1
+ 
+
+//AREAU = AREA1
   id('area_util').value = id('area_total').value;
   var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_raiod.test(raiod.value)) {

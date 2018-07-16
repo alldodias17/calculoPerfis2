@@ -83,6 +83,13 @@ var prateleiras_ind_01 = require ('./app/routes/prateleiras_ind/prateleiras_ind_
 var prateleiras_ind_02 = require ('./app/routes/prateleiras_ind/prateleiras_ind_02')(app);
 var menu_pisos = require ('./app/routes/menu_pisos/menu_pisos')(app);
 var entrada_laterais = require ('./app/routes/menu_entrada_laterais/entrada_laterais')(app);
+var perfis_perfurados = require('./app/routes/perfis_perfurados/perfis_perfurados')(app);
+var perfil_n2 = require  ('./app/routes/perfis_perfurados/perfil_n2')(app);
+var perfil_n3 = require  ('./app/routes/perfis_perfurados/perfil_n3')(app);
+var perfil_n5 = require  ('./app/routes/perfis_perfurados/perfil_n5')(app);
+var perfil_n7 = require  ('./app/routes/perfis_perfurados/perfil_n7')(app);
+var perfil_u3 = require  ('./app/routes/perfis_perfurados/perfil_u3')(app);
+var perfil_u7 = require  ('./app/routes/perfis_perfurados/perfil_u7')(app);
 
 
 

@@ -173,8 +173,6 @@ var U1 = parseFloat(1.57);
 form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.00;
 var U = parseFloat(form10.ud.value);
 
-
-
 //B2 = B1 - ESPES / 2 - RN
 var B1 = parseFloat(form05.dtam_B.value);
 form09.dtam_b.value = (B1 - 2 * ALTDB).toFixed(2) || 0.00;

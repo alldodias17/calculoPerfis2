@@ -90,6 +90,16 @@ var perfil_n5 = require  ('./app/routes/perfis_perfurados/perfil_n5')(app);
 var perfil_n7 = require  ('./app/routes/perfis_perfurados/perfil_n7')(app);
 var perfil_u3 = require  ('./app/routes/perfis_perfurados/perfil_u3')(app);
 var perfil_u7 = require  ('./app/routes/perfis_perfurados/perfil_u7')(app);
+var ppla = require ('./app/routes/perfis_perfurados/ppla')(app);
+var ppln = require ('./app/routes/perfis_perfurados/ppln')(app);
+var ppna = require ('./app/routes/perfis_perfurados/ppna')(app);
+var ppnn = require ('./app/routes/perfis_perfurados/ppnn')(app);
+var pppa = require ('./app/routes/perfis_perfurados/pppa')(app);
+var pppn = require ('./app/routes/perfis_perfurados/pppn')(app);
+var N41 =  require ('./app/routes/perfis_perfurados/N41')(app);
+var N42 =  require ('./app/routes/perfis_perfurados/N42')(app);
+var S41 =  require ('./app/routes/perfis_perfurados/S41')(app);
+var S42 =  require ('./app/routes/perfis_perfurados/S42')(app);
 
 
 

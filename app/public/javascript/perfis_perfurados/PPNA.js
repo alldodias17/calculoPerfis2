@@ -46,26 +46,7 @@ function validar() {
   if (re_etam_C.test(etam_C.value)) {
   etam_C.value = etam_C.value.replace(re_etam_C, "$1$2,00");
  
-  }
-  var form01 = document.getElementById("form01");
-  var etam_D = form01.etam_D;
-  var re_etam_D= /^([0-9]{0,3})([0-9]{0,3})$/;
-  if (re_etam_D.test(etam_D.value)) {
-    etam_D.value = etam_D.value.replace(re_etam_D, "$1$2,00");
-     }
-  var form02 = document.getElementById("form02");
-  var etam_E = form02.etam_E;
-  var re_etam_E= /^([0-9]{0,3})([0-9]{0,3})$/;
-  if (re_etam_E.test(etam_E.value)) {
-    etam_E.value = etam_E.value.replace(re_etam_E, "$1$2,00");
- 
-  }
-
-  var form03 = document.getElementById("form03");
-  var raioe = form03.raioe;
-  var re_raioe = /^([0-9]{0,3})([0-9]{0,3})$/;
-  if (re_raioe.test(raioe.value)) {
-    raioe.value = raioe.value.replace(re_raioe, "$1$2,00");
+      
   }
   var form01 = document.getElementById("form01");
   var espessura_e = form01.espessura_e;
@@ -151,6 +132,7 @@ var g = parseFloat(7.85);
 var h = parseFloat(0.0417);
 var i = parseFloat(1.5);
 var pi = parseFloat(3.14);
+var l  = parseFloat(13.5);
 
 //A1 = 100
 form04.dtam_A.value = (100.00).toFixed(2);
@@ -163,10 +145,11 @@ var C1 = form03.etam_C.value;
 
 //RDB2 = 1.5 * ESPES
 var ESPES = parseFloat(form06.espessura_d.value);
-form06.espessura_d.value = (2.00).toFixed(2);
-form01.espessura_e.value = (2.00).toFixed(2);
+var ESPES_1 = parseFloat(form01.espessura_e.value);
+form06.espessura_d.value = form01.espessura_e.value;
+
 var RDB1 = parseFloat(form03.raioe.value);
-form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
+form07.raiod.value = 1.5 * ESPES || 0.00;
 var RDB2 = parseFloat(form07.raiod.value);
 
 
@@ -185,7 +168,7 @@ var U = parseFloat(form10.ud.value);
 
 //A2 = 100 - 2 * ALTDB
 var A1 = parseFloat(form04.dtam_A.value);
-form09.dtam_a.value = (100*1 - (2 * form08.raio_neutro.value + form06.espessura_d.value*1)).toFixed(2) || 0.00;
+form09.dtam_a.value = (100*1 - (2 * ALTDB)).toFixed(2) || 0.00;
 var A2 = parseFloat(form09.dtam_a.value);
 
 //AB = 100 - ESPES
@@ -194,6 +177,7 @@ var AB = parseFloat(form04.dtam_a1.value);
 
 //C2 = 25 - ALTDB
 var C1 = form03.etam_C.value
+form06.dtam_C.value = form03.etam_C.value;
 form10.dtam_c.value = 25 - ALTDB;
 var C2 = form10.dtam_c.value;
 
@@ -210,15 +194,14 @@ form19.area_total.value = (240 * ESPES).toFixed(2);
 var AREA01 = form19.area_total.value;
 
 //AREAU = AREA1 - 7 * 9 * ESPES
-form19.area_total.value = AREA01 - 7 * 9 * ESPES;
-var AREAU = form19.area_total.value;
+form20.area_util.value = AREA01 - 7 * 9 * ESPES;
+var AREAU = form20.area_util.value;
 
 //KGM = AREA1 * 0.001 * 7.85
 form04.d_Peso.value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
 var KGM = form04.d_Peso.value;
 
 //B2 = (240 - 2 * C2 - A2 - 4 * U) / 2
-
 form09.dtam_b.value = (240 - 2 * C2 - A2 - 4 * U) / 2;
 var B2 = parseFloat(form09.dtam_b.value);
 
@@ -226,15 +209,116 @@ var B2 = parseFloat(form09.dtam_b.value);
 form04.dtam_B.value = B2 + 2 * ALTDB;
 var B1 = parseFloat(form04.dtam_B.value);
 
+
+if(form01.espessura_e.value == 1.52){
+  form04.dtam_B.value = 50.65;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 42.08;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 454506.61;
+  form16.cw.value = 241431175.46;
+}
+if(form01.espessura_e.value == 1.70){
+  form04.dtam_B.value = 51.32;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 41.73;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 507087.60;
+  form16.cw.value = 273961456.51;
+}
+if(form01.espessura_e.value == 1.80){
+  form04.dtam_B.value = 51.69;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 41.54;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 536178.84;
+  form16.cw.value = 292406703.14;
+}
+if(form01.espessura_e.value == 2.00){
+  form04.dtam_B.value = 52.44;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 41.16;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 594099.55;
+  form16.cw.value = 330104789.28;
+}
+if(form01.espessura_e.value == 2.25){
+  form04.dtam_B.value = 54.85;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 40.68;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 6661001.70;
+  form16.cw.value = 378761325.77;
+}
+if(form01.espessura_e.value == 2.65){
+  form04.dtam_B.value = 54.85;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 39.91;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 779864.63;
+  form16.cw.value = 460233021.41;
+}
+if(form01.espessura_e.value == 3.00){
+  form04.dtam_B.value = 56.16;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 39.24;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 878270.42;
+  form16.cw.value = 535276085.46;
+}
+if(form01.espessura_e.value == 3.35){
+  form04.dtam_B.value = 57.46;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 38.56;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 975501.09;
+  form16.cw.value = 613936280.43;
+}
+if(form01.espessura_e.value == 3.75){
+  form04.dtam_B.value = 58.95
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 37.80;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 1085144.22;
+  form16.cw.value = 708414026.18;
+}
+if(form01.espessura_e.value == 4.25){
+  form04.dtam_B.value = 60.81;
+  form02.etam_B.value = form04.dtam_B.value;
+  form01.etam_D.value = 36.84;
+  form08.dtam_D.value = form01.etam_D.value;
+  form12.ixx.value = 1219917.67;
+  form16.cw.value = 833664581.37;
+}
+if (form01.espessura_e.value == 1.52 || form01.espessura_e.value == 1.70 || form01.espessura_e.value == 1.80 || form01.espessura_e.value == 2.00 
+  || form01.espessura_e.value == 2.25 || form01.espessura_e.value == 2.65 || form01.espessura_e.value == 3.00 || form01.espessura_e.value == 3.35 || form01.espessura_e.value == 3.75 || form01.espessura_e.value == 4.25 ) {
+  console.log("válido");
+} 
+else{
+  alert("Valores Válidos: 1.52, 1.70, 1.80, 2.00, 2.25, 2.65, 3.00, 3.35, 3.75, 4.25");
+  form01.espessura_e.value = (0.00).toFixed(2);
+  form01.etam_A.value = (0.00).toFixed(2);
+  form01.etam_A.value = (0.00).toFixed(2);
+  form02.etam_B.value = (0.00).toFixed(2);
+  form.etam_C.value = (0.00).toFixed(2);
+  form01.etam_D.value = (0.00).toFixed(2);
+  form08.dtam_D.value = (0.00).toFixed(2);
+  form03.etam_C.value = (0.00).toFixed(2);
+  }
+
+  
+
+
+
 //BB = B1 - ESPES
-form06.dtam_bbarra.value = (B1 - ESPES).toFixed(2) || 0.00;
+form06.dtam_bbarra.value = B1 - ESPES;
 var BB = parseFloat(form06.dtam_bbarra.value);
 
 //EFE = (B1 - 9) / 2
 EFE = (B1 - 9) / 2;
 
 //XB = ESPES * (2 * C2 * BB + 2 * U * (BB - RN + 0.637 * RN) + 2 * B2 * (B2 / 2 + RN) + 2 * U * (RN - 0.637 * RN) - 2 * 9 * BB - 2 * 9 * (EFE - ESPES / 2 + 4.5)) / AREAU
-form07.dtam_xx.value = ESPES * (2 * C2 * BB + 2 * U * (BB - RN + 0.637 * RN) + 2 * B2 * (B2 / 2 + RN) + 2 * U * (RN - 0.637 * RN) - 2 * 9 * BB - 2 * 9 * (EFE - ESPES / 2 + 4.5)) / AREAU;
+form07.dtam_xx.value = (ESPES * (2 * C2 * BB + 2 * U * (BB - RN + 0.637 * RN) + 2 * B2 * (B2 / 2 + RN) + 2 * U * (RN - 0.637 * RN) - 2 * 9 * BB - 2 * 9 * (EFE - ESPES / 2 + 4.5)) / AREAU).toFixed(2);
 var XB = parseFloat(form07.dtam_xx.value);
 
 //YB = AB / 2
@@ -250,8 +334,7 @@ form15.cgy.value = (50).toFixed(2);
 var CGY = parseFloat(form15.cgy.value);
 
 //IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + 2 * U * (A2 / 2 + 0.637 * RN) ^ 2 + 2 * 0.149 * RN ^ 3 + (0.0833 * C2 ^ 3 + C2 / 4 * (A2 - C2) ^ 2)) - 5 * ESPES * 9 ^ 3 / 12 - 2 * 9 * ESPES ^ 3 / 12 - 2 * 9 * ESPES * (50 - 13.5) ^ 2 - 2 * 9 * ESPES * YB ^ 2 - 2 * 9 * ESPES * 20 ^ 2
-form12.ixx.value = 2 * ESPES * (0.0417 * Math.pow(A2,3) + B2 * Math.pow(A2 / 2 + RN,2) + 2 * U * Math.pow(A2 / 2 + 0.637 * RN,2) + 2 * 0.149 * Math.pow(RN,3) + (0.0833 * Math.pow(C2,3) + C2 / 4 * Math.pow(A2 - C2,2)) - 5 * ESPES * Math.pow(9,3) / 12 - 2 * 9 * Math.pow(ESPES,3) / 12 - 2 * 9 * ESPES * Math.pow(50 - 13.5,2) - 2 * 9 * ESPES * Math.pow(YB,2) - 2 * 9 * ESPES * Math.pow(20,2));
-var IX = parseFloat(form12.ixx.value);
+var IX = form12.ixx.value;
 
 //WX = IX / 50
 form18.wx.value = (IX / 50).toFixed(2);
@@ -270,16 +353,18 @@ form14.wt.value =  (177 * Math.pow(ESPES,2) / 3).toFixed(2) || 0.00;
 var WT = parseFloat(form14.wt.value);
 
 //IX1 = (IX / AREAU) ^ 0.5
-form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+form16.ixis.value = Math.pow(IX / AREAU,0.5).toFixed(2) || 0.00;
 var IX1 = parseFloat(form16.ixis.value);
 
 //IY1 = (IY / AREAU) ^ 0.5
-form17.iy.value = Math.pow(IY / AREA01,0.5);
+form17.iy.value = Math.pow(IY / AREAU,0.5);
 var IY1 = parseFloat(form17.iy.value);
 
 //J1 = WT * ESPES
 form12.j.value =  WT * ESPES;
 var J1 = parseFloat(form12.j.value);
+
+form11.dtam_d.value = form08.dtam_D.value - 5;
 
 //W1 = (CB - 9) * (BB - XB)
 W1 = (CB - 9) * (BB - XB);
@@ -300,45 +385,50 @@ W5 = W4 + (CB - 9) * (BB - XB);
 RO1 = YB - CB;
 
 //RO3 = -YB
-RO3 = -YB;
+RO3 = Math.abs(YB);
 
 //RO5 = -RO1
-RO5 = -RO1;
+RO5 = Math.abs(RO1);
 
 //JWY = (W1 * YB * (CB - 9) + (W1 * YB + W2 * YB) * (BB - 9) + (W2 * YB + W3 * RO3) * (AB - 27) + (W3 * RO3 + W4 * RO3) * (BB - 9) + (W4 * RO3 + W5 * RO5) * (CB - 9)) * ESPES / 3 + (W1 * RO1 * (CB - 9) + (W1 * YB + W2 * YB) * (BB - 9) + (W2 * RO3 + W3 * YB) * (AB - 27) + (W3 * RO3 +  W4 * RO3) * (BB - 9) + (W4 * RO5 + W5 * RO3) *  (CB - 9)) * ESPES / 6
 JWY = (W1 * YB * (CB - 9) + (W1 * YB + W2 * YB) * (BB - 9) + (W2 * YB + W3 * RO3) * (AB - 27) + (W3 * RO3 + W4 * RO3) * (BB - 9) + (W4 * RO3 + W5 * RO5) * (CB - 9)) * ESPES / 3 + (W1 * RO1 * (CB - 9) + (W1 * YB + W2 * YB) * (BB - 9) + (W2 * RO3 + W3 * YB) * (AB - 27) + (W3 * RO3 +  W4 * RO3) * (BB - 9) + (W4 * RO5 + W5 * RO3) *  (CB - 9)) * ESPES / 6;
 
 //x0 = JWY / IX
-form05.dtam_X.value = JWY / IX
-var x0 = form05.dtam_X.value;
+form04.dtam_X.value = (JWY / IX).toFixed(2);
+var x0 = form04.dtam_X.value;
 
 //If x0 < 0 Then x0 = -x0
 if(x0 < 0){
-  form05.dtam_X.value = -x0;
+  form04.dtam_X.value = Math.abs(x0);
 }
 
+
+
 //DIST = x0
-form05.dtam_distancia.value = x0;
-var DIST = parseFloat(form05.dtam_distancia.value);
+form04.dtam_distancia.value = form04.dtam_X.value;
+var DIST = parseFloat(form04.dtam_distancia.value);
 
 //IP = IX + IY + AREAU * DIST ^ 2
-form16.ip.value = IX + IY + AREA01 * DIST * DIST;
+form16.ip.value = IX*1 + IY*1 + AREAU*1 * (DIST * DIST);
 var IP = parseFloat(form16.ip.value);
 
 //W1 = (CB - 9) * (BB - XB + x0)
-W1 = (CB - 9) * (BB - XB + x0);
+W1 = (CB*1 - 9) * (BB*1 - XB*1 + form04.dtam_X.value*1);
 
 //W2 = W1 + (BB - 9) * YB
 W2 = W1 + (BB - 9) * YB;
 
 //W3 = W2 - (AB - 27) * (x0 - XB)
-W3 = W2 - (AB - 27) * (x0 - XB);
+W3 = W2 - (AB - 27) * (form04.dtam_X.value - XB);
 
 //W4 = W3 + (BB - 9) * YB
 W4 = W3 + (BB - 9) * YB;
 
 //W5 = W4 + (CB - 9) * (BB - XB + x0)
-W5 = W4 + (CB - 9) * (BB - XB + x0);
+var w501 = CB - 9;
+var w502 = (BB - XB + x0).toFixed(2);
+var w503 = w501 * w502;
+W5 = (W4 + w503);
 
 //WN0 = ESPES / (2 * AREAU) * (W1 * (CB - 9) + (W1 + W2) * (BB - 9) + (W2 + W3) * (AB - 27) + (W3 + W4) * (BB - 9) + (W4 + W5) * (CB - 9))
 WN0 = ESPES / (2 * AREAU) * (W1 * (CB - 9) + (W1 + W2) * (BB - 9) + (W2 + W3) * (AB - 27) + (W3 + W4) * (BB - 9) + (W4 + W5) * (CB - 9));
@@ -359,7 +449,7 @@ WN4 = WN0 - W4;
 WN5 = WN0 - W5;
 
 //Cw = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * (CB - 9) + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * (BB - 9) + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * (AB - 27)  + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * (BB - 9)  + (WN4 * WN4 + WN4 * WN5 + WN5 * WN5) * (CB - 9))  * ESPES / 3
-form16.cw.value = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * (CB - 9) + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * (BB - 9) + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * (AB - 27)  + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * (BB - 9)  + (WN4 * WN4 + WN4 * WN5 + WN5 * WN5) * (CB - 9))  * ESPES / 3;
+//form16.cw.value = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * (CB - 9) + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * (BB - 9) + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * (AB - 27)  + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * (BB - 9)  + (WN4 * WN4 + WN4 * WN5 + WN5 * WN5) * (CB - 9))  * ESPES / 3;
 
 
 

@@ -7,7 +7,7 @@ window.onload = function () {
     $("#AuxComp1").focus(function () {
       $(this).css("background-color", "#F0F8FF");
     });
-    $("#AuxCargP").focus(function () {
+    $("#AuxCargQ").focus(function () {
       $(this).css("background-color", "#F0F8FF");
     });
     $("#AuxTenes").blur(function () {
@@ -23,11 +23,11 @@ window.onload = function () {
         AuxComp1.value = AuxComp1.value.replace(re_AuxComp1, "$1$2,00");
       
       }
-      var form01 = document.getElementById("form01");
-      var AuxCargP = form01.AuxCargP;
-      var re_AuxCargP = /^([0-9]{0,3})([0-9]{0,3})$/;
-      if (re_AuxCargP.test(AuxCargP.value)) {
-        AuxCargP.value = AuxCargP.value.replace(re_AuxCargP, "$1$2,00");
+      var form03 = document.getElementById("form03");
+      var AuxCargQ = form03.AuxCargQ;
+      var re_AuxCargQ = /^([0-9]{0,3})([0-9]{0,3})$/;
+      if (re_AuxCargQ.test(AuxCargQ.value)) {
+        AuxCargQ.value = AuxCargQ.value.replace(re_AuxCargQ, "$1$2,00");
       
       }
       var form03 = document.getElementById("form03");
@@ -37,6 +37,7 @@ window.onload = function () {
         AuxTenes.value = AuxTenes.value.replace(re_AuxTenes, "$1$2,00");
       
       }
+      
   
     
   
@@ -44,12 +45,13 @@ window.onload = function () {
     var str = document.getElementById("AuxComp1").value;
     var res = str.replace(",", ".");
     document.getElementById("AuxComp1").value = res;
-    var str = document.getElementById("AuxCargP").value;
+    var str = document.getElementById("AuxCargQ").value;
     var res = str.replace(",", ".");
-    document.getElementById("AuxCargP").value = res;
+    document.getElementById("AuxCargQ").value = res;
     var str = document.getElementById("AuxTenes").value;
     var res = str.replace(",", ".");
     document.getElementById("AuxTenes").value = res;
+    
     
   }
   
@@ -69,27 +71,28 @@ window.onload = function () {
     var a = parseFloat(0.6);
     var b = parseFloat(0.4);
     
-    //Aux_m = CDbl(AuxCargP.Value) * CDbl(AuxComp1.Value)
-    var AuxCargP = parseFloat(form01.AuxCargP.value);
-    var AuxComp1 = parseFloat(form01.AuxComp1.value);
-    form02.txtMomento.value = (AuxCargP * AuxComp1).toFixed(2);
-    var txtMomento = parseFloat(form02.txtMomento.value);
-    
-    
-    //Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
-    var txtMomento = parseFloat(form02.txtMomento.value);
-    var AuxTenes = parseFloat(form03.AuxTenes.value);
-    form03.txtWx.value = (txtMomento / (AuxTenes * 0.6)).toFixed(2);
-    var txtWx = parseFloat(form03.txtWx.value);
-    
-    
-    //Aux_Ix = (AuxCargP.Value * AuxComp1.Value ^ 2) / 315
-    form03.txtIx.value = (AuxCargP * AuxComp1**2) / 315;
-    var txtIx = parseFloat(form03.txtIx.value);
-    
-    //Aux_Fc = AuxCargP.Value / AuxTenes.Value / 0.4
-     form04.xtAreaFC.value =   (AuxCargP / AuxTenes / b).toFixed(2);
-     var xtAreaFC = parseFloat(form04.xtAreaFC.value);    
+
+//AUXPESO = AuxCargQ.Value / AuxComp1.Value
+var AuxCargQ = parseFloat(form03.AuxCargQ.value);
+var AuxComp1 = parseFloat(form01.AuxComp1.value);
+AUXPESO = AuxCargQ / AuxComp1;
+
+//Aux_m = AUXPESO * AuxComp1.Value ^ 2 / 8
+form02.txtMomento.value = AUXPESO * AuxComp1**2 / 8;
+var txtMomento = parseFloat(form02.txtMomento.value);
+
+//Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
+var AuxTenes = parseFloat(form03.AuxTenes.value);
+form03.txtWx.value = (txtMomento / (AuxTenes * 0.6)).toFixed(2);
+var txtWx = parseFloat(form03.txtWx.value);
+
+//Aux_Ix = (AuxComp1.Value ^ 3 * AUXPESO * 5) / 40320
+form03.txtIx.value = (AuxComp1.Value ^ 3 * AUXPESO * 5) / 40320;
+var txtIx = parseFloat(form03.txtIx.value);
+
+//Aux_Fc = (AUXPESO * AuxComp1.Value / 2) / AuxTenes.Value / 0.4
+form04.xtAreaFC.value =   (AUXPESO * AuxComp1 / 2) / AuxTenes / b;
+var xtAreaFC = parseFloat(form04.xtAreaFC.value);    
         
           
           window.onload = function () {

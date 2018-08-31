@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <script src="//code.jquery.com/jquery.min.js"></script>
-  <script src="javascript/menu_principal/menu_principal_01_1.js"></script>
+  <script src="javascript/barras_comprimidas/barras_comprimidas.js"></script>
   
 
 
@@ -23,7 +23,7 @@
       
     </div>
     <ul class="nav navbar-nav">
-      
+              
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/">Perfis Normais</a></li>
@@ -32,12 +32,12 @@
         </ul>
       </li>
       <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
-            <li><a href="">Cálculo de Vigas</a></li>
-            <li><a href="">Prateleiras</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Conjunto)</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Individual)</a></li>
-            <li><a href="">Pisos</a></li>
-            <li><a href="">Laterias Novas</a></li>
+            <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Laterias Novas</a></li>
     </ul>
     
 </nav>
@@ -114,19 +114,19 @@
           
           
             <br>
-            <form action="/action_page.php">
+            <form name="form01" action="/action_page.php">
             
               <div class="form-group col-xs-2">
-                <label for="email">Espessura (t)</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Espessura (t)</label>
+                <input type="text" class="form-control" id="espess" placeholder="mm" name="espess">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">St. Venan</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">St. Venan</label>
+                <input type="text" class="form-control" id="stvenan" placeholder="mm" name="stvenan" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="email">Rx</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Rx</label>
+                <input type="text" class="form-control" id="rx" placeholder="mm" name="rx" readonly="true">
               </div>
               
                   
@@ -134,81 +134,82 @@
              
               </form>
               
-              <form action="/action_page.php">
+              <form name="form02" action="/action_page.php">
               <div class="form-group col-xs-2">
-                <label for="email">Cw</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Cw</label>
+                <input type="text" class="form-control" id="cw" placeholder="mm" name="cw" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">Ry</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">Ry</label>
+                <input type="text" class="form-control" id="ry" placeholder="mm" name="ry" readonly="true">
               </div>
               <div class="form-group col-xs-2">
                 <label for="email">X0</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <input type="email" class="form-control" id="x0" placeholder="mm" name="x0" readonly="true">
               </div>
 
               
               
               </form>
               
-              <form action="/action_page.php">
+              <form name="form03" action="/action_page.php">
               <div class="form-group col-xs-2">
-                <label for="email">Área Efetiva</label>
-                <input type="email" class="form-control" id="email" placeholder="mml" name="email">
+                <label for="text">Área Efetiva</label>
+                <input type="text" class="form-control" id="areaefetiva" placeholder="mm" name="areaefetiva" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">Fy</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">Fy</label>
+                <input type="text" class="form-control" id="fy" placeholder="mm" name="fy" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="email">Lt</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Lt</label>
+                <input type="text" class="form-control" id="lt" placeholder="mm" name="lt" readonly="true">
               </div>
               </form>
-              <form action="/action_page.php">
+
+              <form name="form04" action="/action_page.php">
               <div class="form-group col-xs-2">
-                <label for="email">Kt</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Kt</label>
+                <input type="text" class="form-control" id="kt" placeholder="mm" name="kt" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">Ly</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">Ly</label>
+                <input type="text" class="form-control" id="ly" placeholder="mm" name="ly" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="email">Ky</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Ky</label>
+                <input type="text" class="form-control" id="ky" placeholder="mm" name="ky" readonly="true">
               </div>
               </form>
 
 
               
-              <form action="/action_page.php">
+              <form name="form05" action="/action_page.php">
               <div class="form-group col-xs-2">
-                <label for="email">Lx</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Ix</label>
+                <input type="text" class="form-control" id="ix" placeholder="mm" name="ix" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">Kx</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">Kx</label>
+                <input type="text" class="form-control" id="kx" placeholder="mm" name="kx" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="email">W</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">W</label>
+                <input type="text" class="form-control" id="w" placeholder="mm" name="w" readonly="true">
               </div>
               </form>
-              <form action="/action_page.php">
+              <form  name="form06" action="/action_page.php">
               <div class="form-group col-xs-2">
-                <label for="email">Área Total</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">Área Total</label>
+                <input type="text" class="form-control" id="areatotal" placeholder="mm" name="areatotal" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="pwd">(l) Profundidade</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                <label for="text">(l) Profundidade</label>
+                <input type="text" class="form-control" id="profundidade" placeholder="mm" name="profundidade" readonly="true">
               </div>
               <div class="form-group col-xs-2">
-                <label for="email">(h) Altura</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                <label for="text">(h) Altura</label>
+                <input type="text" class="form-control" id="altura" placeholder="mm" name="altura" readonly="true">
               </div>
             </form>
             

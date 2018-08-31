@@ -4,34 +4,71 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shhrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <link href="node_modules\bootstrap\dist\css\bootstrap.css" rel="stylesheet">
-    <link href="node_modules\bootstrap\dist\css\bootstrap-theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
-    rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
-    rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script src="jquery/jquery.min.js"></script> 
+    <script src="javascript/menu_principal/menu_principal_02_2.js"></script>
+  
+  
   </head>
     
 
   </head>
   <body>
-
+    <nav class="navbar navbar-inverse">
+      <a class="navbar-brand" href="#">
+          <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
+        </a>
+      <div class="container">
+        <div class="navbar-header">
+          
+        </div>
+        <ul class="nav navbar-nav">
+                
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/">Perfis Normais</a></li>
+              <li><a href="/perfis_perfurados">Perfis Perfurados</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+                <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+                <li><a href="menu_prateleiras">Prateleiras</a></li>
+                <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+                <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+                <li><a href="menu_pisos">Pisos</a></li>
+                <li><a href="entrada_laterais">Laterias Novas</a></li>
+        </ul>
+        
+    </nav>
+    
+    
+      
+     
+      
+     <fieldset>
+      <legend><center></center></legend>
+      <hr>
+      <hr>
+      
+      <hr>
+      <hr>
+      <hr>
       
       <div class"container-fluid">
           
 
-                  <div class="section">
-                  <div class="container">
-                    <div class="row">
-                        <img src="imagens\menu_prateleiras_Prat0R_1F.jpg" style="width:40%" class="center-block img-responsive img-rounded">
-                      <ul class="pager"></ul>
-                    </div> 
+        <div class="container">
+          <div class="row">
+      
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="thumbnail01">
+                    <img src="imagens\menu_prateleiras_Prat0R_1F.bmp" style="width:50%" class="center-block img-responsive img-rounded">
+                    
+                  </div>
     
                     <div class="well">
                     <ul class="nav nav-tabs">
@@ -149,19 +186,24 @@
                                    </form>
                                    </div> 
                                    <br>
-                                  <a href="file:///C:/Users/clodoaldo.dias/git/perfisCalc/calc_vigas/calc_Vigas.html"> <button type="button" class="btn btn-voltar" style="width: 100px">Voltar</button></a>
-                                   <a href="C:\Users\clodoaldo.dias\git\perfisCalc\index_calc_vigas\P01.html"><button type="button" class="btn btn-cancela"  style="width: 100px">Cancelar</button></a>
+                                   <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
+                    
+                    
+
+                                   <a href="/">
+                                     <button type="button" class="btn btn-primary" style="width: 100px; ">Voltar</button>
+                                   </a>
+                                 </p>
                                   
-                                   <br>
-                                   <br>
+                                   
                                    
                             </div>
                             </div>
                           </div>
                         
                         <div id="dimensoes" class="tab-pane fade">
-                            <div class="container-fluid">
-                                <div class="well">
+                            <div class="container">
+                                
                           
                             
                             
@@ -268,7 +310,7 @@
                             </div>
 
 
-                          </div>
+                         
 
 
 
@@ -277,7 +319,7 @@
                         <div id="propriedades_geometricas" class="tab-pane fade">
                             
                           <div class="container-fluid">
-                            <div class="well">
+                            
                                   
                                   <form action="/action_page.php">
                                     <div class="form-group col-xs-5">
@@ -351,16 +393,16 @@
                                       
                                 </p>                                                 
                                 
-                                <div class="container-fluid">
+                                
                                 <br>
-                                <a href="guardadorrebanhos.html"><button type="button" class="btn btn-danger" style="width: 100px">Cancela</button> 
-                                </a>
-                               
-  
-    <button type="button" class="btn btn-default" style="width: 100px">
-        <span class="glyphicon glyphicon-print"></span>Imprimir</button>  
+                                
                         </div>
-                        
+                        <a href="guardadorrebanhos.html"><button type="button" class="btn btn-danger" style="width: 100px">Cancela</button> 
+                        </a>
+                       
+
+<button type="button" class="btn btn-default" style="width: 100px">
+<span class="glyphicon glyphicon-print"></span>Imprimir</button>  
                       </div>
                     </div>
         
@@ -382,20 +424,14 @@
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="../../assets/js/docs.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-          <script src="../../dist/js/bootstrap.min.js"></script>
-          <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-          <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
         </body>
       </html>

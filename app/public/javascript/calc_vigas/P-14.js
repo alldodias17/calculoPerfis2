@@ -68,7 +68,31 @@ window.onload = function () {
       document.getElementById("AuxCargQ").value = res;     
 
 
-var a = parseFloat(0.6);
+
+  
+    
+    
+  }
+  
+  function SomenteNumero(e) {
+    var tecla = (window.event) ? event.keyCode : e.which;
+    if ((tecla > 43 && tecla < 58)) return true;
+    else {
+      if (tecla == 8 || tecla == 0) return true;
+      else return false;
+    }    
+  }
+  function id(el) {
+    return document.getElementById(el);
+  }
+  function soma() {
+  
+    var a = parseFloat(0.6);
+    var b = parseFloat(0.4);
+    var c = parseFloat(133.47);
+    var d = parseFloat(4.5);
+    var e = parseFloat(2.5);
+    var a = parseFloat(0.6);
 var b = parseFloat(0.4);
 var c = parseFloat(133.47);
 var d = parseFloat(4.5);
@@ -188,30 +212,6 @@ if(AUX_IX3 > Aux_Ix){
 
 }  
   
-  
-    
-    
-  }
-  
-  function SomenteNumero(e) {
-    var tecla = (window.event) ? event.keyCode : e.which;
-    if ((tecla > 43 && tecla < 58)) return true;
-    else {
-      if (tecla == 8 || tecla == 0) return true;
-      else return false;
-    }    
-  }
-  function id(el) {
-    return document.getElementById(el);
-  }
-  function soma() {
-  
-    var a = parseFloat(0.6);
-    var b = parseFloat(0.4);
-    var c = parseFloat(133.47);
-    var d = parseFloat(4.5);
-    var e = parseFloat(2.5);
-    
 
 
     

@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <script src="//code.jquery.com/jquery.min.js"></script>
-  <script src="javascript/porta_conjunto/porta_conjunto.js"></script>
+  <script src="javascript/menu_prateleiras_portapallets_conj/menu_prateleiras_portapallets_conj.js"></script>
   
 
 
@@ -33,11 +33,11 @@
       </li>
       <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
             <li><a href="calc_vigas">Cálculo de Vigas</a></li>
-            <li><a href="">Prateleiras</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Conjunto)</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Individual)</a></li>
-            <li><a href="">Pisos</a></li>
-            <li><a href="">Laterias Novas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Laterias Novas</a></li>
     </ul>
     
 </nav>
@@ -71,10 +71,10 @@
           
           <div class="well">  
               
-              <form action="/action_page.php">
+              <form name="form01" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Comprimento L1</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="text" class="form-control" id="comprimentol1" placeholder="mm" name="comprimentol1" tabindex="1">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
@@ -82,31 +82,31 @@
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">QTDE</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0.00" name="pwd">
+                  <input type="text" class="form-control" id="qtde01" placeholder="0.00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">A</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="a01" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">Espes</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="espess01" placeholder="0,00" name="espess01" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P. Unit.</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="punit01" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">A(Comp)</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="acomp01" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P(Comp)</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="pcomp01" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P. Total</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="ptotal01" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 
                 
@@ -114,10 +114,10 @@
                 
               </form>
               
-              <form action="/action_page.php">
+              <form name="form02" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Vão</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="text" class="form-control" id="vao" placeholder="0.00" name="vao" tabindex="2">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
@@ -125,31 +125,31 @@
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0.00" name="pwd">
+                  <input type="text" class="form-control" id="qtde02" placeholder="0.00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0.00" name="pwd">
+                  <input type="text" class="form-control" id="a02" placeholder="0.00" name="a02" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="espess02" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="punit02" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="acomp02" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="pcomp02" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P.Total</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="ptotal02" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 
                 
@@ -158,10 +158,10 @@
               </form>
               
               
-               <form action="/action_page.php">
+               <form name="form03" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Carga / Par de Viga</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" tabindex="3">
                 </div>
                 
                <div class="form-group col-xs-1">
@@ -170,40 +170,40 @@
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="qtde03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="a03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="espess03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="punit03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="acomp03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="pcomp03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P. Total</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="ptotal03" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 
                 
               </form>
               
-              <form action="/action_page.php">
+              <form name="form04" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Tensão de Escoamento</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" tabindex="4">
                 </div>
                 <div class="form-group col-xs-1">
                     <label for="pwd"></label>
@@ -211,31 +211,31 @@
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="qtde04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="a04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="espess04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="punit04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="acomp04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd"></label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="pcomp04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
                   <div class="form-group col-xs-1">
                     <label for="pwd">P. Total</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                    <input type="text" class="form-control" id="ptotal04" placeholder="0,00" name="pwd" readonly="true">
                   </div>
 
 
@@ -246,7 +246,7 @@
 
 
               </form>
-              <form action="/action_page.php">
+              <form name="form05" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email"></label>
                   
@@ -257,31 +257,31 @@
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="qtde05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="a05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="espess05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="punit05" placeholder="0,00" name="pwd" readonly="true" >
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="acomp05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd"></label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="pcomp05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 <div class="form-group col-xs-1">
                   <label for="pwd">P. Total</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="0,00" name="pwd">
+                  <input type="text" class="form-control" id="ptotal05" placeholder="0,00" name="pwd" readonly="true">
                 </div>
                 
                 
@@ -290,13 +290,13 @@
               </form>
               
             
-              <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
+              <a href="/"><button type="button" class="btn btn-primary" style="width: 100px">Voltar</button></a>
               
               
          <align="rigth"> <button type="button" class="btn btn-print" style="width: 100px">
           <span class="glyphicon glyphicon-print" align="right"></span>Imprimir</button>
-          <button type="button" class="btn btn-success" style="width: 100px">Calcular</button>
-          <button type="button" class="btn btn-danger"  style="width: 100px">Cancelar</button>   
+          <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px; margin-left:08px;"   >Calcular</button>
+        <a href="menu_prateleiras_portapallets_conj">  <button type="button" class="btn btn-danger"  style="width: 100px">Cancelar</button>   </a>
               
               
               

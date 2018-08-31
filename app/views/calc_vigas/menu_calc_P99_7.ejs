@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="javascript/calc_vigas/P-99_6.js"></script>
+  
+
+
+</head>
+
+<nav class="navbar navbar-inverse">
+  <a class="navbar-brand" href="#">
+      <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
+    </a>
+  <div class="container">
+    <div class="navbar-header">
+      
+    </div>
+    <ul class="nav navbar-nav">
+              
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/">Perfis Normais</a></li>
+          <li><a href="/perfis_perfurados">Perfis Perfurados</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+            <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Laterias Novas</a></li>
+    </ul>
+    
+</nav>
+
+
+  
+ 
+  
+ <fieldset>
+  <legend><center></center></legend>
+  <hr>
+  <hr>
+  
+  <hr>
+  <hr>
+  <hr>
+  
+      
+      <div class"container-fluid">
+          <div class="row">
+
+                  <div class="section">
+                  <div class="container">
+                    <div class="row">
+                        <div class="thumbnail01">
+                        <img src="imagens\P99-7.bmp" style="width:40%" class="center-block img-responsive img-rounded">
+                      <ul class="pager"></ul>
+                    </div> 
+
+                                      
+        
+            
+                        
+                          <div class="well">
+                            <div class="container-fluid">
+                            <form action="/action_page.php" id="form01">
+                             <hr>
+                              <div class="form-group col-xs-4">
+                                <label for="e-mail">Comprimento (L1)</label>
+                                <input type="text" class="form-control" id="AuxComp1"  placeholder="mm" tabIndex = "1" >
+                              </div>
+                              <div class="form-group col-xs-4">
+                                <label for="text">Carga Pontual (P)</label>
+                                <input type="text" class="form-control" id="AuxCargP" placeholder="0.00" name="pwd" tabIndex = "4" >
+                              </div>
+                               <div class="form-group col-xs-4">
+                                <label for="pwd"><h3><b>Resultado</b></h3></label>
+                               </div>
+                              </form>
+                            
+                              
+                              <form action="/action_page.php" id="form02">
+                              <div class="form-group col-xs-4">
+                                <label for="text">Comprimento (L2)</label>
+                                <input type="text" class="form-control" id="AuxComp2" placeholder="0.00" name="PWD" tabIndex = "2" >
+                              </div>
+                              <div class="form-group col-xs-4">
+                                <label for="text">Carga Pontual (F)</label>
+                                <input type="text" class="form-control" id="AuxCargF" placeholder="0.00" name="pwd" disabled>
+                              </div>
+                               <div class="form-group col-xs-4">
+                                <label for="text">Momento</label>
+                                <input type="text" class="form-control" id="txtMomento" placeholder="mm" name="pwd" readonly="true">
+                              </div>
+
+                            </form>
+                              <form action="/action_page.php" id="form03">
+                              <div class="form-group col-xs-4">
+                                <label for="text">Comrpimento (L3)</label>
+                                <input type="text" class="form-control" id="AuxComp3" placeholder="0.00" name="email" disabled>
+                              </div>
+                              <div class="form-group col-xs-4">
+                                <label for="text">Tensão de Escoamento</label>
+                                <input type="text" class="form-control" id="AuxTenes" placeholder="mm" name="pwd" tabIndex = "5" >
+                              </div>
+                               <div class="form-group col-xs-4">
+                                <label for="text">wx</label>
+                                <input type="text" class="form-control" id="txtWx" placeholder="mm" name="pwd" readonly="true">
+                              </div>
+                              <form action="/action_page.php">
+                              <div class="form-group col-xs-4">
+                                <label for="text">Carga Distribuída</label>
+                                <input type="text" class="form-control" id="AuxCargQ" placeholder="0.00" name="email" tabIndex = "3" >
+                              </div>
+                              <div class="form-group col-xs-4">
+                                <label for="text"></label>
+                                <input type="text" class="hidden" id="" placeholder="0.00" name="email" disabled>
+                              </div>
+                              
+                               <div class="form-group col-xs-4" >
+                                <label for="text">lx</label>
+                                <input type="text" class="form-control" id="txtIx" placeholder="mm" name="pwd" readonly="true">
+                              </div>
+                            </form>
+                            <form action="/action_page.php" id="form04">
+                              <div class="form-group col-xs-4">
+                                <label for="text"></label>
+                                <input type="text" class="hidden" id="email"  placeholder="mm" name="email">
+                              </div>
+                              <div class="form-group col-xs-4">
+                                
+                                
+                              </div>
+                               <div class="form-group col-xs-4">
+                                <label for="text">ÁreaFC</label>
+                                <input type="text" class="form-control" id="xtAreaFC" placeholder="mm" name="pwd" readonly="true">
+                              </div>
+                              
+                                              </form>   
+                                            </br>
+                                              <br>
+                                              
+                                                   <a href="calc_vigas"> <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button></a>
+                                                
+                                                    
+                                                   <button type="button" class="btn btn-default" style="width: 100px">
+                                                    <span class="glyphicon glyphicon-print"></span>Imprimir</button>
+                                                    
+                                                    
+                                                    
+                                                    <button type="button" onclick="soma(); validar(); SomenteNumero();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
+                                                   
+                                                      
+                                              
+                          </div>
+                        <hr>
+
+    
+
+
+
+
+
+
+
+
+
+                        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+                        
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+                
+  </body>
+</html>

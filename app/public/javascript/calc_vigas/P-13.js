@@ -68,43 +68,7 @@ window.onload = function () {
       document.getElementById("AuxCargQ").value = res;     
 
 
-var a = parseFloat(0.6);
-var b = parseFloat(0.4);
-var c = parseFloat(133.47);
-var d = parseFloat(4.5);
-var e = parseFloat(2.5);
 
-//AUXCOMPT = AuxComp1 * 4
-var AuxComp1 = parseFloat(form01.AuxComp1.value);
-var AuxComp2 = parseFloat(form02.AuxComp2.value);
-AUXCOMPT = (AuxComp1 * 4).toFixed(2);
-
-//AUXPESO = AuxCargQ.Value / AUXCOMPT
-var AuxCargQ = parseFloat(form03.AuxCargQ.value);
-AUXPESO = (AuxCargQ / AUXCOMPT).toFixed(2);
-
-//Aux_m = (AUXCOMPT * (AUXPESO * AUXCOMPT + 2 * AuxCargF.Value) + 8 * AuxCargP * AuxComp1) / 8
-var AuxCargP = parseFloat(form01.AuxCargP.value);
-var AuxCargF = form02.AuxCargF.value;
-form02.txtMomento.value = ((AUXCOMPT * (AUXPESO * AUXCOMPT + 2 * AuxCargF) + 8 * AuxCargP * AuxComp1) / 8).toFixed(2);
-var txtMomento = parseFloat(form02.txtMomento.value);
-
-//Aux_Wx = Aux_m / (AuxTenes * 0.6)
-var AuxTenes = parseFloat(form03.AuxTenes.value);
-form03.txtWx.value = (txtMomento / (AuxTenes * a)).toFixed(2);
-
-//Aux_Ix = (3.2 * AuxCargP * AUXCOMPT ^ 2 * (3 * AuxComp1 / AUXCOMPT - 4 * AuxComp1 ^ 3 / AUXCOMPT ^ 3) + AUXPESO * AUXCOMPT ^ 3 + 1.6 * AuxCargF.Value * AUXCOMPT ^ 2) / 8064
-form03.txtIx.value = (3.2 * AuxCargP * AUXCOMPT**2 * (3 * AuxComp1 / AUXCOMPT - 4 * AuxComp1**3 / AUXCOMPT**3) + AUXPESO * AUXCOMPT**3 + 1.6 * AuxCargF * AUXCOMPT**2) / 8064;
-var txtIx = parseFloat(form03.txtIx.value);
-
-//Aux_Fc = ((AUXPESO * AUXCOMPT + 2 * AuxCargP + AuxCargF.Value) / 2) / AuxTenes / 0.4
-aux_01 = AUXPESO * AUXCOMPT;
-aux_02 = 2 * AuxCargP;
-aux_03 = aux_01 + aux_02 + AuxCargF;
-aux_04 = aux_03 / 2;
-form04.xtAreaFC.value = aux_04 / AuxTenes / 0.4;
-    
-  
   
     
     

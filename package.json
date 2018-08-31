@@ -1,30 +1,19 @@
 {
-  "name": "portal_noticias",
-  "version": "1.0.0",
-  "description": "Site de notícias",
-  "main": "noticias.js",
+  "name": "calculoperfis2",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "Clodoaldo Dias",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "bootstrap": "^3.3.7",
-    "ejs": "^2.5.9",
-    "express": "^4.15.3",
-    "express-validator": "^4.3.0",
-    "gerador-validador-cpf": "^3.1.1",
-    "intl": "^1.2.5",
-    "is-empty": "^1.2.0",
-    "jquery": "^3.3.1",
-    "jquery-inputmask": "^1.0.1",
-    "nodemon": "^1.14.7",
-    "nodepdf": "^1.3.2",
-    "nodewebkit": "^0.11.6",
-    "pdfkit": "^0.8.3"
-  },
-  "devDependencies": {
-    "inputmask": "^3.3.11"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.1",
+    "express": "~4.16.0",
+    "express-validator": "^5.3.0",
+    "http-errors": "~1.6.2",
+    "jsreport": "^2.1.1",
+    "morgan": "~1.9.0",
+    "pdf-maker": "0.0.2"
   }
 }

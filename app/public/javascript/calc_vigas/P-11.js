@@ -51,10 +51,10 @@ window.onload = function () {
         AuxCargQ.value = AuxCargQ.value.replace(re_AuxCargQ, "$1$2,00");
       
       }
+      var a = parseFloat(0.6);
+      var b = parseFloat(0.4); 
       
-      
-      
-      
+    
   
     
   

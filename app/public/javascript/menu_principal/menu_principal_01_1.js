@@ -19,7 +19,7 @@ $(document).ready(function () {
     $(this).css("background-color", "#F0F8FF");
   });
 });
-  function validar() {
+  function validar () {
     var form01 = document.getElementById("form01");
     var etam_A = form01.etam_A;
     var re_etam_A = /^([0-9]{0,3})([0-9]{0,3})$/;
@@ -45,7 +45,7 @@ $(document).ready(function () {
       espessura_e.value = espessura_e.value.replace(re_espessura_e, "$1$2,00");
     }
 
-
+    
 
 
   var str = document.getElementById("etam_A").value;
@@ -109,11 +109,13 @@ var h = parseFloat(0.0417);
 
 
 
+
 //RDB2 = RDB1 * ESPES
 var ESPES = parseFloat(form06.espessura_d.value);
 var RDB1 = parseFloat(form03.raioe.value);
 form07.raiod.value = (RDB1 * ESPES || 0.00 ).toFixed(2);
-var RDB2 = parseFloat(form07.raiod.value); 
+var RDB2 = parseFloat(form07.raiod.value);
+
 
 //RN = RDB2 + ESPES / 2
 form08.raio_neutro.value = (form07.raiod.value*1 + (form06.espessura_d.value / 2) || 0.00).toFixed(2);
@@ -151,14 +153,9 @@ form15.cgy.value = (A1 / 2 || 0.00).toFixed(2);
 var CGY = parseFloat(form15.cgy.value);
 
 //IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + U * (A2 / 2 + 0.637 * RN) ^ 2 + 0.149 * RN ^ 3)
-var ix01 = Math.pow(A2,3);
-var ix02 = A2 / 2 + RN;
-var ix03 = Math.pow(ix02,2);
-var ix04 = A2 / 2 + e * RN;
-var ix05 = Math.pow(ix04,2);
-var ix06 = Math.pow(RN,3);
 
-form12.ixx.value = (2 * ESPES * (h * ix01 + B2 * ix03 + U * ix05 + b * ix06 )).toFixed(2);
+
+form12.ixx.value = 2 * ESPES * (0.0417 * A2**3 + B2 * (A2 / 2 + RN)**2 + U * (A2 / 2 + 0.637 * RN)**2 + 0.149 * RN**3);
 
 var IX = parseFloat(form12.ixx.value);
 
@@ -249,11 +246,16 @@ BETAF = (ESPES / 2 * ((BB - XB) ^ 4 - Math.pow(XB,4)) + (ESPES * Math.pow(AB,2))
 
 
 
-
   
   window.onload = function () {
     id('copiar').onclick = function () {
       soma();
     }
   }
+
 }
+
+
+  
+
+

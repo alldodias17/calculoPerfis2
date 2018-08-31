@@ -53,12 +53,6 @@ window.onload = function () {
       }
       
       
-      
-      
-  
-    
-  
-  
     var str = document.getElementById("AuxComp1").value;
     var res = str.replace(",", ".");
     document.getElementById("AuxComp1").value = res;

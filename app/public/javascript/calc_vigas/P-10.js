@@ -38,8 +38,7 @@ window.onload = function () {
       
       }
       
-      
-      
+     
       
   
     

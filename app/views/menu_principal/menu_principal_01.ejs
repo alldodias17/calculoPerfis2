@@ -6,9 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="javascript/menu_principal/menu_principal_01_1.js"></script>
-    
+    <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
+    <script>
+    var downloadPDF = function() {
+      DocRaptor.createAndDownloadDoc("YOUR_API_KEY_HERE", {
+        test: false, // test documents are free, but watermarked
+        type: "pdf",
+        //document_content: document.querySelector('html').innerHTML, // use this page's HTML
+        //document_content: "<h1>Hello world!</h1>",               // or supply HTML directly
+        //document_url: "http://www.google.com.br",            // or use a URL
+        //javascript: true,                                        // enable JavaScript processing
+        // prince_options: {
+        //   media: "screen",                                       // use screen styles instead of print styles
+        // }
+      })
+    }
+    </script>
   
   
   </head>
@@ -16,9 +32,10 @@
   
   
       
-  <body background="/imagens/fundo.jpg");>
-    
+  <body>
       
+    
+  
       <nav class="navbar navbar-inverse">
           <a class="navbar-brand" href="#">
               <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
@@ -65,9 +82,9 @@
   
   
   
+  <div id="HTMLtopdf">
   
-  
-  <div class="container">
+  <div class="container" >
     <div class="row">
 
       <div class="section">
@@ -114,7 +131,7 @@
 
 
 
-                    <form class="form-group" action="/action_page.php" id="form01">
+                    <form class="form-group"  id="form01" >
                       <div class="form-group col-xs-4">
                         <label for="email">Tamanho de A</label>
                         <input type="text" class="form-control" id="etam_A" onkeypress='return SomenteNumero(event)' style="width:60%;" placeholder="mm" name="etam_A"
@@ -166,16 +183,18 @@
                     </form>
                     </div>
                     
-                    
-                      <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
                     
                     
 
-                      <a href="/">
-                        <button type="button" class="btn btn-primary" style="width: 100px; ">Voltar</button>
+                      
+                     <a href="/">   <button type="button"  class="btn btn-primary" style="width: 100px; ">Voltar</button></a>
                       </a>
-                    </p>
-                  
+                    
+                    <a href="menu_principal_01"><button type="button"  class="btn btn-danger" style="width: 100px ;">Cancela</button></a>
                   
                 </div>
                 <div id="dimensoes_Perfil" class="tab-pane fade">
@@ -354,31 +373,20 @@
                     
                    <form>
                   </div>
-                  <form>
-                      
-                    <button type="button" class="btn btn-primary" style="width: 100px; ">
-                      <a href="/"> </a>Voltar</button>
                   
-
-
-</a>
-                  
-                    <a href="menu_principal_17">
-                      <button type="button" class="btn btn-danger" style="width: 100px; ">Cancela</button>
-                    </a>
-                  </form> 
                   
 
                   
                 
             </div>
-
-        
+            <br>
+            <br>
+            
                 <div id="propriedades_Geometricas" class="tab-pane fade">
                   <div class="container-fluid">
                     <br>
                 
-                    <form class="form-group" name="form12">
+                    <form name="form12" class="form-group" >
                       
                         <div class="col-xs-2">
                           <label for="ex1">Ix</label>
@@ -455,7 +463,7 @@
                         </div>
                         <div class="col-xs-2">
                           <label for="ex3">Cw</label>
-                          <input class="form-control" id="cw" type="text" placeholder="Refazer" readonly="true">
+                          <input class="form-control" id="cw" type="text" placeholder="0.00" readonly="true">
                         </div>
                     </form>
                     
@@ -523,11 +531,14 @@
                   <br>
                   
                   
-                      <button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button>
-                      <button type="button" class="btn btn-danger" style="width: 100px ;">Cancela</button>
-                      <button type="button" class="btn btn-default" style="width: 100px;">
-                      <span class="glyphicon glyphicon-print" ></span>Imprimir</button>
-                  
+                  <a href="/"><button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button></a>
+                      <a href="menu_principal_01"><button type="button"  class="btn btn-danger" style="width: 100px ;">Cancela</button>
+                      
+                      
+                        <a href="menu_principal_01pdf" class="btn btn-info " style="width: 100px ;">
+                          <span class="glyphicon glyphicon-print"></span> Print
+                        </a>
+                    </p>
                 </div>
 
 
@@ -560,6 +571,7 @@
   <!-- Bootstrap core JavaScript
         ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -572,6 +584,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        
 
 
 </body>

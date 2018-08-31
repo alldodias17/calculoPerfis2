@@ -13,7 +13,7 @@
 
 
 </head>
-
+<body>
 <nav class="navbar navbar-inverse">
   <a class="navbar-brand" href="#">
       <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
@@ -23,7 +23,7 @@
       
     </div>
     <ul class="nav navbar-nav">
-      
+              
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/">Perfis Normais</a></li>
@@ -33,11 +33,11 @@
       </li>
       <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
             <li><a href="calc_vigas">Cálculo de Vigas</a></li>
-            <li><a href="">Prateleiras</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Conjunto)</a></li>
-            <li><a href="">Pratelerias Porta-Pallets (Individual)</a></li>
-            <li><a href="">Pisos</a></li>
-            <li><a href="">Laterias Novas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Laterias Novas</a></li>
     </ul>
     
 </nav>
@@ -81,7 +81,7 @@
                               </div>
                               <div class="form-group col-xs-4">
                                 <label for="text">Carga Pontual (P)</label>
-                                <input type="text" class="form-control" id="AuxCargP" placeholder="mm" name="pwd" tabIndex = "2">
+                                <input type="text" class="form-control" id="AuxCargP" placeholder="0.00" name="pwd" tabIndex = "2">
                               </div>
                                <div class="form-group col-xs-4">
                                 <label for="pwd"><h3><b>Resultado</b></h3></label>
@@ -92,7 +92,7 @@
                               <form action="/action_page.php" name="form02">
                               <div class="form-group col-xs-4">
                                 <label for="text">Comprimento (L2)</label>
-                                <input type="text" class="form-control" id="AuxComp2" placeholder="0.00" name="PWD" disabled>
+                                <input type="text" class="form-control" id="AuxComp2" placeholder="0.00"  disabled>
                               </div>
                               <div class="form-group col-xs-4">
                                 <label for="text">Carga Pontual (F)</label>

@@ -44,9 +44,9 @@ window.onload = function () {
         AuxComp2.value = AuxComp2.value.replace(re_AuxComp2, "$1$2,00");
       
       }
-      
-      
-      
+
+  
+        
   
     
   

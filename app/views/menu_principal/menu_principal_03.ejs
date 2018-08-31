@@ -14,7 +14,7 @@
 
 </head>
 
-<body style="overflow-y: hidden; overflow-x: hidden;">
+<body>
   <nav class="navbar navbar-inverse">
     <a class="navbar-brand" href="#">
         <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
@@ -24,7 +24,7 @@
         
       </div>
       <ul class="nav navbar-nav">
-        
+              
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/">Perfis Normais</a></li>
@@ -32,13 +32,13 @@
             
           </ul>
         </li>
-        <li><a href="">Barras Comprimidas</a></li>
-              <li><a href="">Cálculo de Vigas</a></li>
-              <li><a href="">Prateleiras</a></li>
-              <li><a href="">Pratelerias Porta-Pallets (Conjunto)</a></li>
-              <li><a href="">Pratelerias Porta-Pallets (Individual)</a></li>
-              <li><a href="">Pisos</a></li>
-              <li><a href="">Laterias Novas</a></li>
+        <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+              <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+              <li><a href="menu_prateleiras">Prateleiras</a></li>
+              <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+              <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+              <li><a href="menu_pisos">Pisos</a></li>
+              <li><a href="entrada_laterais">Laterias Novas</a></li>
       </ul>
       
   </nav>
@@ -158,14 +158,15 @@
                     </div>
                     
                     
-                      <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
+                    <button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
                     
                     
 
-                      <a href="/">
-                        <button type="button" class="btn btn-primary" style="width: 100px; ">Voltar</button>
-                      </a>
-                    </p>
+                      
+                    <a href="/">   <button type="button"  class="btn btn-primary" style="width: 100px; ">Voltar</button></a>
+                     </a>
+                   
+                   <a href="menu_principal_03"><button type="button"  class="btn btn-danger" style="width: 100px ;">Cancela</button></a>
                   
                   
                 </div>
@@ -345,19 +346,7 @@
                     
                    <form>
                   </div>
-                  <form>
-                      
-                    <button type="button" class="btn btn-primary" style="width: 100px; ">
-                      <a href="/"> </a>Voltar</button>
                   
-
-
-</a>
-                  
-                    <a href="menu_principal_17">
-                      <button type="button" class="btn btn-danger" style="width: 100px; ">Cancela</button>
-                    </a>
-                  </form> 
                   
 
                   
@@ -511,10 +500,11 @@
                   
                   <br><br><br>
                   
-                      <button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button>
-                      <button type="button" class="btn btn-danger" style="width: 100px ;">Cancela</button>
-                      <button type="button" class="btn btn-default" style="width: 100px;">
-                      <span class="glyphicon glyphicon-print" ></span>Imprimir</button>
+                   <a href="/">   <button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button></a>
+                   <a href="menu_principal_03">  <button type="button" class="btn btn-danger" style="width: 100px ;">Cancela</button></a>
+                      <a href="menu_principal_03pdf" class="btn btn-info " style="width: 100px ;">
+                        <span class="glyphicon glyphicon-print"></span> Print
+                      </a>
                   
                 </div>
 

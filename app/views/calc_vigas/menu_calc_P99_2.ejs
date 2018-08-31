@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="javascript/calc_vigas/P-99-2.js"></script>
+  
+
+
+</head>
+
+<nav class="navbar navbar-inverse">
+  <a class="navbar-brand" href="#">
+      <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
+    </a>
+  <div class="container">
+    <div class="navbar-header">
+      
+    </div>
+    <ul class="nav navbar-nav">
+              
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/">Perfis Normais</a></li>
+          <li><a href="/perfis_perfurados">Perfis Perfurados</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+            <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+            <li><a href="menu_prateleiras">Prateleiras</a></li>
+            <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+            <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
+            <li><a href="menu_pisos">Pisos</a></li>
+            <li><a href="entrada_laterais">Laterias Novas</a></li>
+    </ul>
+    
+</nav>
+
+
+  
+ 
+  
+ <fieldset>
+  <legend><center></center></legend>
+  <hr>
+  <hr>
+  
+  <hr>
+  <hr>
+  <hr>
+  
+      
+      <div class"container-fluid">
+          <div class="row">
+
+                  <div class="section">
+                  <div class="container">
+                    <div class="row">
+                        <div class="thumbnail01">
+                        <img src="imagens\P99-2.bmp" style="width:40%" class="center-block img-responsive img-rounded">
+                      <ul class="pager"></ul>
+                    </div> 
+
+                                      
+        
+            
+                        
+                          <div class="well">
+                            <div class="container">
+                              <br>
+                              <br>
+                              <form name="form01" class="form-group" action="/action_page.php">
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Comprimento (A)</label>
+                                  <input type="text" class="form-control" id="aa" placeholder="mm"  name="aa">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Comrpimento (E)</label>
+                                  <input type="text" class="form-control" id="ee" placeholder="mm" name="ee">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Carga Pontual (P2)</label>
+                                  <input type="text" class="form-control" id="p2" placeholder="mm" name="p2">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Tensão Escoamento</label>
+                                  <input type="text" class="form-control" id="tensao" placeholder="mm" name="tensao">
+                                </div>
+                                
+                              </form>
+                              <form name="form02" class="form-group" action="/action_page.php">
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Comprimento (B)</label>
+                                  <input type="text" class="form-control" id="bb" placeholder="mm"  name="bb">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Comprimento (F)</label>
+                                  <input type="text" class="form-control" id="ff" placeholder="mm" name="ff">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Carga Pontual (P3)</label>
+                                  <input type="text" class="form-control" id="p3" placeholder="mm" name="p3">
+                                </div>
+                                
+                              </form>
+                              <form name="form03" class="form-group" action="/action_page.php">
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Comprimento (C)</label>
+                                  <input type="text" class="form-control" id="cc" placeholder="mm"  name="cc">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Carga Ditribuída (Q)</label>
+                                  <input type="text" class="form-control" id="qq" placeholder="mm" name="qq">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Carga Pontual (P4)</label>
+                                  <input type="text" class="form-control" id="p4" placeholder="mm" name="p4">
+                                </div>
+                                
+                              </form>
+                              <form name="form04" class="form-group" action="/action_page.php">
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Comprimento (D)</label>
+                                  <input type="text" class="form-control" id="dd" placeholder="mm"  name="dd">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Carga Pontual (P1)</label>
+                                  <input type="text" class="form-control" id="p1" placeholder="mm" name="p1">
+                                </div>
+                                <div class="col-xs-4">
+                                  <label for="ex2" >Carga Pontual (P5)</label>
+                                  <input type="text" class="form-control" id="p5" placeholder="mm" name="p5">
+                                </div>
+                                
+                              </form>
+                              </div>
+                              
+                              <br>
+                              <div class="container">
+                              <p align="center"><b>Resultado</b></p>  
+                              <form name="form5" class="form-group" action="/action_page.php">
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Momento</label>
+                                  <input type="text" class="form-control" id="momento" placeholder="0.00"  name="momento" readonly="true">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Wx</label>
+                                  <input type="text" class="form-control" id="wx" placeholder="0.00" name="wx" readonly="true">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Ix</label>
+                                  <input type="text" class="form-control" id="ix" placeholder="0.00" name="ix" readonly="true">
+                                </div>
+                                <div class="col-xs-3">
+                                  <label for="ex2" >Area FC</label>
+                                  <input type="text" class="form-control" id="area" placeholder="0.00" name="area" readonly="true">
+                                </div>
+                              </form>
+                              <br>
+                              <br>
+                              <br>
+                              <button type="button" class="btn btn-primary" style="width: 100px">Voltar</button>
+                            <button type="button" class="btn btn-success" style="width: 100px">Calcular</button>
+                            <button type="button" class="btn btn-danger" style="width: 100px">Cancela</button>
+                            <a href="#" class="btn btn-info">
+                                      <span class="glyphicon glyphicon-print" style="width: 20px"></span> Imprimir
+                                    </a>
+                            </div>
+
+
+
+
+
+
+
+                        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+                        
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+                
+  </body>
+</html>

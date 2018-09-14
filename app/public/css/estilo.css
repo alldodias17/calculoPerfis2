@@ -18,7 +18,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+element.style{
+  width: 1400px;
 
+}
 
 
 
@@ -1094,7 +1097,7 @@ html {
 }
 body {
   font-family: Lato;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.42857143;
   color: #000000;
   background-color: #ffffff;
@@ -1593,8 +1596,8 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media (min-width: 768px) {
   .container {
@@ -1608,7 +1611,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1500px;
   }
 }
 .container-fluid {
@@ -3903,7 +3906,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 18px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4277,8 +4280,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 .navbar-form {

@@ -1,321 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="estilo.css">
-  <link rel="stylesheet" type="text/css" href="css/estilo.css">
-  <script src="jquery/jquery.min.js"></script> 
-  <script src="javascript/menu_principal/menu_principal_02_2.js"></script>
-
-
-</head>
-
-<body>
-  <nav class="navbar navbar-inverse">
-    <a class="navbar-brand" href="#">
-        <img src="imagens/altamira.jpg" alt="logo" style="width:190px;">
-      </a>
-    <div class="container">
-      <div class="navbar-header">
-        
-      </div>
-      <ul class="nav navbar-nav">
-              
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/">Perfis Normais</a></li>
-            <li><a href="/perfis_perfurados">Perfis Perfurados</a></li>
-            
-          </ul>
-        </li>
-        <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
-              <li><a href="calc_vigas">Cálculo de Vigas</a></li>
-              <li><a href="menu_prateleiras">Prateleiras</a></li>
-              <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
-              <li><a href="prateleiras_ind">Pratelerias Porta-Pallets (Individual)</a></li>
-              <li><a href="menu_pisos">Pisos</a></li>
-              <li><a href="entrada_laterais">Laterias Novas</a></li>
-      </ul>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="javascript/menu_principal/menu_principal_01_1.js"></script>
+    
+  
+  
+  </head>
+  
+  
+  
       
-  </nav>
-  
-  
+  <body background="/imagens/fundo.jpg");>
     
-   
-    
-   <fieldset>
-    <legend><center></center></legend>
-    <hr>
-    <hr>
-    
-    <hr>
-    <hr>
-    <hr>
-    
-    
-  
-  <div class="container">
-    <div class="row">
-
-      <div class="section">
-        <div class="container">
-          <div class="row">
-            <div class="thumbnail01">
-              <img src="imagens\piso_antiderrapante.bmp" style="width:50%" class="center-block img-responsive img-rounded">
+      
+      <nav class="navbar navbar-inverse">
+          
+          <div class="container">
+            <div class="navbar-header">
               
             </div>
-    <div class="well">
-        <div class="container">
-            
-          
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#entrada_dados">Entrada de Dados</a></li>
-              <li><a data-toggle="tab" href="#dimensoes">Dimensões</a></li>
-              <li><a data-toggle="tab" href="#propriedades">Propriedades Geométricas</a></li>
+            <ul class="nav navbar-nav">
               
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfis<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/">Perfis Normais</a></li>
+                  <li><a href="/perfis_perfurados">Perfis Perfurados</a></li>
+                  
+                </ul>
+              </li>
+              <li><a href="barras_comprimidas">Barras Comprimidas</a></li>
+                    <li><a href="calc_vigas">Cálculo de Vigas</a></li>
+                    <li><a href="menu_prateleiras">Prateleiras</a></li>
+                    <li><a href="menu_prateleiras_portapallets_conj">Pratelerias Porta-Pallets (Conjunto)</a></li>
+                    <li><a href="prateleiras_ind">Pratelerias Porta-Pallets</a></li>
+                    <li><a href="menu_pisos">Pisos</a></li>
+                    <li><a href="entrada_laterais">Laterias Novas</a></li>
             </ul>
             
-            <div class="tab-content">
-              <div id="entrada_dados" class="tab-pane fade in active">
-               <br>
-               <div class="checkbox">
-               <label><input type="checkbox" name="remember"> Enrijecido</label>
-               <br>
-               <br>
-               <form action="/action_page.php">
-               <div class="form-group col-xs-6">
-               <label for="email">Tamanho de A</label>
-               <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-               </div>
-               <div class="form-group col-xs-6">
-               <label for="pwd">Vão</label>
-               <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-               </div>
-               
-               </form>
-               <form action="/action_page.php">
-                                <div class="form-group col-xs-6">
-                                  <label for="email">Tamanho de B</label>
-                                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-                                </div>
-                                <div class="form-group col-xs-6">
-                                  <label for="pwd">Escoamento</label>
-                                  <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-                                </div>
-                                  
-                              </form>
-                              
-                               <form action="/action_page.php">
-                                <div class="form-group col-xs-6">
-                                  <label for="email">Tamanho de C</label>
-                                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-                                </div>
-                                <div class="form-group col-xs-6">
-                                  <label for="pwd">Espessura</label>
-                                  <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-                                </div>
-                                  
-                              </form>
-               
-               
-               
-               </div>
-               <button type="button" class="btn btn-success"  style="width: 100px">Calcular</button>
-               <a href="file:///C:/Users/clodoaldo.dias/git/perfisCalc/calc_vigas/calc_Vigas.html"> <button type="button" class="btn btn-primary"            style="width: 100px">Voltar</button></a>
-               
-               
-              </div>
-              <div id="dimensoes" class="tab-pane fade">
-              <br>
-              <form action="/action_page.php">
-              <div class="form-group col-xs-4">
-                <label for="email">A</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="pwd">Raio da Obra</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="email">Compr.da Fita</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-              
-             
-             </form>
-             <form action="/action_page.php">
-              <div class="form-group col-xs-4">
-                <label for="email">B</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="pwd">Espessura</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="email">Vão</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-            </form>
-                <form action="/action_page.php">
-              <div class="form-group col-xs-4">
-                <label for="email">C</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="pwd">Largura da Fita</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="pwd">Peso Bruto</label>
-                <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
-              </div>
-              
-            </form>
-            <form action="/action_page.php">
-              <div class="form-group col-xs-4">
-                <label for="email">Espessura Reforço</label>
-                <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-              </div>
-               <div class="form-group col-xs-4">
-                <label for="email"></label>
-                <input type="email" class="hidden" id="email" placeholder="mm" name="email">
-              </div>
-              <div class="form-group col-xs-4">
-                <label for="email"></label>
-                <input type="email" class="hidden" id="email" placeholder="mm" name="email">
-              </div>
-              
-              </form>
-              <div>
-              
-              </div>
-             
-              </div>
-              
-              <div id="propriedades" class="tab-pane fade">
-              <br>
-                <form action="/action_page.php">
-                          <div class="form-group col-xs-6">
-                            <label for="email">lx</label>
-                            <input type="email" class="form-control" id="email" placeholder="mm4" name="email">
-                          </div>
-                            <div class="form-group col-xs-6">
-                            <label for="pwd">Área Total</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="mm2" name="pwd">
-                          </div>
-                
-                </form>
-                <form action="/action_page.php">
-                          <div class="form-group col-xs-6">
-                            <label for="email">wx</label>
-                            <input type="email" class="form-control" id="email" placeholder="mm3" name="email">
-                          </div>
-                          <div class="form-group col-xs-6">
-                            <label for="pwd"></label>
-                            
-                          </div>
-                
-                
-                <form action="/action_page.php">
-                          <div class="form-group col-xs-6">
-                            <label for="email">Tensão de Escoamento</label>
-                         <input type="password" class="form-control" id="pwd" placeholder="KGF/CM2" name="pwd">   
-                          </div>
-                          <div class="form-group col-xs-6">
-                            <label for="pwd">Cap. Carga Pontual</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
-                          </div>
-                          
-                        </form>
-                        
-                        <form action="/action_page.php">
-                          <div class="form-group col-xs-4">
-                            <label for="email">Flexa Máxima</label>
-                            <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-                          </div>
-                          <div class="form-group col-xs-2">
-                            <label for="email"></label>
-                            <input type="email" class="form-control" id="email" placeholder="mm" name="email">
-                          </div>
-                          <div class="form-group col-xs-6">
-                            <label for="pwd">Cap. de Carga Concentrada</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
-                          </div>
-                          
-                        </form>
-                        
-                        <form action="/action_page.php">
-                          <div class="form-group col-xs-4">
-                            <label for="email">Capacidade de Carga</label>
-                            <input type="email" class="form-control" id="email" placeholder="Kg / m2" name="email">
-                          </div>
-                           <div class="form-group col-xs-2">
-                            <label for="email"></label>
-                            <input type="email" class="form-control" id="email" placeholder="Kg / Prateleira" name="email">
-                          </div>
-                          
-                         
-                             
-                          
-                            
-                         
-          
-                        </form>
-                        
-                        <div>
-                        
-                            <br>
-                            <br>
-                            <br>
-                            <div class="form-group col-xs-3">
-                                <button type="button" class="btn btn-primary" style="width: 100px ;">Voltar</button>
-                              </div>
-                                <div class="form-group col-xs-3">
-                                    <button type="button" class="btn btn-danger" style="width: 100px ;">Cancela</button>
-                                  </div>
-                                    <div class="form-group col-xs-3">
-                                      <a href="menu_principal_02pdf" class="btn btn-info " style="width: 100px ;">
-                                        <span class="glyphicon glyphicon-print"></span> Print
-                                      </a>     
-                                    </div>
-                                
-             
-                       
-                        
-                        
-                            
-                            
-                                                          
-                                                              
-                                                              
-           
-          
-                        
-                        </div>
-                        
-                        
-                        
-                        
-                
-              </div>
-              
-            </div>
-          </div>
-
+        </nav>
         
-
-
-
-      <!-- Bootstrap core JavaScript
-          ================================================== -->
-          <!-- Placed at the end of the document so the pages load faster -->
-          <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
+    
+          
+         
+          
+        <fieldset>
+          <legend><center></center></legend>
+          <br><br>
+          
+          
+          
+          <br>
+          <div class="container">
+            <div class="container">
+              <div class="row">
+                  
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="antiderrapante" target="_self">
+                                  <img src="imagens/piso_antiderrapante.bmp" class="img-thumbnail"  >
+                                  <div class="caption"><center>Antiderrapante</center>
+                                               
+                                  </div>
+                                
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="grelhado" target="_self">
+                                  <img src="imagens\piso_grelhado.bmp" class="img-thumbnail" style="width:100%">
+                                  <div class="caption"><center>Grelhado</center>
+                                    
+                                  </div>
+                                </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="liso" target="_self">
+                                  <img src="imagens\piso_liso.bmp" class="img-thumbnail" style="width:100%">
+                                  <div class="caption"><center>Liso</center>
+                                    
+                                  </div>
+                                </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+        
+         
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -328,7 +108,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-
-
+          
         </body>
+
+        
       </html>

@@ -75,7 +75,6 @@ window.onload = function () {
     form02.txtMomento.value = (AuxCargP * AuxComp1).toFixed(2);
     var txtMomento = parseFloat(form02.txtMomento.value);
     
-    
     //Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
     var txtMomento = parseFloat(form02.txtMomento.value);
     var AuxTenes = parseFloat(form03.AuxTenes.value);

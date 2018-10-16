@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <script src="jquery/jquery.min.js"></script> 
-  <script src="javascript/menu_principal/menu_principal_02_2.js"></script>
+  <script src="javascript/prateleira_individual/menu_principal_02_2.js"></script>
 
 
 </head>
@@ -83,38 +83,41 @@
                         <label><input type="checkbox" name="remember"> Enrijecido</label>
                       </div>
                     
-                    <form action="/action_page.php">
+                    <form name="form01" action="/action_page.php">
                       <div class="form-group col-xs-6">
                         <label for="email">Tamanho de A</label>
-                        <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                        <input type="text" class="form-control" id="A1" placeholder="mm" name="email">
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="pwd">Vão</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                        <input type="text" class="form-control" id="VAO" placeholder="mm" name="pwd">
                       </div>
                         
                     </form>
-                    <form action="/action_page.php">
+                    <form name="form02" action="/action_page.php">
                       <div class="form-group col-xs-6">
                         <label for="email">Tamanho de B</label>
-                        <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                        <input type="text" class="form-control" id="B1" placeholder="mm" name="email">
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="pwd">Escoamento</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                        <input type="text" class="form-control" id="TESCO" placeholder="mm" name="pwd">
                       </div>
                         
                     </form>
-                    <form action="/action_page.php">
-                      <div class="form-group col-xs-6">
+                    <form name="form03"  action="/action_page.php">
+                      <div class="form-group col-xs-4">
                         <label for="email">Tamanho de C</label>
-                        <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                        <input type="text" class="form-control" id="C1" placeholder="mm" name="email">
                       </div>
-                      <div class="form-group col-xs-6">
+                      <div class="form-group col-xs-4">
                         <label for="pwd">Espessura</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+                        <input type="text" class="form-control" id="ESPESSURA" placeholder="mm" name="pwd">
                       </div>
-                        
+                      <div class="form-group col-xs-4">
+                        <label for="pwd">Espessura do Reforço</label>
+                        <input type="text" class="form-control" id="ESPESU" placeholder="mm" name="pwd">
+                      </div>
                     </form>
                     <br>
                     <br>
@@ -132,54 +135,54 @@
           
           
               <div id="dimensao" class="tab-pane fade">
-              <form action="/action_page.php">
+              <form name="form04" action="/action_page.php">
     <div class="form-group col-xs-4">
       <label for="email">A</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RA1" placeholder="mm" name="email">
     </div>
     <div class="form-group col-xs-4">
       <label for="pwd">Raio da Obra</label>
-      <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+      <input type="text" class="form-control" id="RRD" placeholder="mm" name="pwd">
     </div>
     <div class="form-group col-xs-4">
       <label for="email">Compr.da Fita</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RCOMPF" placeholder="mm" name="email">
     </div>
     
   </form>
-  <form action="/action_page.php">
+  <form name="form05" action="/action_page.php">
     <div class="form-group col-xs-4">
       <label for="email">B</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RB1" placeholder="mm" name="email">
     </div>
     <div class="form-group col-xs-4">
       <label for="pwd">Espessura</label>
-      <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+      <input type="text" class="form-control" id="RESPES" placeholder="mm" name="pwd">
     </div>
     <div class="form-group col-xs-4">
       <label for="email">Vão</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RVAO" placeholder="mm" name="email">
     </div>
   </form>
-  <form action="/action_page.php">
+  <form name="form06" action="/action_page.php">
     <div class="form-group col-xs-4">
       <label for="email">C</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RC1" placeholder="mm" name="email">
     </div>
     <div class="form-group col-xs-4">
       <label for="pwd">Largura da Fita</label>
-      <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+      <input type="text" class="form-control" id="RLARGT" placeholder="mm" name="pwd">
     </div>
     <div class="form-group col-xs-4">
       <label for="pwd">Peso Bruto</label>
-      <input type="password" class="form-control" id="pwd" placeholder="mm" name="pwd">
+      <input type="text" class="form-control" id="RPESOB" placeholder="mm" name="pwd">
     </div>
     
   </form>
-  <form action="/action_page.php">
+  <form name="form07" action="/action_page.php">
     <div class="form-group col-xs-4">
       <label for="email">Espessura Reforço</label>
-      <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+      <input type="text" class="form-control" id="RESPESR" placeholder="mm" name="email">
     </div>
     
     
@@ -193,21 +196,21 @@
           </div>
           <br>
           <div id="propriedades_geometricas" class="tab-pane fade">
-              <form action="/action_page.php">
+              <form name="form08" action="/action_page.php">
                 <div class="form-group col-xs-6">
                   <label for="email">lx</label>
-                  <input type="email" class="form-control" id="email" placeholder="mm4" name="email">
+                  <input type="text" class="form-control" id="RIX" placeholder="mm4" name="email">
                 </div>
                 <div class="form-group col-xs-6">
                   <label for="pwd">Área Total</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="mm2" name="pwd">
+                  <input type="text" class="form-control" id="RAREAT" placeholder="mm2" name="pwd">
                 </div>
                 
               </form>
-              <form action="/action_page.php">
+              <form name="form09" action="/action_page.php">
                 <div class="form-group col-xs-6">
                   <label for="email">wx</label>
-                  <input type="email" class="form-control" id="email" placeholder="mm3" name="email">
+                  <input type="text" class="form-control" id="RWX" placeholder="mm3" name="email">
                 </div>
                 <div class="form-group col-xs-6">
                   <label for="pwd"></label>
@@ -215,42 +218,42 @@
                 </div>
                 
               </form>
-              <form action="/action_page.php">
+              <form name="form10" action="/action_page.php">
                 <div class="form-group col-xs-6">
                   <label for="email">Tensão de Escoamento</label>
-               <input type="password" class="form-control" id="pwd" placeholder="KGF/CM2" name="pwd">   
+               <input type="text" class="form-control" id="RTESCO" placeholder="KGF/CM2" name="pwd">   
                 </div>
                 <div class="form-group col-xs-6">
                   <label for="pwd">Cap. Carga Pontual</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
+                  <input type="text" class="form-control" id="RCAPAPO" placeholder="KG / Prateleira" name="pwd">
                 </div>
                 
               </form>
               
-              <form action="/action_page.php">
+              <form name="form11" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Flexa Máxima</label>
-                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                  <input type="text" class="form-control" id="RFLEXA" placeholder="mm" name="email">
                 </div>
                 <div class="form-group col-xs-2">
                   <label for="email"></label>
-                  <input type="email" class="form-control" id="email" placeholder="mm" name="email">
+                  <input type="text" class="form-control" id="email" placeholder="mm" name="email">
                 </div>
                 <div class="form-group col-xs-6">
                   <label for="pwd">Cap. de Carga Concentrada</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="KG / Prateleira" name="pwd">
+                  <input type="text" class="form-control" id="RCAPACO" placeholder="KG / Prateleira" name="pwd">
                 </div>
                 
               </form>
               
-              <form action="/action_page.php">
+              <form name="form12" action="/action_page.php">
                 <div class="form-group col-xs-4">
                   <label for="email">Capacidade de Carga</label>
-                  <input type="email" class="form-control" id="email" placeholder="Kg / m2" name="email">
+                  <input type="text" class="form-control" id="RCAPACA" placeholder="Kg / m2" name="email">
                 </div>
                  <div class="form-group col-xs-2">
                   <label for="email"></label>
-                  <input type="email" class="form-control" id="email" placeholder="Kg / Prateleira" name="email">
+                  <input type="text"  class="form-control" id="RCAPACAPRA" placeholder="Kg / Prateleira" name="email">
                 </div>
                 
                 

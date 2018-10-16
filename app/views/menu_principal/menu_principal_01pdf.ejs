@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-    <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
-    <script>
-    function somar (){
-    id="demo" = 100;
-    }
-    document.getElementById(demo).inneHTML = 
-    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <script src="jquery/jquery.min.js"></script> 
+  <script src="javascript/menu_principal/menu_principal_01_1.js"></script>
+    
     
     <style>
         table, th, td {
@@ -45,7 +38,7 @@
             
 <br>
                   
-<p id="demo"></p>
+<p id="raio_neutro"></p>
 
 <table style="width:100%">
   <tr>
@@ -59,7 +52,7 @@
     
   </tr>
   <tr>
-    <td id="td03">B..:</td>
+    <td name="raio_neutro">B..:</td>
     <td id="td04">Iy..:</td>
     
   </tr>
@@ -203,7 +196,7 @@
 </div>
 <br>
 
-<button type="button"  onclick="somar();">somar</button>
+<button type="button" onclick="validar();soma();" class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
 
 
 

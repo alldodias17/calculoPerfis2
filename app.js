@@ -125,21 +125,37 @@ var entrada_laterais = require ('./app/routes/menu_entrada_laterais/entrada_late
 var entrada_lateraipdf = require ('./app/routes/menu_entrada_laterais/entrada_lateraispdf')(app);
 var perfis_perfurados = require('./app/routes/perfis_perfurados/perfis_perfurados')(app);
 var perfil_n2 = require  ('./app/routes/perfis_perfurados/perfil_n2')(app);
+var perfil_n2pdf = require  ('./app/routes/perfis_perfurados/perfil_n2pdf')(app);
 var perfil_n3 = require  ('./app/routes/perfis_perfurados/perfil_n3')(app);
+var perfil_n3pdf = require  ('./app/routes/perfis_perfurados/perfil_n3pdf')(app);
 var perfil_n5 = require  ('./app/routes/perfis_perfurados/perfil_n5')(app);
+var perfil_n5pdf = require  ('./app/routes/perfis_perfurados/perfil_n5pdf')(app);
 var perfil_n7 = require  ('./app/routes/perfis_perfurados/perfil_n7')(app);
+var perfil_n7pdf = require  ('./app/routes/perfis_perfurados/perfil_n7pdf')(app);
 var perfil_u3 = require  ('./app/routes/perfis_perfurados/perfil_u3')(app);
+var perfil_u3pdf = require  ('./app/routes/perfis_perfurados/perfil_u3pdf')(app);
 var perfil_u7 = require  ('./app/routes/perfis_perfurados/perfil_u7')(app);
+var perfil_u7pdf = require  ('./app/routes/perfis_perfurados/perfil_u7pdf')(app);
 var ppla = require ('./app/routes/perfis_perfurados/ppla')(app);
+var pplpdf = require ('./app/routes/perfis_perfurados/pplapdf')(app);
 var ppln = require ('./app/routes/perfis_perfurados/ppln')(app);
+var pplnpdf = require ('./app/routes/perfis_perfurados/pplnpdf')(app);
 var ppna = require ('./app/routes/perfis_perfurados/ppna')(app);
+var ppnapdf = require ('./app/routes/perfis_perfurados/ppnapdf')(app);
 var ppnn = require ('./app/routes/perfis_perfurados/ppnn')(app);
+var ppnnpdf = require ('./app/routes/perfis_perfurados/ppnnpdf')(app);
 var pppa = require ('./app/routes/perfis_perfurados/pppa')(app);
+var pppapdf = require ('./app/routes/perfis_perfurados/pppapdf')(app);
 var pppn = require ('./app/routes/perfis_perfurados/pppn')(app);
+var pppnpdf = require ('./app/routes/perfis_perfurados/pppnpdf')(app);
 var N41 =  require ('./app/routes/perfis_perfurados/N41')(app);
+var N41pdf =  require ('./app/routes/perfis_perfurados/N41pdf')(app);
 var N42 =  require ('./app/routes/perfis_perfurados/N42')(app);
+var N42pdf =  require ('./app/routes/perfis_perfurados/N42pdf')(app);
 var S41 =  require ('./app/routes/perfis_perfurados/S41')(app);
+var S41pdf =  require ('./app/routes/perfis_perfurados/S41pdf')(app);
 var S42 =  require ('./app/routes/perfis_perfurados/S42')(app);
+var S42pdf =  require ('./app/routes/perfis_perfurados/S42pdf')(app);
 var menu_principal_01pdf = require('./app/routes/menu_principal/menu_principal_01pdf')(app);
 var menu_principal_02pdf = require('./app/routes/menu_principal/menu_principal_02pdf')(app);
 var menu_principal_03pdf = require('./app/routes/menu_principal/menu_principal_03pdf')(app);
@@ -181,7 +197,6 @@ var menu_principal_35pdf = require('./app/routes/menu_principal/menu_principal_3
 var menu_principal_36apdf = require('./app/routes/menu_principal/menu_principal_36apdf')(app);
 var menu_principal_36bpdf = require('./app/routes/menu_principal/menu_principal_36bpdf')(app);
 var menu_principal_37pdf = require('./app/routes/menu_principal/menu_principal_37pdf')(app);
-
 
 
 

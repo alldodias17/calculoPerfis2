@@ -198,7 +198,7 @@ var CGX = parseFloat(id('cgx').value);
 
 
 //WY = IY / CGX
-form13.wy.value = (IY / CGX).toFixed(2) || 0.00;
+id('wy').value = (IY / CGX).toFixed(2) || 0.00;
 var WY = parseFloat(id('wy').value);
 
 //WT = 2 * (AB * 2 * (BB + ESPES / 2) - 4 * CB * ESPES) * ESPES

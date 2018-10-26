@@ -123,7 +123,7 @@ window.onload = function () {
 
   
 //AREA1 = A1 * B1
-var A1 = parseFloat(form04.dtam_A.value);
+var A1 = parseFloat(id('dtam_A').value);
 var B1 = parseFloat(form05.dtam_B.value);
 form19.area_total.value = (A1 * B1).toFixed(2) || 0.00;
 var AREA01 = parseFloat(form19.area_total.value);

@@ -70,10 +70,10 @@ window.onload = function () {
     var b = parseFloat(0.4);
     
     //Aux_m = CDbl(AuxCargP.Value) * CDbl(AuxComp1.Value)
-    var AuxCargP = parseFloat(form01.AuxCargP.value);
-    var AuxComp1 = parseFloat(form01.AuxComp1.value);
-    form02.txtMomento.value = (AuxCargP * AuxComp1).toFixed(2);
-    var txtMomento = parseFloat(form02.txtMomento.value);
+    var AuxCargP = parseFloat(id('AuxCargP').value);
+    var AuxComp1 = parseFloat(id('AuxComp1').value);
+    id('txtMomento').value = (AuxCargP * AuxComp1).toFixed(2);
+    var txtMomento = parseFloat(id('txtMomento').value);
     
     //Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
     var txtMomento = parseFloat(form02.txtMomento.value);

@@ -116,66 +116,66 @@ window.onload = function () {
   var o = parseFloat(7.85);
   
 //FITA = 3.1416 * (A1 - ESPES)
-var A1 = parseInt(form04.dtam_A.value);
-var ESPES = parseInt(form01.espessura_e.value);
-form10.largura_da.value = l * (A1*1 - ESPES*1);
-var FITA = parseFloat(form10.largura_da.value);
+var A1 = parseInt(id('dtam_A').value);
+var ESPES = parseInt(id('espessura_e').value);
+id('largura_da').value = l * (A1*1 - ESPES*1);
+var FITA = parseFloat(id('largura_da').value);
 
 //AREA1 = FITA * ESPES
-form19.area_total.value = FITA*1 * ESPES*1;
-var AREA01 = parseFloat(form19.area_total.value);
+id('area_total').value = FITA*1 * ESPES*1;
+var AREA01 = parseFloat(id('area_total').value);
 
 //AREAU = AREA1
 id('area_util').value = id('area_total').value;
 
 //KGM = AREA1 * 0.001 * 7.85
-form04.d_Peso.value = (AREA01 * n * o).toFixed(2) || 0.00;
-var KGM = form04.d_Peso.value;
+id('d_Peso').value = (AREA01 * n * o).toFixed(2) || 0.00;
+var KGM = id('d_Peso').value;
 
 
 //IX = 3.1416 * A1 ^ 4 / 64 - 3.1416 * (A1 - 2 * ESPES) ^ 4 / 64
-form12.ixx.value = l * Math.pow(A1,4) / 64 - l * Math.pow(A1 - 2 * ESPES,4) / 64;
-var IX = parseFloat(form12.ixx.value)
+id('ixx').value = l * Math.pow(A1,4) / 64 - l * Math.pow(A1 - 2 * ESPES,4) / 64;
+var IX = parseFloat(id('ixx').value)
 
 //IY = IX
-form13.iyy.value = IX;
-var IY = parseFloat(form13.iyy.value);
+id('iyy').value = IX;
+var IY = parseFloat(id('iyy').value);
 
 //IP = IX + IY
-form16.ip.value = IX*1 + IY*1; 
-var IP = parseFloat(form16.ip.value);
+id('ip').value = IX*1 + IY*1; 
+var IP = parseFloat(id('ip').value);
 
 //CGX = A1 / 2
-form14.cgx.value = (A1  / 2).toFixed(2) || 0.00;
-var CGX = parseFloat(form14.cgx.value);
+id('cgx').value = (A1  / 2).toFixed(2) || 0.00;
+var CGX = parseFloat(id('cgx').value);
 
 //CGY = CGX
-form15.cgy.value = CGX;
-var CGY = parseInt(form15.cgy.value);
+id('cgy').value = CGX;
+var CGY = parseInt(id('cgy').value);
 
 //WX = IX / CGY
-form18.wx.value = (IX / CGY).toFixed(2);
-var WX = parseFloat(form18.wx.value);
+id('wx').value = (IX / CGY).toFixed(2);
+var WX = parseFloat(id('wx').value);
 
 //WY = WX
-form13.wy.value = WX;
-var WY = parseFloat(form13.wy.value);
+id('wy').value = WX;
+var WY = parseFloat(id('wy').value);
 
 //IX1 = (IX / AREA1) ^ 0.5
-form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
-var IX1 = parseFloat(form16.ixis.value);
+id('ixis').value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+var IX1 = parseFloat(id('ixis').value);
 
 //IY1 = IX1
-form17.iy.value = IX1;
-var IY1 = parseFloat(form17.iy.value);
+id('iy').value = IX1;
+var IY1 = parseFloat(id('iy').value);
 
 //J1 = 3.1416 * (A1 - ESPES) ^ 3 * ESPES / 4
-form12.j.value = l * Math.pow(A1 - ESPES,3) * ESPES / 4;
-var J1 = parseFloat(form12.j.value);
+id('j').value = l * Math.pow(A1 - ESPES,3) * ESPES / 4;
+var J1 = parseFloat(id('j').value);
 
 //WT = 3.1416 * (A1 - ESPES) ^ 2 * ESPES / 2
-form14.wt.value =  l * Math.pow(A1 - ESPES,2) * ESPES / 2;
-var WT = parseFloat(form14.wt.value);
+id('wt').value =  l * Math.pow(A1 - ESPES,2) * ESPES / 2;
+var WT = parseFloat(id('wt').value);
   
   
     var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;

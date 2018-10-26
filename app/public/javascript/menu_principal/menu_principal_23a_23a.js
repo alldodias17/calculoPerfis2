@@ -107,7 +107,7 @@ var i = parseFloat(1.5);
 var l = parseFloat(3.1416);
 
 //AREA1 = 3.1416 * A1 ^ 2 / 4
-var A1 = parseInt(form04.dtam_A.value);
+var A1 = parseInt(dtam_A.value);
 form19.area_total.value = l * Math.pow(A1,2) / 4;
 var AREA01 = parseFloat(form19.area_total.value);
 
@@ -115,52 +115,52 @@ var AREA01 = parseFloat(form19.area_total.value);
 id('area_util').value = id('area_total').value;
 
 //KGM = AREA1 * 0.001 * 7.85
-form04.d_Peso.value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
+id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
 var KGM = form04.d_Peso.value;
 
 //CGX = A1 / 2
-form14.cgx.value = (A1  / 2).toFixed(2) || 0.00;
-var CGX = parseFloat(form14.cgx.value);
+id('cgx').value = (A1  / 2).toFixed(2) || 0.00;
+var CGX = parseFloat(id('gx').value);
 
 //CGY = CGX
-form15.cgy.value = CGX;
-var CGY = parseInt(form15.cgy.value);
+id('cgy').value = CGX;
+var CGY = parseInt(id('cgy').value);
 
 //IX = 3.1416 * A1 ^ 4 / 64
-form12.ixx.value = l* Math.pow(A1,4) / 64;
+id('ixx').value = l* Math.pow(A1,4) / 64;
 var IX = parseFloat(form12.ixx.value);
 
 //IY = IX
-form13.iyy.value = IX;
-var IY = form13.iyy.value ;
+id('iyy').value = IX;
+var IY = id('iyy').value ;
 
 //IP = IX + IY
-form16.ip.value = IX*1 + IY*1; 
+id('ip').value = IX*1 + IY*1; 
 var IP = parseFloat(form16.ip.value);
 
 //WX = IX / CGY
 form18.wx.value = (IX / CGY).toFixed(2);
-var WX = parseFloat(form18.wx.value);
+var WX = parseFloat(id('wx').value);
 
 //WY = WX
-form13.wy.value = WX;
-var WY = parseFloat(form13.wy.value);
+id('wy').value = WX;
+var WY = parseFloat(id('wy').value);
 
 //IX1 = (IX / AREA1) ^ 0.5
-form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
-var IX1 = parseFloat(form16.ixis.value);
+id('ixis').value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+var IX1 = parseFloat(id('ixis').value);
 
 //IY1 = IX1
-form17.iy.value = Math.pow(IY / AREA01,0.5);
-var IY1 = parseFloat(form17.iy.value);
+id('iy').value = Math.pow(IY / AREA01,0.5);
+var IY1 = parseFloat(id('iy').value);
 
 //J1 = IX / 2
-form12.j.value = IX / 2;
-var J1 = parseFloat(form12.j.value);
+id('j').value = IX / 2;
+var J1 = parseFloat(id('j').value);
 
 //WT = 3.1416 * A1 ^ 3 / 16
-form14.wt.value =  l * Math.pow(A1,3) / 16;
-var WT = parseFloat(form14.wt.value);
+id('wt').value =  l * Math.pow(A1,3) / 16;
+var WT = parseFloat(id('wt').value);
 
 
   var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;

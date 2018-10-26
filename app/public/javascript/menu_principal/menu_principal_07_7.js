@@ -175,6 +175,7 @@ id('dtam_bbarra').value = (id('dtam_B').value*1 - id('espessura_d').value*1 ).to
 var BB = parseFloat(id('dtam_bbarra').value);
 
 //CB = C1 - (ESPES / 2)
+var C1 = id('etam_C').value;
 id('dtam_D').value = C1 - (ESPES / 2);
 var CB = id('dtam_D').value;
 
@@ -378,10 +379,7 @@ id('area_util').value = id('area_total').value;
     if (re_dtam_E.test(dtam_E.value)) {
       dtam_E.value = dtam_E.value.replace(re_dtam_E, "$1$20.00");
     }
-    var re_dtam_d = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_d.test(dtam_d.value)) {
-      dtam_d.value = dtam_d.value.replace(re_dtam_d, "$1$20.00");
-    }
+    
     var re_dtam_e = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_e.test(dtam_e.value)) {
       dtam_e.value = dtam_e.value.replace(re_dtam_e, "$1$20.00");
@@ -398,10 +396,7 @@ id('area_util').value = id('area_total').value;
     if (re_u2.test(u2.value)) {
       u2.value = u2.value.replace(re_u2, "$1$20.00");
     }
-    var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_u3.test(dtam_u3.value)) {
-      dtam_u3.value = dtam_u3.value.replace(re_dtam_u3, "$1$20.00");
-    }
+    
     var re_dtam_m = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_m.test(dtam_m.value)) {
       dtam_m.value = dtam_m.value.replace(re_dtam_m, "$1$2.00");
@@ -438,26 +433,13 @@ id('area_util').value = id('area_total').value;
     if (re_wy.test(wy.value)) {
       wy.value = wy.value.replace(re_wy, "$1$20.00");
     }
-    var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_bbb.test(bbb.value)) {
-      bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
-    }
+    
     var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_ixx.test(ixx.value)) {
       ixx.value = ixx.value.replace(re_ixx, "$1$20.00");
     }
-    var re_lz = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_lz.test(lz.value)) {
-      lz.value = lz.value.replace(re_lz, "$1$20.00");
-    }
-    var re_lv = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_lv.test(lv.value)) {
-      lv.value = lv.value.replace(re_lv, "$1$20.00");
-    }
-    var re_lxy = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_lxy.test(lxy.value)) {
-      lxy.value = lxy.value.replace(re_lxy, "$1$20.00");
-    }
+    
+    
     var re_wv = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_wv.test(wv.value)) {
       wv.value = wv.value.replace(re_wv, "$1$20.00");

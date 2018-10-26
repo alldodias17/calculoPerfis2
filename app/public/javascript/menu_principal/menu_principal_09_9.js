@@ -198,7 +198,7 @@ var EME = id('dtam_m').value;
 id('largura_da').value = (2 * C2 + 2 * B2 + A2 + 4 * U).toFixed(2) || 0.00;
 var FITA = parseFloat(id('largura_da').value);
 
-//FITA1 = A1 - 5
+
 FITA1 = A1 - 5;
 
 //AREA1 = 2 * FITA * ESPES

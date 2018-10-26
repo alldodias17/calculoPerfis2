@@ -145,13 +145,13 @@ var U = parseFloat(id('ud').value);
 //A2 = A1 - (2 * RN + ESPES)
 var A1 = parseFloat(id('dtam_A').value);
 id('dtam_a').value = (id('dtam_A').value*1 - (2 * id('raio_neutro').value + id('espessura_d').value*1)).toFixed(2) || 0.00;
-var A2 = parseFloat(id9('dtam_a').value);
+var A2 = parseFloat(id('dtam_a').value);
 
 
 //B2 = B1 - (RN + ESPES / 2)
 var B1 = parseFloat(id('dtam_B').value);
 id('dtam_b').value = (id('dtam_B').value*1 - (id('raio_neutro').value*1 + id('espessura_d').value / 2)).toFixed(2) || 0.00;
-var B2 = parseFloat(form09.dtam_b.value);
+var B2 = parseFloat(id('dtam_b').value);
 
 //AB = A1 - ESPES
 id('dtam_a1').value = (id('dtam_A').value - id('espessura_d').value).toFixed(2) || 0.00;
@@ -240,7 +240,7 @@ var J1 = id('j').value;
 
 //Cw = (ESPES * AB ^ 2 * B1 ^ 3) / 3
 id('cw').value = ((ESPES * Math.pow(AB,2) * Math.pow(B1,3)) / 3).toFixed(2)|| 0.00;
-var Cw = form16.cw.value;
+var Cw = id('cw').value;
 
 //KGM = AREA1 * 0.001 * 7.85
 id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00
@@ -326,10 +326,7 @@ id('area_util').value = id('area_total').value;
   if (re_dtam_E.test(dtam_E.value)) {
     dtam_E.value = dtam_E.value.replace(re_dtam_E, "$1$20.00");
   }
-  var re_dtam_d = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_d.test(dtam_d.value)) {
-    dtam_d.value = dtam_d.value.replace(re_dtam_d, "$1$20.00");
-  }
+  
   var re_dtam_e = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_e.test(dtam_e.value)) {
     dtam_e.value = dtam_e.value.replace(re_dtam_e, "$1$20.00");

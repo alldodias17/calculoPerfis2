@@ -127,9 +127,10 @@ var B1 = parseFloat(id('dtam_B').value);
 id('dtam_b').value = (B1 - (2 * RN + ESPES) || 0.00).toFixed(2);
 var B2 = parseFloat(id('dtam_b').value); 
 
+
 //C2 = C1 - (RN + ESPES / 2)
 id('dtam_C').value = id('etam_C').value - (RN + ESPES / 2);
-
+var C2 = parseFloat(id('dtam_C').value);
 
 //AB = A1 - ESPES
 id('dtam_a1').value = A1 - ESPES;
@@ -145,19 +146,7 @@ id('dtam_D').value = id('etam_C').value - id('espessura_d').value / 2;
 id('cgy').value = A1 / 2;
 
 //IX = 2 * ESPES * (0.0417 * A2 ^ 3 + B2 * (A2 / 2 + RN) ^ 2 + 2 * U * (A2 / 2 + 0.637 * RN) ^ 2 + 2 * 0.149 * RN ^ 3 + (0.0833 * C2 ^ 3 + C2 / 4 * (A2 - C2) ^ 2))
-var x1 = parseFloat(0.0417);
-var x2 = parseFloat(0.149);
-var x3 = parseFloat(0.637);
-var x4 = parseFloat(0.0833);
-var x5 = 2 * id('espessura_d').value;
-var x6 = Math.pow(parseFloat(id('dtam_a').value), 3);
-var x7 = Math.pow(parseFloat(id('dtam_a').value) / 2 + parseFloat(id('raio_neutro').value), 2);
-var x8 = Math.pow(parseFloat(id('dtam_a').value) / 2 + x3 * id('raio_neutro').value,2);
-var x9 = Math.pow(parseFloat(id('raio_neutro').value), 3);
-var x10 = Math.pow(parseFloat(id('dtam_c').value), 3);
-var x11 = Math.pow(parseFloat(id('dtam_a').value) - parseFloat(id('dtam_c').value), 2);
-var x12 = (x1 * x6) + (id('dtam_b').value * x7) + (2 * id('ud').value * x8) + (2 * x2 * x9) + (x4 * x10) + (id('dtam_c').value / 4 * x11);
-id('ixx').value = (x5 * x12).toFixed(2);
+id('ixx').value = 2 * ESPES * (0.0417 * A2**3 + B2 * (A2 / 2 + RN)**2 + 2 * U * (A2 / 2 + 0.637 * RN)**2 + 2 * 0.149 * RN**3 + (0.0833 * C2**3 + C2 / 4 * (A2 - C2)**2));
 
 //WX = IX / CGY
 id('wx').value = (id('ixx').value*1 / id('cgy').value*1 ).toFixed(2);
@@ -294,10 +283,7 @@ J2 = (1 / (2 * id('iyy').value) * (BETAW + BETAF + BETAL) - id('dtam_X').value);
   var re_dtam_E = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_E.test(dtam_E.value)) {
     dtam_E.value = dtam_E.value.replace(re_dtam_E, "$1$20.00");
-  }
-  var re_dtam_d = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_d.test(dtam_d.value)) {
-    dtam_d.value = dtam_d.value.replace(re_dtam_d, "$1$20.00");
+  
   }
   var re_dtam_e = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_e.test(dtam_e.value)) {
@@ -314,10 +300,7 @@ J2 = (1 / (2 * id('iyy').value) * (BETAW + BETAF + BETAL) - id('dtam_X').value);
   var re_u2 = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_u2.test(u2.value)) {
     u2.value = u2.value.replace(re_u2, "$1$20.00");
-  }
-  var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_u3.test(dtam_u3.value)) {
-    dtam_u3.value = dtam_u3.value.replace(re_dtam_u3, "$1$20.00");
+  
   }
   var re_dtam_m = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_m.test(dtam_m.value)) {
@@ -355,10 +338,7 @@ J2 = (1 / (2 * id('iyy').value) * (BETAW + BETAF + BETAL) - id('dtam_X').value);
   if (re_wy.test(wy.value)) {
     wy.value = wy.value.replace(re_wy, "$1$20.00");
   }
-  var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_bbb.test(bbb.value)) {
-    bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
-  }
+  
   var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_ixx.test(ixx.value)) {
     ixx.value = ixx.value.replace(re_ixx, "$1$20.00");
@@ -367,14 +347,8 @@ J2 = (1 / (2 * id('iyy').value) * (BETAW + BETAF + BETAL) - id('dtam_X').value);
   if (re_lz1.test(lz1.value)) {
     lz1.value = lz1.value.replace(re_lz1, "$1$20.00");
   }
-  var re_lv = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_lv.test(lv.value)) {
-    lv.value = lv.value.replace(re_lv, "$1$20.00");
-  }
-  var re_lxy = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_lxy.test(lxy.value)) {
-    lxy.value = lxy.value.replace(re_lxy, "$1$20.00");
-  }
+  
+  
   var re_wv = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_wv.test(wv.value)) {
     wv.value = wv.value.replace(re_wv, "$1$20.00");

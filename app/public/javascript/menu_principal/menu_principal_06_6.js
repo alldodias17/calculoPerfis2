@@ -156,11 +156,11 @@ var B2 = parseFloat(id('dtam_b').value);
 
 //AB = A1 - ESPES
 id('dtam_a1').value = (id('dtam_A').value - id('espessura_d').value).toFixed(2) || 0.00;
-var AB = parseFloat(form05.dtam_a1.value);
+var AB = parseFloat(id('dtam_a1').value);
 
 //BB = B1 - ESPES / 2
 id('dtam_bbarra').value = (id('dtam_B').value*1 - (id('espessura_d').value / 2)).toFixed(2) || 0.00;
-var BB = parseFloat(form06.dtam_bbarra.value);
+var BB = parseFloat(id('dtam_bbarra').value);
 
 //CGY = A1 / 2
 id('cgy').value = (A1 / 2).toFixed(2) || 0.00;

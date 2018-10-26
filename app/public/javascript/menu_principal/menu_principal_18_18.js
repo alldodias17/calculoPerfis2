@@ -143,7 +143,7 @@ var i = parseFloat(1.5);
 
 //RDB2 = RDB1 * ESPES
 var ESPES = parseFloat(form06.espessura_d.value);
-var RDB1 = parseFloat(form03.raioe.value);
+var RDB1 = parseFloat(id('raioe').value);
 form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
 var RDB2 = parseFloat(form07.raiod.value);
 

@@ -298,8 +298,7 @@ id('cw').value = (2 / 3 * ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * CB + (W
 id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
 var KGM = id('d_Peso').value;
 
-//XB = 0
-//x0 = 0
+
 //y0 = 0               
 
 

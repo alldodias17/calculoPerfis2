@@ -127,7 +127,7 @@ var ESPES = parseFloat(id('espessura_d').value);
 var RDB1 = parseFloat(id('raioe').value);
 id('raiod').value = (RDB1 * ESPES).toFixed(2) || 0.00;
 var RDB2 = parseFloat(id('raiod').value);
-id('raiod').value = id('raio').value;
+
 
 //RN = RDB2 + ESPES / 2
 raio_neutro = parseFloat(raio_neutro);
@@ -141,7 +141,7 @@ var ALTDB = parseFloat(id('alturadobra').value);
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
 id('ud').value = ((id('raio_neutro').value * 10 * 1.57) / 10).toFixed(2) || 0.00;
-var U = parseFloat(form10.ud.value);
+var U = parseFloat(id('ud').value);
 
 //A2 = A1 - (2 * RN + ESPES)
 var A1 = parseFloat(id('dtam_A').value);
@@ -150,7 +150,7 @@ var A2 = parseFloat(id('dtam_a').value);
 
 //B2 = B1 - (RN + ESPES / 2)
 var B1 = parseFloat(id('dtam_B').value);
-form09.dtam_b.value = (id('dtam_B').value*1 - (id('raio_neutro').value*1 + id('espessura_d').value / 2)).toFixed(2) || 0.00;
+id('dtam_b').value = (id('dtam_B').value*1 - (id('raio_neutro').value*1 + id('espessura_d').value / 2)).toFixed(2) || 0.00;
 var B2 = parseFloat(id('dtam_b').value);
 
 //AB = A1 - ESPES
@@ -189,7 +189,7 @@ id('ixx').value = (2 * ESPES * ( d * Math.pow(RN,3) + A2 * Math.pow(A2 / 2 + RN,
 var IX = id('ixx').value;
 
 //WX = IX / CGY
-id('wx').value = (id('ixx').value / form15.cgy.value).toFixed(2) || 0.00;
+id('wx').value = (id('ixx').value / id('cgy').value).toFixed(2) || 0.00;
 var WX = id('wx').value;
 
 //IY = 4 * ESPES * (B2 * (B2 / 2 + RN + ESPES / 2) ^ 2 + 0.0833 * B2 ^ 3 + U * (0.363 * RN + ESPES / 2) ^ 2 + 0.149 * RN ^ 3)

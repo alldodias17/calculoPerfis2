@@ -124,53 +124,53 @@ window.onload = function () {
   
 //AREA1 = A1 * B1
 var A1 = parseFloat(id('dtam_A').value);
-var B1 = parseFloat(form05.dtam_B.value);
-form19.area_total.value = (A1 * B1).toFixed(2) || 0.00;
-var AREA01 = parseFloat(form19.area_total.value);
+var B1 = parseFloat(id('dtam_B').value);
+id('area_total').value = (A1 * B1).toFixed(2) || 0.00;
+var AREA01 = parseFloat(id('area_total').value);
 
 //AREAU = AREA1
 id('area_util').value = id('area_total').value;
 
 //KGM = AREA1 * 0.001 * 7.85
-form04.d_Peso.value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
-var KGM = parseFloat(form04.d_Peso.value);
+id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
+var KGM = parseFloat(id('d_Peso').value);
 
 //CGX = B1 / 2
-form14.cgx.value = B1 / 2;
-var CGX = parseFloat(form14.cgx.value);
+id('cgx').value = B1 / 2;
+var CGX = parseFloat(id('cgx').value);
 
 //CGY = A1 / 2
-form15.cgy.value = A1 / 2;
-var CGY = parseFloat(form15.cgy.value);
+id('cgy').value = A1 / 2;
+var CGY = parseFloat(id('cgy').value);
 
 //IX = B1 * A1 ^ 3 / 12
-form12.ixx.value = B1 * Math.pow(A1,3) / 12;
-var IX = parseFloat(form12.ixx.value);
+id('ixx').value = B1 * Math.pow(A1,3) / 12;
+var IX = parseFloat(id('ixx').value);
 
 //IY = A1 * B1 ^ 3 / 12
-form13.iyy.value = A1 * Math.pow(B1,3) / 12;
-var IY = parseFloat(form13.iyy.value); 
+id('iyy').value = A1 * Math.pow(B1,3) / 12;
+var IY = parseFloat(id('iyy').value); 
 
 //IP = IX + IY
-form16.ip.value = IX + IY;
-var IP = parseFloat(form16.ip.value);
+id('ip').value = IX + IY;
+var IP = parseFloat(id('ip').value);
 
 //WX = IX / CGY
-form18.wx.value = IX / CGY;
-var WX = parseFloat(form18.wx.value); 
+id('wx').value = IX / CGY;
+var WX = parseFloat(id('wx').value); 
 
 //WY = IY / CGX
-form13.wy.value = IY / CGX;
-var WY = parseFloat(form13.wy.value);
+id('wy').value = IY / CGX;
+var WY = parseFloat(id('wy').value);
 
 //IX1 = (IX / AREA1) ^ 0.5
 
-form16.ixis.value = Math.pow(IX*1 / AREA01,0.5);
-var IX1 = parseFloat(form16.ixis.value);
+id('ixis').value = Math.pow(IX*1 / AREA01,0.5);
+var IX1 = parseFloat(id('ixis').value);
 
 //IY1 = (IY / AREA1) ^ 0.5
-form17.iy.value = Math.pow(IY*1 / AREA01,0.5);
-var IY1 = parseFloat(form17.iy.value);
+id('iy').value = Math.pow(IY*1 / AREA01,0.5);
+var IY1 = parseFloat(id('iy').value);
 
 //AUX0 = A1 / B1
 AUX0 = A1*1 / B1*1;
@@ -221,13 +221,13 @@ while (Cont < 2)
 
 //J1 = N1 * B1 ^ 3 * A1
 var j01 = Math.pow(B1,3);
-form12.j.value = N1*1 * j01 * A1*1;
-var J1 = parseFloat(form12.j.value);
+id('j').value = N1*1 * j01 * A1*1;
+var J1 = parseFloat(id('j').value);
 
 
 //WT = N2 * B1 ^ 2 * A1
-form14.wt.value =  N2 * Math.pow(B1,2) * A1;
-var WT = parseFloat(form14.wt.value);
+id('wt').value =  N2 * Math.pow(B1,2) * A1;
+var WT = parseFloat(id('wt').value);
 
 
 

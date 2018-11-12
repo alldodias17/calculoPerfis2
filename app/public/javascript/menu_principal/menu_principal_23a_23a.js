@@ -109,18 +109,18 @@ var l = parseFloat(3.1416);
 //AREA1 = 3.1416 * A1 ^ 2 / 4
 var A1 = parseInt(dtam_A.value);
 form19.area_total.value = l * Math.pow(A1,2) / 4;
-var AREA01 = parseFloat(form19.area_total.value);
+var AREA01 = parseFloat(id('area_total').value);
 
 //AREAU = AREA1
 id('area_util').value = id('area_total').value;
 
 //KGM = AREA1 * 0.001 * 7.85
 id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
-var KGM = form04.d_Peso.value;
+var KGM = id('d_Peso').value;
 
 //CGX = A1 / 2
 id('cgx').value = (A1  / 2).toFixed(2) || 0.00;
-var CGX = parseFloat(id('gx').value);
+var CGX = parseFloat(id('cgx').value);
 
 //CGY = CGX
 id('cgy').value = CGX;
@@ -128,7 +128,7 @@ var CGY = parseInt(id('cgy').value);
 
 //IX = 3.1416 * A1 ^ 4 / 64
 id('ixx').value = l* Math.pow(A1,4) / 64;
-var IX = parseFloat(form12.ixx.value);
+var IX = parseFloat(id('ixx').value);
 
 //IY = IX
 id('iyy').value = IX;
@@ -136,10 +136,10 @@ var IY = id('iyy').value ;
 
 //IP = IX + IY
 id('ip').value = IX*1 + IY*1; 
-var IP = parseFloat(form16.ip.value);
+var IP = parseFloat(id('ip').value);
 
 //WX = IX / CGY
-form18.wx.value = (IX / CGY).toFixed(2);
+id('wx').value = (IX / CGY).toFixed(2);
 var WX = parseFloat(id('wx').value);
 
 //WY = WX
@@ -227,10 +227,7 @@ var WT = parseFloat(id('wt').value);
   if (re_lxy.test(lxy.value)) {
     lxy.value = lxy.value.replace(re_lxy, "$1$20.00");
    }
-  var re_dtam_d = /^([0-9]{0,4})([0-9]{0,4})$/;
-  if (re_dtam_d.test(dtam_d.value)) {
-    dtam_d.value = dtam_d.value.replace(re_dtam_d, "$1$20.00");
-  }
+ 
   var re_dtam_e = /^([0-9]{0,4})([0-9]{0,4})$/;
   if (re_dtam_e.test(dtam_e.value)) {
     dtam_e.value = dtam_e.value.replace(re_dtam_e, "$1$20.00");

@@ -78,24 +78,24 @@ window.onload = function () {
     var e = parseFloat(2.5);
     
 //AUXCOMPT = AuxComp1.Value * 6
-var AuxComp1 = parseFloat(form01.AuxComp1.value);
+var AuxComp1 = parseFloat(id('AuxComp1').value);
 AUXCOMPT = (AuxComp1 * 6).toFixed(2);
 
 //Aux_m = 4.5 * AuxCargP.Value * AuxComp1.Value
 var AuxCargP = parseFloat(form01.AuxCargP.value);
-form02.txtMomento.value = (4.5 * AuxCargP * AuxComp1).toFixed(2);
-var txtMomento = parseFloat(form02.txtMomento.value);
+id('txtMomento').value = (4.5 * AuxCargP * AuxComp1).toFixed(2);
+var txtMomento = parseFloat(id('txtMomento').value);
 
 //Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
-var AuxTenes = parseFloat(form03.AuxTenes.value);
-form03.txtWx.value = (txtMomento / (AuxTenes * a)).toFixed(2);
+var AuxTenes = parseFloat(id('AuxTenes').value);
+id('txtWx').value = (txtMomento / (AuxTenes * a)).toFixed(2);
 
 //Aux_Ix = AUXCOMPT ^ 2 * AuxCargP.Value / 1370
-form03.txtIx.value = (AUXCOMPT**2 * AuxCargP / 1370).toFixed(2);
-var txtIx = parseFloat(form03.txtIx.value);
+id('txtIx').value = (AUXCOMPT**2 * AuxCargP / 1370).toFixed(2);
+var txtIx = parseFloat(id('txtIx').value);
 
 //Aux_Fc = AuxCargP.Value * 2.5 / AuxTenes.Value / 0.4
-form04.xtAreaFC.value = ((AuxCargP * e) / AuxTenes / b).toFixed(2);
+id('xtAreaFC').value = ((AuxCargP * e) / AuxTenes / b).toFixed(2);
 
 
           

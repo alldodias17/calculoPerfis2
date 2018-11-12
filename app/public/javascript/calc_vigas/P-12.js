@@ -91,29 +91,29 @@ window.onload = function () {
     var e = parseFloat(2.5);
     
 //AUXCOMPT = AuxComp1.Value + AuxComp1.Value + AuxComp2.Value
-var AuxComp1 = parseFloat(form01.AuxComp1.value);
-var AuxComp2 = parseFloat(form02.AuxComp2.value);
+var AuxComp1 = parseFloat(id('AuxComp1').value);
+var AuxComp2 = parseFloat(id('AuxComp2').value);
 AUXCOMPT = (AuxComp1 + AuxComp1 + AuxComp2).toFixed(2);
 
 //AUXPESO = AuxCargQ.Value / AUXCOMPT
-var AuxCargQ = parseFloat(form03.AuxCargQ.value);
+var AuxCargQ = parseFloat(id('AuxCargQ').value);
 AUXPESO = (AuxCargQ / AUXCOMPT).toFixed(2);
 
 //Aux_m = (AUXCOMPT ^ 2 * AUXPESO + 8 * AuxCargP.Value * AuxComp1.Value) / 8
-var AuxCargP = parseFloat(form01.AuxCargP.value);
-form02.txtMomento.value = ((AUXCOMPT**2 * AUXPESO + 8 * AuxCargP * AuxComp1) / 8).toFixed(2);
-var txtMomento = parseFloat(form02.txtMomento.value);
+var AuxCargP = parseFloat(id('AuxCargP').value);
+id('txtMomento').value = ((AUXCOMPT**2 * AUXPESO + 8 * AuxCargP * AuxComp1) / 8).toFixed(2);
+var txtMomento = parseFloat(id('txtMomento').value);
 
 //Aux_Wx = Aux_m / (AuxTenes.Value * 0.6)
-var AuxTenes = parseFloat(form03.AuxTenes.value);
-form03.txtWx.value = (txtMomento / (AuxTenes * a)).toFixed(2);
+var AuxTenes = parseFloat(id('AuxTenes').value);
+id('txtWx').value = (txtMomento / (AuxTenes * a)).toFixed(2);
 
 //Aux_Ix = (3.2 * AuxCargP.Value * AUXCOMPT ^ 2 * (3 * AuxComp1.Value / AUXCOMPT - 4 * AuxComp1.Value ^ 3 / AUXCOMPT ^ 3) + AUXPESO * AUXCOMPT ^ 3) / 8064
-form03.txtIx.value = ((3.2 * AuxCargP * AUXCOMPT**2 * (3 * AuxComp1 / AUXCOMPT - 4 * AuxComp1**3 / AUXCOMPT**3) + AUXPESO * AUXCOMPT**3) / 8064).toFixed(2);
-var txtIx = parseFloat(form03.txtIx.value);
+id('txtIx').value = ((3.2 * AuxCargP * AUXCOMPT**2 * (3 * AuxComp1 / AUXCOMPT - 4 * AuxComp1**3 / AUXCOMPT**3) + AUXPESO * AUXCOMPT**3) / 8064).toFixed(2);
+var txtIx = parseFloat(id('txtIx').value);
 
 //Aux_Fc = ((AUXPESO * AUXCOMPT + 2 * AuxCargP.Value) / 2) / AuxTenes.Value / 0.4
-form04.xtAreaFC.value = (((AUXPESO * AUXCOMPT + 2 * AuxCargP) / 2) / AuxTenes / b).toFixed(2);
+id('xtAreaFC').value = (((AUXPESO * AUXCOMPT + 2 * AuxCargP) / 2) / AuxTenes / b).toFixed(2);
 
 
           

@@ -99,13 +99,13 @@ var d = parseFloat(4.5);
 var e = parseFloat(2.5);
 
 //AUXCOMPT = AuxComp1 + AuxComp2 + AuxComp3
-var AuxComp1 = parseFloat(form01.AuxComp1.value);
-var AuxComp2 = parseFloat(form02.AuxComp2.value);
-var AuxComp3 = parseFloat(form03.AuxComp3.value);
+var AuxComp1 = parseFloat(id('AuxComp1').value);
+var AuxComp2 = parseFloat(id('AuxComp2').value);
+var AuxComp3 = parseFloat(id('AuxComp3').value);
 AUXCOMPT = (AuxComp1 + AuxComp2 + AuxComp3).toFixed(2);
 
 //AUXPESO = AuxCargQ.Value / AUXCOMPT
-var AuxCargQ = parseFloat(form03.AuxCargQ.value);
+var AuxCargQ = parseFloat(id('AuxCargQ').value);
 AUXPESO = (AuxCargQ / AUXCOMPT).toFixed(2);
 
 //AUX_R2 = (AUXPESO * AuxComp3 * (AuxComp2 + AuxComp3 / 2) + AUXPESO * AuxComp2 ^ 2 / 2 -AUXPESO * AuxComp1 ^ 2 / 2) / AuxComp2
@@ -128,10 +128,10 @@ AUX_M4 = (AUX_M3 - AUXPESO * AuxComp2**2 / 8);
 
 //Aux_m = AUX_M1
 //If AUX_M2 > Aux_m Then Aux_m = AUX_M2
-form02.txtMomento.value = AUX_M1;
-if(AUX_M2 > form02.txtMomento.value){
-  form02.txtMomento.value = AUX_M2;
-  var txtMomento = parseFloat(form02.txtMomento.value);
+id('txtMomento').value = AUX_M1;
+if(AUX_M2 > id('txtMomento').value){
+  id('txtMomento').value = AUX_M2;
+  var txtMomento = parseFloat(id('txtMomento').value);
 }
 
 //If AUX_M4 > Aux_m Then Aux_m = AUX_M4
@@ -142,7 +142,7 @@ if(AUX_M4 > form03.txtWx.value){
 
 
 //Aux_Wx = Aux_m / (AuxTenes * 0.6)
-var AuxTenes = parseFloat(form03.AuxTenes.value);
+var AuxTenes = parseFloat(id('AuxTenes').value);
 var aux_01 = parseFloat(0.6);
 form03.txtWx.value = form02.txtMomento.value/ (AuxTenes * aux_01);
 

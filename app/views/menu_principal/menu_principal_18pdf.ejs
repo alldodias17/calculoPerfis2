@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-    <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
-    <script>
     
-    </script>
-    
+    <script src="javascript/menu_principal/menu_principal_18_18.js"></script>
     <style>
         table, th, td {
             border: 1px solid black;
@@ -26,7 +21,7 @@
   
   
   </head>
-<body  >
+<body onchange="pdf" >
     
 
   
@@ -41,17 +36,17 @@
 
             
 <br>
-                  
+  <p id="campo01"></p>            
 
 
-<table style="width:100%">
+<table   style="width:100%">
   <tr>
     <th>Dimensões do Perfil</th>
     <th>Propriedades Geométricas da Seção Tranversal</th> 
     
   </tr>
   <tr>
-    <td id="campo02" name="campo02">A..:</td>
+    <td id="td01">A..:</td>
     <td id="td02">Ix..:</td>
     
   </tr>
@@ -199,7 +194,15 @@
 </table>
 </div>
 <br>
+<button type="button" onclick="pdf(); " class="btn btn-success" style="width: 100px;  ;" >Calcular</button>
 
+<script>
+ 
+
+    
+    
+ 
+</script>
 
 
 

@@ -1,30 +1,12 @@
-window.onload = function () {
-    document.getElementById("etam_A").focus();
-  };
+var RDB2;
+function pdf() {
+  var calc = RDB2;
+  document.getElementById('td01').innerHTML = "A.: "+ calc;
+  id('td01').value = RDB2;
+  
+ 
+ }; 
 
-
-
-  $(document).ready(function () {
-    $("#etam_A").focus(function () {
-      $(this).css("background-color", "#F0F8FF");
-
-    });
-    $("#etam_B").blur(function () {
-      $(this).css("background-color", "#F0F8FF");
-    });
-    $("#etam_C").blur(function () {
-      $(this).css("background-color", "#F0F8FF");
-    });
-    $("#espessura_e").blur(function () {
-      $(this).css("background-color", "#F0F8FF");
-    });
-    $("#raioe").blur(function () {
-      $(this).css("background-color", "#F0F8FF");
-    });
-
-
-
-  });
 
   function validar() {
     var form01 = document.getElementById("form01");
@@ -113,8 +95,10 @@ window.onload = function () {
 
   function id(el) {
     return document.getElementById(el);
+    
   }
-
+  
+  
 
   function soma() {
 
@@ -124,7 +108,7 @@ window.onload = function () {
 id('dtam_A').value = id('etam_A').value;
 id('dtam_B').value = id('etam_B').value;
 id('dtam_C').value = id('etam_C').value;
-id('dtam_D').value = id('etam_D').value;
+id('dtam_d').value = id('etam_D').value;
 id('dtam_E').value = id('etam_E').value;
 id('espessura_d').value = id('espessura_e').value;
 
@@ -142,78 +126,79 @@ var i = parseFloat(1.5);
 
 
 //RDB2 = RDB1 * ESPES
-var ESPES = parseFloat(form06.espessura_d.value);
+var ESPES = parseFloat(id('espessura_d').value);
 var RDB1 = parseFloat(id('raioe').value);
-form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-var RDB2 = parseFloat(form07.raiod.value);
+id('raiod').value = (RDB1 * ESPES).toFixed(2) || 0.00;
+RDB2 = parseFloat(id('raiod').value);
+
 
 //RN = RDB2 + ESPES / 2
-form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-var RN = parseFloat(form08.raio_neutro.value);
+id('raio_neutro').value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
+var RN = parseFloat(id('raio_neutro').value);
 
 //ALTDB = RDB2 + ESPES
-form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-var ALTDB = parseFloat(form09.alturadobra.value);
+id('alturadobra').value = (RDB2 + ESPES).toFixed(2) || 0.00;
+var ALTDB = parseFloat(id('alturadobra').value);
 
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
-form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.00;
-var U = parseFloat(form10.ud.value);
+id('ud').value = ((id('raio_neutro').value * 10 * 1.57) / 10).toFixed(2) || 0.00;
+var U = parseFloat(id('ud').value);
 
 //A2 = A1 - 2 * ALTDB
-var A1 = parseFloat(form04.dtam_A.value);
-form09.dtam_a.value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
-var A2 = parseFloat(form09.dtam_a.value);
+var A1 = parseFloat(id('dtam_A').value);
+id('dtam_a').value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
+var A2 = parseFloat(id('dtam_a').value);
 
 //B2 = B1 - 2 * ALTDB
-var B1 = parseFloat(form05.dtam_B.value);
-form09.dtam_b.value = (B1 - 2 * ALTDB).toFixed(2) || 0.00;
-var B2 = parseFloat(form09.dtam_b.value);
+var B1 = parseFloat(id('dtam_B').value);
+id('dtam_b').value = (B1 - 2 * ALTDB).toFixed(2) || 0.00;
+var B2 = parseFloat(id('dtam_b').value);
 
 //C2 = C1 - ALTDB
-var C1 = form03.etam_C.value
-form10.dtam_c.value = form03.etam_C.value - ALTDB;
-var C2 = parseFloat(form10.dtam_c.value);
+var C1 = id('etam_C').value
+id('dtam_c').value = id('etam_C').value - ALTDB;
+var C2 = parseFloat(id('dtam_c').value);
 
 //D2 = D1 - ALTDB
-var D1 = form01.etam_D.value;
-form11.dtam_d.value= D1 - ALTDB;
-var D2 = parseFloat(form11.dtam_d.value);
+var D1 = id('etam_D').value;
+id('dtam_d').value= D1 - ALTDB;
+var D2 = parseFloat(id('dtam_d').value);
 
 //AB = A1 - ESPES
-form05.dtam_a1.value = (A1 - ESPES).toFixed(2) || 0.00;
-var AB = parseFloat(form05.dtam_a1.value);
+id('dtam_a1').value = (A1 - ESPES).toFixed(2) || 0.00;
+var AB = parseFloat(id('dtam_a1').value);
 
 //BB = B1 - ESPES
-form06.dtam_bbarra.value = (B1 - ESPES).toFixed(2) || 0.00;
-var BB = parseFloat(form06.dtam_bbarra.value);
+id('dtam_bbarra').value = (B1 - ESPES).toFixed(2) || 0.00;
+var BB = parseFloat(id('dtam_bbarra').value);
 
 //CB = C1 - ESPES / 2
-form07.dtam_ccc.value = C1 - ESPES / 2;
-var CB = parseFloat(form07.dtam_ccc.value);
+id('dtam_cbarra').value = C1 - ESPES / 2;
+var CB = parseFloat(id('dtam_cbarra').value);
 
 //DB = D1 - ESPES / 2
-form07.dtam_dd.value = DB = D1 - ESPES / 2;
-var DB = parseFloat(form07.dtam_dd.value);
+id('dtam_dd').value = DB = D1 - ESPES / 2;
+var DB = parseFloat(id('dtam_dd').value);
 
 //FITA = C2 + 3 * U + B2 + A2 + D2
-form10.largura_da.value = C2 + 3 * U + B2 + A2 + D2;
-var FITA = parseFloat(form10.largura_da.value);
+id('largura_da').value = C2 + 3 * U + B2 + A2 + D2;
+var FITA = parseFloat(id('largura_da').value);
 
 //AREA1 = FITA * ESPES
-form19.area_total.value = (FITA * ESPES).toFixed(2) || 0.00;
-var AREA01 = parseFloat(form19.area_total.value);
+id('area_total').value = (FITA * ESPES).toFixed(2) || 0.00;
+var AREA01 = parseFloat(id('area_total').value);
 
 //AREAU = AREA1
 id('area_util').value = id('area_total').value;
 
 //X = (C2 * ESPES * (DB + BB) + U * ESPES * (DB + BB - RN + 0.637 * RN) + B2 * ESPES * (D2 + 2 * RN + B2 / 2) + U * ESPES * (DB + RN - 0.637 * RN) + A2 * ESPES * DB + U * ESPES * (DB - RN + 0.637 * RN) + D2 * ESPES * D2 / 2) / AREA1
-form07.dtam_xx.value = (C2 * ESPES * (DB + BB) + U * ESPES * (DB + BB - RN + e * RN) + B2 * ESPES * (D2 + 2 * RN + B2 / 2) + U * ESPES * (DB + RN - e * RN) + A2 * ESPES * DB + U * ESPES * (DB - RN + e * RN) + D2 * ESPES * D2 / 2) / AREA01;
-var X = parseFloat(form07.dtam_xx.value);
+id('dtam_xx').value = (C2 * ESPES * (DB + BB) + U * ESPES * (DB + BB - RN + e * RN) + B2 * ESPES * (D2 + 2 * RN + B2 / 2) + U * ESPES * (DB + RN - e * RN) + A2 * ESPES * DB + U * ESPES * (DB - RN + e * RN) + D2 * ESPES * D2 / 2) / AREA01;
+var X = parseFloat(id('dtam_xx').value);
 
 //CGX = X
-form14.cgx.value = X;
-var CGX = parseFloat(form14.cgx.value);
+id('cgx').value = X;
+var CGX = parseFloat(id('cgx').value);
 
 
 //If A1 = B1 And C1 = D1 Then
@@ -221,19 +206,19 @@ var CGX = parseFloat(form14.cgx.value);
 //Else
 //Y = (C2 * ESPES * C2 / 2 + U * ESPES * (CB - RN + 0.637 * RN) + B2 * ESPES * CB + U * ESPES * (C2 + 2 * RN - 0.637 * RN) + A2 * ESPES * (C2 + 2 * RN + A2 / 2) + U * ESPES * (CB + AB - RN + 0.637 * RN) + D2 * ESPES * (CB + AB)) / AREA1
 if(A1 == B1 && C1 == D1){
-  form09.dtamy.value  = X; 
+  id('dtam_Y').value  = X; 
 }else{
-  form09.dtamy.value = (C2 * ESPES * C2 / 2 + U * ESPES * (CB - RN + e * RN) + B2 * ESPES * CB + U * ESPES * (C2 + 2 * RN - e * RN) + A2 * ESPES * (C2 + 2 * RN + A2 / 2) + U * ESPES * (CB + AB - RN + e * RN) + D2 * ESPES * (CB + AB)) / AREA01;
-  var Y = parseFloat(form09.dtamy.value);
+  id('dtam_Y').value = (C2 * ESPES * C2 / 2 + U * ESPES * (CB - RN + e * RN) + B2 * ESPES * CB + U * ESPES * (C2 + 2 * RN - e * RN) + A2 * ESPES * (C2 + 2 * RN + A2 / 2) + U * ESPES * (CB + AB - RN + e * RN) + D2 * ESPES * (CB + AB)) / AREA01;
+  var Y = parseFloat(id('dtam_Y').value);
 }
 
 //CGY = Y
-form15.cgy.value = Y;
-var CGY = parseFloat(form15.cgy.value);
+id('cgy').value = Y;
+var CGY = parseFloat(id('cgy').value);
 
 //IX = ESPES * C2 ^ 3 / 12 + 3 * 0.149 * RN * ESPES + B2 * ESPES ^ 3 / 12 + ESPES * A2 ^ 3 / 12 + D2 * ESPES ^ 3 / 12 + C2 * ESPES * (Y - C2 / 2) ^ 2 + U * ESPES * (Y - CB + RN - 0.637 * RN) ^ 2 + B2 * ESPES * (Y - CB) ^ 2 + U * ESPES * (Y - CB - RN + 0.637 * RN) ^ 2 + A2 * ESPES * (-Y +  CB + RN + A2 / 2) ^ 2 + U * ESPES * (-Y + CB - RN + AB + 0.637 * RN) ^ 2 + D2 * ESPES * (CB + AB - Y) ^ 2
-form12.ixx.value =  ESPES * Math.pow(C2,3) / 12 + 3 * 0.149 * RN * ESPES + B2 * Math.pow(ESPES,3) / 12 + ESPES * Math.pow(A2,3) / 12 + D2 * Math.pow(ESPES,3) / 12 + C2 * ESPES * Math.pow(Y - C2 / 2,2) + U * ESPES * Math.pow(Y - CB + RN - e * RN,2) + B2 * ESPES * Math.pow(Y - CB,2) + U * ESPES * Math.pow(Y - CB - RN + e * RN,2) + A2 * ESPES * Math.pow(-Y +  CB + RN + A2 / 2,2) + U * ESPES * Math.pow(-Y + CB - RN + AB + e * RN,2) + D2 * ESPES * Math.pow(CB + AB - Y,2);
-var IX = parseFloat(form12.ixx.value);
+id('ixx').value =  ESPES * Math.pow(C2,3) / 12 + 3 * 0.149 * RN * ESPES + B2 * Math.pow(ESPES,3) / 12 + ESPES * Math.pow(A2,3) / 12 + D2 * Math.pow(ESPES,3) / 12 + C2 * ESPES * Math.pow(Y - C2 / 2,2) + U * ESPES * Math.pow(Y - CB + RN - e * RN,2) + B2 * ESPES * Math.pow(Y - CB,2) + U * ESPES * Math.pow(Y - CB - RN + e * RN,2) + A2 * ESPES * Math.pow(-Y +  CB + RN + A2 / 2,2) + U * ESPES * Math.pow(-Y + CB - RN + AB + e * RN,2) + D2 * ESPES * Math.pow(CB + AB - Y,2);
+var IX = parseFloat(id('ixx').value);
 
 
 //End If
@@ -242,16 +227,16 @@ var IX = parseFloat(form12.ixx.value);
 //Else
 //IY = ESPES * D2 ^ 3 / 12 + 3 * 0.149 * RN * ESPES + A2 * ESPES ^ 3 / 12 + ESPES * B2 ^ 3 / 12 + C2 * ESPES ^ 3 / 12 + D2 * ESPES * (X - D2 / 2) ^ 2 + U * ESPES * (X - DB + RN - 0.637 * RN) ^ 2 + A2 * ESPES * (X - DB) ^ 2 + U * ESPES * (X - DB - RN + 0.637 * RN) ^ 2 + B2 * ESPES * (-X + DB + RN + B2 / 2) ^ 2 + U * ESPES * (-X  - RN + DB + BB + 0.637 * RN) ^ 2 + C2 * ESPES * _(DB + BB - X) ^ 2
 if(A1 == B1 && C1 == D1){
-  form13.iyy.value = IX;
-  var IY = parseFloat(form13.iyy.value);
+  id('iyy').value = IX;
+  var IY = parseFloat(id('iyy').value);
 }else{
-  form13.iyy.value = ESPES * Math.pow(D2,3) / 12 + 3 * 0.149 * RN * ESPES + A2 * Math.pow(ESPES,3) / 12 + ESPES * Math.pow(B2,3) / 12 + C2 * Math.pow(ESPES,3) / 12 + D2 * ESPES * Math.pow(X - D2 / 2,2) + U * ESPES * Math.pow(X - DB + RN - 0.637 * RN,2) + A2 * ESPES * Math.pow(X - DB,2) + U * ESPES * Math.pow(X - DB - RN + 0.637 * RN,2) + B2 * ESPES * Math.pow(-X + DB + RN + B2 / 2,2) + U * ESPES * Math.pow(-X  - RN + DB + BB + 0.637 * RN,2) + C2 * ESPES * Math.pow(DB + BB - X,2);
-  var IY = parseFloat(form13.iyy.value);
+  id('iyy').value = ESPES * Math.pow(D2,3) / 12 + 3 * 0.149 * RN * ESPES + A2 * Math.pow(ESPES,3) / 12 + ESPES * Math.pow(B2,3) / 12 + C2 * Math.pow(ESPES,3) / 12 + D2 * ESPES * Math.pow(X - D2 / 2,2) + U * ESPES * Math.pow(X - DB + RN - 0.637 * RN,2) + A2 * ESPES * Math.pow(X - DB,2) + U * ESPES * Math.pow(X - DB - RN + 0.637 * RN,2) + B2 * ESPES * Math.pow(-X + DB + RN + B2 / 2,2) + U * ESPES * Math.pow(-X  - RN + DB + BB + 0.637 * RN,2) + C2 * ESPES * Math.pow(DB + BB - X,2);
+  var IY = parseFloat(id('iyy').value);
 }
 
 //ixy = C2 * ESPES * (DB + BB - X) * (Y - C2 / 2) + _U * ESPES * (DB + BB - RN + 0.637 * RN - X) * (Y - CB + RN - 0.637 * RN) + B2 * ESPES * (X - D2 - 2 * RN - B2 / 2) * (Y - CB) + U * ESPES * (-X + D2 + 2 * RN - 0.637 * RN) * (Y - CB - RN + 0.637 * RN) + A2 * ESPES * (DB - X) * (Y -CB - AB / 2) + U * ESPES * (DB - RN + 0.637 * RN - X) * (Y - CB - AB + RN - 0.637 * RN) + D2 * ESPES * (D2 / 2 - X) * (CB + AB - Y)
-form17.lxy.value = C2 * ESPES * (DB + BB - X) * (Y - C2 / 2) + U * ESPES * (DB + BB - RN + e * RN - X) * (Y - CB + RN - e * RN) + B2 * ESPES * (X - D2 - 2 * RN - B2 / 2) * (Y - CB) + U * ESPES * (-X + D2 + 2 * RN - e * RN) * (Y - CB - RN + e * RN) + A2 * ESPES * (DB - X) * (Y -CB - AB / 2) + U * ESPES * (DB - RN + e * RN - X) * (Y - CB - AB + RN - e * RN) + D2 * ESPES * (D2 / 2 - X) * (CB + AB - Y);
-var ixy = parseFloat(form17.lxy.value);
+id('lxy').value = C2 * ESPES * (DB + BB - X) * (Y - C2 / 2) + U * ESPES * (DB + BB - RN + e * RN - X) * (Y - CB + RN - e * RN) + B2 * ESPES * (X - D2 - 2 * RN - B2 / 2) * (Y - CB) + U * ESPES * (-X + D2 + 2 * RN - e * RN) * (Y - CB - RN + e * RN) + A2 * ESPES * (DB - X) * (Y -CB - AB / 2) + U * ESPES * (DB - RN + e * RN - X) * (Y - CB - AB + RN - e * RN) + D2 * ESPES * (D2 / 2 - X) * (CB + AB - Y);
+var ixy = parseFloat(id('lxy').value);
 
 
 //End If
@@ -272,14 +257,14 @@ var ixy = parseFloat(form17.lxy.value);
 //y0 = -JWX / IY
 //End If
 if(A1 == B1 && C1 == D1){
-  form15.lv.value = IX + ixy;
-  var IV = parseFloat(form15.lv.value);
+  id('lv').value = IX + ixy;
+  var IV = parseFloat(id('lv').value);
   iz = IX - ixy;
 }else{
-  form15.lv.value = (IX + IY) / 2 + Math.pow(((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy,0.5);
-  var IV = parseFloat(form15.lv.value);
-  form14.lz.value = (IX + IY) / 2 - Math.pow(((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy,0.5);
-  var iz = parseFloat(form14.lz.value);
+  id('lv').value = (IX + IY) / 2 + Math.pow(((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy,0.5);
+  var IV = parseFloat(id('lv').value);
+  id('lz').value = (IX + IY) / 2 - Math.pow(((IX - IY) / 2) * ((IX - IY) / 2) + ixy * ixy,0.5);
+  var iz = parseFloat(id('lz').value);
   
   W1 = CB * (X - DB - BB);
   parseFloat(W1);
@@ -332,10 +317,11 @@ if(A1 == B1 && C1 == D1){
   parseFloat(JWY);
   x0 = JWY / IX;
   parseFloat(x0); 
-  form05.dtam_distancia.value = (Math.pow(x0 * x0 + y0 * y0,0.5)).toFixed(2) || 0.00;
-  var DIST = parseFloat(form05.dtam_distancia.value);
-  form16.ip.value = IX + IY + AREA01 * Math.pow(DIST,2);
-  var IP = parseFloat(form16.ip.value);
+
+  id('dtam_distancia').value = (Math.pow(x0 * x0 + y0 * y0,0.5)).toFixed(2) || 0.00;
+  var DIST = parseFloat(id('dtam_distancia').value);
+  id('ip').value = IX + IY + AREA01 * Math.pow(DIST,2);
+  var IP = parseFloat(id('ip').value);
   AUX2 = (CB + AB) / 2; 
   parseFloat(AUX2);
 }
@@ -347,12 +333,12 @@ if(A1 == B1 && C1 == D1){
 //Else
 //WX = IX / Y
 //End If
-  if (AUX2 > Y){  (form18.wx.value = IX / (CB + AB - Y + ESPES / 2));
-    var Wx = parseFloat(form18.wx.value);
+  if (AUX2 > Y){  (id('wx').value = IX / (CB + AB - Y + ESPES / 2));
+    var Wx = parseFloat(id('wx').value);
   }
   else{
-    form18.wx.value = IX / Y;
-    var Wx = parseFloat(form18.wx.value);
+    id('wx').value = IX / Y;
+    var Wx = parseFloat(id('wx').value);
 }
 
 
@@ -366,38 +352,38 @@ parseFloat(AUX2);
 //Else
 //WY = IY / X
 //End If
-  if(AUX2 > X) {(form13.wy.value = IY / (DB + BB - X + ESPES / 2))
-    var WY = parseFloat(form13.wy.value);
+  if(AUX2 > X) {(id('wy').value = IY / (DB + BB - X + ESPES / 2))
+    var WY = parseFloat(id('wy').value);
   }
   else{
-    form13.wy.value = IY / X;
+    id('wy').value = IY / X;
     
 }
 
 
 //WT = FITA * ESPES ^ 2 / 3
-form14.wt.value = FITA * Math.pow(ESPES,2) / 3;
-var WT = parseFloat(form14.wt.value);
+id('wt').value = FITA * Math.pow(ESPES,2) / 3;
+var WT = parseFloat(id('wt').value);
 
 //J1 = WT * ESPES
-form12.j.value = WT * ESPES;
-var J1 = parseFloat(form12.j.value);
+id('j').value = WT * ESPES;
+var J1 = parseFloat(id('j').value);
 
 //IX1 = (IX / AREA1) ^ 0.5
-form16.ixis.value = Math.pow(IX / AREA01,0.5);
-var IX1 = parseFloat(form16.ixis.value);
+id('ixis').value = Math.pow(IX / AREA01,0.5);
+var IX1 = parseFloat(id('ixis').value);
 
 //IY1 = (IY / AREA1) ^ 0.5
-form17.iy.value = Math.pow(IY / AREA01,0.5);
-var IY1 = parseFloat(form17.iy.value);
+id('iy').value = Math.pow(IY / AREA01,0.5);
+var IY1 = parseFloat(id('iy').value);
 
 //iz1 = (iz / AREA1) ^ 0.5
-form18.iz.value = Math.pow(iz / AREA01,0.5);
-var iz1 = parseFloat(form18.iz.value);
+id('iz').value = Math.pow(iz / AREA01,0.5);
+var iz1 = parseFloat(id('iz').value);
 
 //iv1 = (IV / AREA1) ^ 0.5
-form19.iv.value = Math.pow(IV / AREA01,0.5);
-var iv1 = parseFloat(form19.iv.value);
+id('iv').value = Math.pow(IV / AREA01,0.5);
+var iv1 = parseFloat(id('iv').value);
 
 //RO1 = -(DB + BB - X - x0)
 RO1 = -(DB + BB - X - x0);
@@ -431,7 +417,7 @@ else{
 
 //If x0 < 0 Then x0 = -x0
   if(x0 < 0){
-  (form05.dtam_X.value = (-x0));
+  (id('dtam_X').value = (-x0));
   parseFloat(x0);
   }
 
@@ -479,7 +465,7 @@ WN4 = WN0 - W4;
 parseFloat(WN4);
 
 //Cw = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * CB + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * ESPES * BB + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * ESPES * AB + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * ESPES * DB) / 3
-form16.cw.value = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * CB + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * ESPES * BB + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * ESPES * AB + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * ESPES * DB) / 3;
+id('cw').value = ((WN0 * WN0 + WN0 * WN1 + WN1 * WN1) * ESPES * CB + (WN1 * WN1 + WN1 * WN2 + WN2 * WN2) * ESPES * BB + (WN2 * WN2 + WN2 * WN3 + WN3 * WN3) * ESPES * AB + (WN3 * WN3 + WN3 * WN4 + WN4 * WN4) * ESPES * DB) / 3;
 
 //If A1 = B1 And C1 = D1 Then
 //TETA = 45
@@ -504,8 +490,8 @@ if(A1 == B1 && C1 == D1){
   Resultado_01 = Math.atan(parametro_01);
   Resultado_01_1 = Resultado_01 / (pi / 180);
   ATAN1 = Resultado_01_1;
-  form18.teta.value = 90 - ATAN1 / 2;
-  var TETA = parseFloat(form18.teta.value);
+  id('teta').value = 90 - ATAN1 / 2;
+  var TETA = parseFloat(id('teta').value);
 }
 
 
@@ -518,10 +504,14 @@ if(A1 == B1 && C1 == D1){
 TETA_AUX = TETA;
 TETA_AUX1 = TETA - TETA_AUX;
 TETA_AUX1 = TETA_AUX1 * 60;
-form04.d_Peso.value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
-var KGM = parseFloat(form04.d_Peso.value);
+id('d_Peso').value = (AREA01 * 0.001 * 7.85).toFixed(2) || 0.00;
+var KGM = parseFloat(id('d_Peso').value);
 XB = X;
 YB = Y;
+  
+
+
+ 
 
 
 
@@ -586,10 +576,7 @@ YB = Y;
     var re_ip = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_ip.test(ip.value)) {
       ip.value = ip.value.replace(re_ip, "$1$2.00");
-    }
-    var re_dtam_D = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_D.test(dtam_D.value)) {
-      dtam_D.value = dtam_D.value.replace(re_dtam_D, "$1$2.00");
+    
     }
     var re_largura_da = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_largura_da.test(largura_da.value)) {
@@ -618,10 +605,7 @@ YB = Y;
     var re_dtam_ee = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_ee.test(dtam_ee.value)) {
       dtam_ee.value = dtam_ee.value.replace(re_dtam_ee, "$1$20.00");
-     }
-    var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_u3.test(dtam_u3.value)) {
-      dtam_u3.value = dtam_u3.value.replace(re_dtam_u3, "$1$20.00");
+     
     }
     var re_dtam_m = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_m.test(dtam_m.value)) {
@@ -647,10 +631,6 @@ YB = Y;
     if (re_dtam_distancia.test(dtam_distancia.value)) {
       dtam_distancia.value = dtam_distancia.value.replace(re_dtam_distancia, "$1$20.00");
     }
-    var re_dtamy = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtamy.test(dtamy.value)) {
-      dtamy.value = dtamy.value.replace(re_dtamy, "$1$20.00");
-    }
     var re_wz = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_wz.test(wz.value)) {
       wz.value = wz.value.replace(re_wz, "$1$20.00");
@@ -662,29 +642,26 @@ YB = Y;
     var re_iii = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_iii.test(iii.value)) {
       iii.value = iii.value.replace(re_iii, "$1$20.00");
-    }
-    var re_bbb = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_bbb.test(bbb.value)) {
-      bbb.value = bbb.value.replace(re_bbb, "$1$20.00");
+    
     }
     var re_ixx = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_ixx.test(ixx.value)) {
       ixx.value = ixx.value.replace(ixx_bbb, "$1$20.00");
+    
     }
-    var re_dtam_ccc = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_ccc.test(dtam_ccc.value)) {
-      dtam_ccc.value = dtam_ccc.value.replace(re_dtam_ccc, "$1$2.00");
-    }
-
-
-
+    
+   
 
     window.onload = function () {
       id('copiar').onclick = function () {
-        soma();
+        
       }
+      
     }
-
-
-
+    
+    
   }
+  
+  
+  
+  

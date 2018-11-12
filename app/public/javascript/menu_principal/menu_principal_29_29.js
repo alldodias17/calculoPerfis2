@@ -137,124 +137,124 @@ var i = parseFloat(1.5);
 var pi = parseFloat(3.14);
 
 //RDB2 = RDB1 * ESPES
-var ESPES = parseFloat(form06.espessura_d.value);
-var RDB1 = parseFloat(form03.raioe.value);
-form07.raiod.value = (RDB1 * ESPES).toFixed(2) || 0.00;
-var RDB2 = parseFloat(form07.raiod.value);
+var ESPES = parseFloat(id('espessura_d').value);
+var RDB1 = parseFloat(id('raioe').value);
+id('raiod').value = (RDB1 * ESPES).toFixed(2) || 0.00;
+var RDB2 = parseFloat(id('raiod').value);
 
 //RN = RDB2 + ESPES / 2
-form08.raio_neutro.value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
-var RN = parseFloat(form08.raio_neutro.value);
+id('raio_neutro').value = (RDB2 + ESPES / 2).toFixed(2) || 0.00;
+var RN = parseFloat(id('raio_neutro').value);
 
 //ALTDB = RDB2 + ESPES
-form09.alturadobra.value = (RDB2 + ESPES).toFixed(2) || 0.00;
-var ALTDB = parseFloat(form09.alturadobra.value);
+id('alturadobra').value = (RDB2 + ESPES).toFixed(2) || 0.00;
+var ALTDB = parseFloat(id('alturadobra').value);
 
 //U = RN * 1.57
 var U1 = parseFloat(1.57);
-form10.ud.value = ((form08.raio_neutro.value * 10 * 1.57) / 10).toFixed(2) || 0.00;
-var U = parseFloat(form10.ud.value);
+id('ud').value = ((id('raio_neutro').value * 10 * 1.57) / 10).toFixed(2) || 0.00;
+var U = parseFloat(id('ud').value);
 
 //A2 = A1 - 2 * ALTDB
-var A1 = parseFloat(form04.dtam_A.value);
-form09.dtam_a.value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
-var A2 = parseFloat(form09.dtam_a.value);
+var A1 = parseFloat(id('dtam_A').value);
+id('dtam_a').value = (A1 - 2 * ALTDB).toFixed(2) || 0.00;
+var A2 = parseFloat(id('dtam_a').value);
 
 
 //B2 = B1 - ALTDB
-var B1 = parseFloat(form05.dtam_B.value);
-form09.dtam_b.value = (B1 - ALTDB).toFixed(2) || 0.00;
-var B2 = parseFloat(form09.dtam_b.value);
+var B1 = parseFloat(id('dtam_B').value);
+id('dtam_b').value = (B1 - ALTDB).toFixed(2) || 0.00;
+var B2 = parseFloat(id('dtam_b').value);
 
 //C2 = C1 - ALTDB
-var C1 = form03.etam_C.value
-form10.dtam_c.value = C1 - ALTDB;
-var C2 = parseFloat(form10.dtam_c.value);
+var C1 = id('etam_C').value
+id('dtam_c').value = C1 - ALTDB;
+var C2 = parseFloat(id('dtam_c').value);
 
 //AB = A1 - ESPES
-form05.dtam_a1.value = (A1 - ESPES).toFixed(2) || 0.00;
-var AB = parseFloat(form05.dtam_a1.value)
+id('dtam_a1').value = (A1 - ESPES).toFixed(2) || 0.00;
+var AB = parseFloat(id('dtam_a1').value)
 
 
 //BB = B1 - ESPES / 2
-form06.dtam_bbarra.value = (B1 - ESPES / 2).toFixed(2) || 0.00;
-var BB = parseFloat(form06.dtam_bbarra.value);
+id('dtam_bbarra').value = (B1 - ESPES / 2).toFixed(2) || 0.00;
+var BB = parseFloat(id('dtam_bbarra').value);
 
 //CB = C1 - ESPES / 2
-form07.dtam_ccc.value = C1 - ESPES / 2;
-var CB = parseFloat(form07.dtam_ccc.value);
+id('dtam_ccc').value = C1 - ESPES / 2;
+var CB = parseFloat(id('dtam_ccc').value);
 
 //FITA = B2 + A2 + C2 + 2 * U
-form10.largura_da.value = 2 * U + C2 + B2 + A2;
-var FITA = parseFloat(form10.largura_da.value);
+id('largura_da').value = 2 * U + C2 + B2 + A2;
+var FITA = parseFloat(id('largura_da').value);
 
 //AREA1 = 2 * FITA * ESPES
-form19.area_total.value = ( 2 * FITA * ESPES).toFixed(2) || 0.00;
-var AREA01 = parseFloat(form19.area_total.value);
+id('area_total').value = ( 2 * FITA * ESPES).toFixed(2) || 0.00;
+var AREA01 = parseFloat(id('area_total').value);
 
 //AREAU = AREA1
 id('area_util').value = id('area_total').value;
 
 //KGM = AREA1 * 0.00785
-form04.d_Peso.value = (AREA01 * 0.00785).toFixed(2) || 0.00;
-var KGM = parseFloat(form04.d_Peso.value);
+id('d_Peso').value = (AREA01 * 0.00785).toFixed(2) || 0.00;
+var KGM = parseFloat(id('d_Peso').value);
 
 //CGX = B1
-form14.cgx.value = B1;
-var CGX = parseFloat(form14.cgx.value);
+id('cgx').value = B1;
+var CGX = parseFloat(id('cgx').value);
 
 //YB = 2 * ESPES / AREA1 * (U * (0.363 * RN) + A2 * (RN + A2 / 2) + U * (A2 + 1.637 * RN) + C2 * (A2 + 2 * RN))
-form09.dtam_y.value = 2 * ESPES / AREA01 * (U * (0.363 * RN) + A2 * (RN + A2 / 2) + U * (A2 + 1.637 * RN) + C2 * (A2 + 2 * RN));
-var YB = parseFloat(form09.dtam_y.value);
+id('dtam_y').value = 2 * ESPES / AREA01 * (U * (0.363 * RN) + A2 * (RN + A2 / 2) + U * (A2 + 1.637 * RN) + C2 * (A2 + 2 * RN));
+var YB = parseFloat(id('dtam_y').value);
 
 //CGY = YB + ESPES / 2
-form15.cgy.value = YB + ESPES / 2;
-var CGY = parseFloat(form15.cgy.value);
+id('cgy').value = YB + ESPES / 2;
+var CGY = parseFloat(id('cgy').value);
 
 //IY = 2 * ESPES * (B2 * (B2 / 2 + RN + ESPES / 2) ^ 2 + 2 * 0.0833 * B2 ^ 3 + 2 * U * (0.363 * RN + ESPES / 2) ^ 2 + 2 * 0.149 * RN ^ 3 + C2 * (C2 / 2 + RN + ESPES / 2) ^ 2)
-form13.iyy.value = 2 * ESPES * (B2 * Math.pow(B2 / 2 + RN + ESPES / 2,2) + 2 * 0.0833 * Math.pow(B2,3) + 2 * U * Math.pow(0.363 * RN + ESPES / 2,2) + 2 * 0.149 * Math.pow(RN,3) + C2 * Math.pow(C2 / 2 + RN + ESPES / 2,2)); 
-var IY = parseFloat(form13.iyy.value);
+id('iyy').value = 2 * ESPES * (B2 * Math.pow(B2 / 2 + RN + ESPES / 2,2) + 2 * 0.0833 * Math.pow(B2,3) + 2 * U * Math.pow(0.363 * RN + ESPES / 2,2) + 2 * 0.149 * Math.pow(RN,3) + C2 * Math.pow(C2 / 2 + RN + ESPES / 2,2)); 
+var IY = parseFloat(id('iyy').value);
 
 //IX = 2 * ESPES * (0.358 * RN ^ 3 + A2 * (A2 / 2 + RN) ^ 2 + 0.0833 * A2 ^ 3 + U * (A2 + 1.637 * RN) ^ 2 + 0.149 * RN ^ 3 + C2 * (A2 + 2 * RN) ^ 2) - AREA1 * YB ^ 2
-form12.ixx.value = 2 * ESPES * (0.358 * Math.pow(RN,3) + A2 * Math.pow(A2 / 2 + RN,2) + 0.0833 * Math.pow(A2,3) + U * Math.pow(A2 + 1.637 * RN,2) + 0.149 * Math.pow(RN,3) + C2 * Math.pow(A2 + 2 * RN,2)) - AREA01 * Math.pow(YB,2);
-var IX = parseFloat(form12.ixx.value);
+id('ixx').value = 2 * ESPES * (0.358 * Math.pow(RN,3) + A2 * Math.pow(A2 / 2 + RN,2) + 0.0833 * Math.pow(A2,3) + U * Math.pow(A2 + 1.637 * RN,2) + 0.149 * Math.pow(RN,3) + C2 * Math.pow(A2 + 2 * RN,2)) - AREA01 * Math.pow(YB,2);
+var IX = parseFloat(id('ixx').value);
 
 //y0 = YB - AB * (1 - BB ^ 3 / (BB ^ 3 + CB ^ 3))
-form06.dtam_Y.value = YB - AB * (1 - Math.pow(BB,3) / (Math.pow(BB,3) + Math.pow(CB,3)));
-var y0 = form06.dtam_Y.value;
+id('dtam_Y').value = YB - AB * (1 - Math.pow(BB,3) / (Math.pow(BB,3) + Math.pow(CB,3)));
+var y0 = id('dtam_Y').value;
 
 
 //DIST = y0
-form05.dtam_distancia.value = y0;
-var DIST = parseFloat(form05.dtam_distancia.value);
+id('dtam_distancia').value = y0;
+var DIST = parseFloat(id('dtam_distancia').value);
 
 //J1 = 2 * ESPES ^ 3 * FITA / 3
-form12.j.value = 2 * Math.pow(ESPES,3) * FITA / 3;
-var J1 = parseFloat(form12.j.value);
+id('j').value = 2 * Math.pow(ESPES,3) * FITA / 3;
+var J1 = parseFloat(id('j').value);
 
 //WT = J1 / ESPES
-form14.wt.value = J1 / ESPES;
-var WT = parseFloat(form14.wt.value);
+id('wt').value = J1 / ESPES;
+var WT = parseFloat(id('wt').value);
 
 //IP = IX + IY + AREA1 * DIST ^ 2
-form16.ip.value = IX + IY + AREA01 * DIST * DIST;
-var IP = parseFloat(form16.ip.value);
+id('ip').value = IX + IY + AREA01 * DIST * DIST;
+var IP = parseFloat(id('ip').value);
 
 //WX = IX / (AB + ESPES / 2 - YB)
-form18.wx.value = IX / (AB + ESPES / 2 - YB);
-var WX = parseFloat(form18.wx.value);
+id('wx').value = IX / (AB + ESPES / 2 - YB);
+var WX = parseFloat(id('wx').value);
 
 //WY = IY / B1
-form13.wy.value = IY / B1;
-var WY = parseFloat(form13.wy.value);
+id('wy').value = IY / B1;
+var WY = parseFloat(id('wy').value);
 
 //IX1 = (IX / AREA1) ^ 0.5
-form16.ixis.value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
-var IX1 = parseFloat(form16.ixis.value);
+id('ixis').value = Math.pow(IX / AREA01,0.5).toFixed(2) || 0.00;
+var IX1 = parseFloat(id('ixis').value);
 
 //IY1 = (IY / AREA1) ^ 0.5
-form17.iy.value = Math.pow(IY / AREA01,0.5);
-var IY1 = parseFloat(form17.iy.value);
+id('iy').value = Math.pow(IY / AREA01,0.5);
+var IY1 = parseFloat(id('iy').value);
 
 //AUX2 = ESPES * (2 * BB) ^ 3 / 12
 AUX2 = ESPES * Math.pow(2 * BB,3) / 12;
@@ -263,7 +263,7 @@ AUX2 = ESPES * Math.pow(2 * BB,3) / 12;
 AUX3 = ESPES * Math.pow(2 * CB,3) / 12
 
 //Cw = AB ^ 2 * AUX2 * AUX3 / (AUX2 + AUX3)
-form16.cw.value = Math.pow(AB,2) * AUX2 * AUX3 / (AUX2 + AUX3);
+id('cw').value = Math.pow(AB,2) * AUX2 * AUX3 / (AUX2 + AUX3);
 
 
     var re_raiod = /^([0-9]{0,4})([0-9]{0,4})$/;
@@ -354,10 +354,7 @@ form16.cw.value = Math.pow(AB,2) * AUX2 * AUX3 / (AUX2 + AUX3);
     var re_u2 = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_u2.test(u2.value)) {
       u2.value = u2.value.replace(re_u2, "$1$20.00");
-    }
-    var re_dtam_u3 = /^([0-9]{0,4})([0-9]{0,4})$/;
-    if (re_dtam_u3.test(dtam_u3.value)) {
-      dtam_u3.value = dtam_u3.value.replace(re_dtam_u3, "$1$20.00");
+    
     }
     var re_dtam_m = /^([0-9]{0,4})([0-9]{0,4})$/;
     if (re_dtam_m.test(dtam_m.value)) {

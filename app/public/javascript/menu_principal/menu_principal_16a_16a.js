@@ -123,8 +123,6 @@ window.onload = function () {
 
 id('dtam_A').value = id('etam_A').value || 0.00;
 id('dtam_B').value = id('etam_B').value || 0.00;
-id('dtam_C').value = id('etam_C').value || 0.00;
-id('tam_DD').value = id('etam_D').value || 0.00;
 id('dtam_D').value = id('etam_E').value || 0.00;
 id('espessura_d').value = id('espessura_e').value || 0.00;
 

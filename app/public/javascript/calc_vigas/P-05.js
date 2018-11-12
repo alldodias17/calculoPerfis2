@@ -72,24 +72,24 @@ window.onload = function () {
     var b = parseFloat(0.4);
     
 //Aux_m = AuxCargP.Value * AuxComp1.Value / 4
-var AuxCargP = parseFloat(form01.AuxCargP.value);
-var AuxComp1 = parseFloat(form01.AuxComp1.value);
-form02.txtMomento.value = AuxCargP * AuxComp1 / 4;
-var txtMomento = parseFloat(form02.txtMomento.value);
+var AuxCargP = parseFloat(id('AuxCargP').value);
+var AuxComp1 = parseFloat(id('AuxComp1').value);
+id('txtMomento').value = AuxCargP * AuxComp1 / 4;
+var txtMomento = parseFloat(id('txtMomento').value);
 
 //Aux_Wx = Aux_m / (AuxTenes * 0.6)
-var AuxTenes = parseFloat(form03.AuxTenes.value);
-var txtMomento = parseFloat(form02.txtMomento.value);
-form03.txtWx.value = txtMomento / (AuxTenes * a);
-var txtWx = parseFloat(form03.txtWx.value);
+var AuxTenes = parseFloat(id('AuxTenes').value);
+var txtMomento = parseFloat(id('txtMomento').value);
+id('txtWx').value = txtMomento / (AuxTenes * a);
+var txtWx = parseFloat(id('txtWx').value);
 
 //Aux_Ix = AuxComp1.Value ^ 2 * AuxCargP.Value / 5040
-form03.txtIx.value = AuxComp1**2 * AuxCargP / 5040;
-var txtIx = parseFloat(form03.txtIx.value);
+id('txtIx').value = AuxComp1**2 * AuxCargP / 5040;
+var txtIx = parseFloat(id('txtIx').value);
 
 //Aux_Fc = (AuxCargP.Value / 2) / AuxTenes.Value / 0.4 
-form04.xtAreaFC.value =   (AuxCargP / 2) / AuxTenes / 0.4 ;
-var xtAreaFC = parseFloat(form04.xtAreaFC.value);   
+id('xtAreaFC').value =   (AuxCargP / 2) / AuxTenes / 0.4 ;
+var xtAreaFC = parseFloat(id('xtAreaFC').value);   
           
           window.onload = function () {
             id('copiar').onclick = function () {
